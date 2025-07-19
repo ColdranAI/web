@@ -13,15 +13,9 @@ export default function MarketingLayout({
         <div className="flex h-16 items-center justify-between max-w-7xl mx-auto px-4 lg:px-6">
           <div className="flex items-center gap-6">
             <Link href="/" className="font-normal flex items-center gap-4">
-              <span className="text-sm md:text-lg text-neutral-800">
-                <span className="font-bold">RukList</span> serves{" "}
-                <span className="font-semibold bg-neutral-100 border border-neutral-300 px-1.5 py-1 text-black">
-                  SECURE, ROBUST and SCALEABLE Waitlists
-                </span>{" "}
-                to{" "}
-                <span className="font-semibold text-black">
-                  {"Cool People {You}"}
-                </span>{" "}
+              <span className="text-sm md:text-lg text-neutral-800 flex items-center gap-2">
+                <img src="/logo.svg" alt="Coldran" width={32} height={32} />
+                <span className="font-bold">Coldran</span>
               </span>
             </Link>
             <nav className="hidden text-sm md:flex gap-6">

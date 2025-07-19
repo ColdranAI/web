@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { JetBrains_Mono, Inter } from "next/font/google";
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/next"
 import { cn } from "@/lib/utils";
 import RootProviders from "@/components/providers";
 
@@ -22,8 +23,8 @@ const fontHeading = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Kite Portfolio",
-  description: "Modern Next.js 15 portfolio application",
+  title: "Ruklist",
+  description: "We provide better functional waitlists",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -47,6 +48,7 @@ export default function RootLayout({
         )}
       >
         <RootProviders>{children}</RootProviders>
+        <Analytics />
       </body>
     </html>
   );

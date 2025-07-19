@@ -28,7 +28,7 @@ export default function Home() {
           Focus on the serving your{" "}
           <span className="font-semibold text-black">Potential Customers</span>{" "}
           while you build the{" "}
-          <span className="font-semibold text-black">MVP</span>. Ruklist will
+          <span className="font-semibold text-black">MVP</span>. Coldran will
           help you do that.
         </p>
       </div>
