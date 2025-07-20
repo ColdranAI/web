@@ -6,21 +6,14 @@ import { PricingCard } from "@/components/pricing-card";
 import { SecondFeature } from "@/components/second-feature";
 import { FeatureCard } from "@/components/FeedbackForm";
 import { TemplatesSection } from "@/components/templates-section";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <div className=" mx-auto px-4 max-w-5xl lg:px-6 h-auto overflow-y-auto md:overflow-hidden my-10  items-center justify-center">
       <div className="md:min-h-screen pt-20 pb-20 md:pb-0">
-        <div className="relative w-full max-w-5xl aspect-[16/8] rounded-2xl mx-auto overflow-hidden">
-          <Image
-            src="/hero.png"
-            alt="Kite"
-            width={800}
-            height={450}
-            draggable={false}
-            className="rounded-xl select-none brightness-87 object-cover w-full h-full"
-          />
-          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:text-5xl font-bold text-center z-10 ">
+        <div className=" w-full max-w-2xl mx-auto py-2">
+          <h1 className="text-black text-4xl md:text-5xl font-semibold text-center z-10 ">
             Frictionless Waitlists for Busy Founders
           </h1>
         </div>
@@ -31,6 +24,9 @@ export default function Home() {
           <span className="font-semibold text-black">MVP</span>. Coldran will
           help you do that.
         </p>
+        <div className="flex items-center pt-10 justify-center">
+        <Button variant="default" size="lg">Build Your Agent</Button>
+      </div>
       </div>
       <div className="mb-14 max-w-4xl mx-auto px-4">
           <section>

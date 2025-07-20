@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { JetBrains_Mono, Inter } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { cn } from "@/lib/utils";
@@ -12,18 +12,21 @@ const fontSans = Inter({
   display: "swap",
 });
 
-const fontMono = JetBrains_Mono({
-  variable: "--font-mono",
+const fontPoppins = Poppins({
   subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const fontHeading = Inter({
-  variable: "--font-inter",
+const fontMono = Inter({
   subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Ruklist",
+  title: "Coldran",
   description: "We provide better functional waitlists",
   icons: {
     icon: "/favicon.png",
@@ -43,7 +46,7 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
-          fontHeading.variable,
+          fontPoppins.variable,
           fontMono.variable,
         )}
       >

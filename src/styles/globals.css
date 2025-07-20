@@ -6,6 +6,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--font-poppins);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -38,7 +39,7 @@
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  --font-heading: var(--font-inter);
+  --font-heading: var(--font-poppins);
 }
 
 :root {
@@ -145,4 +146,24 @@
   to {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
+}
+
+.orangeshadow {
+  box-shadow: 0px 6px #FFB031;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.orangeshadow:active {
+  transform: translateY(2px);
+  transition: transform 0.3s ease;
+  box-shadow: 0px 2px #FFB031;
+  transition: box-shadow 0.2s ease;
+}
+
+
+
+.circular:hover {
+  background-color: #f7f7f7;
+  transition: background-color 0.2s ease;
 }

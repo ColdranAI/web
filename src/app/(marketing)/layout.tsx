@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function MarketingLayout({
   children,
@@ -10,26 +11,25 @@ export default function MarketingLayout({
     <div className="relative flex min-h-screen flex-col">
       {/* Header */}
       <header className="w-full py-2 bg-white">
-        <div className="flex h-16 items-center justify-between max-w-7xl mx-auto px-4 lg:px-6">
+        <div className="flex h-14 items-center justify-between max-w-7xl mx-auto px-4 lg:px-6">
           <div className="flex items-center gap-6">
             <Link href="/" className="font-normal flex items-center gap-4">
-              <span className="text-sm md:text-lg text-neutral-800 flex items-center gap-2">
-                <img src="/logo.svg" alt="Coldran" width={32} height={32} />
-                <span className="font-bold">Coldran</span>
+              <span className="text-sm md:text-xl text-neutral-800 flex items-center gap-3">
+                <img src="/logo.svg" alt="Coldran" draggable={false} width={46} height={46} />
+                <span className="font-semibold font-poppins tracking-wide">
+                  Coldran</span>
               </span>
             </Link>
-            <nav className="hidden text-sm md:flex gap-6">
-                Coming Soon
+            <nav className="hidden font-semibold text-md md:flex pl-5 gap-1">
+                <Link href="/pricing" className="circular rounded-md px-3 py-2 text-neutral-800">Pricing</Link>
+                <Link href="/features" className="circular rounded-md px-3 py-2 text-neutral-800">Features</Link>
+                <Link href="/blog" className="circular rounded-md px-3 py-2 text-neutral-800">Blog</Link>
+                <Link href="/about" className="circular rounded-md px-3 py-2 text-neutral-800">About</Link>
             </nav>
           </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href="https://arjunaditya.xyz/"
-              target="_blank"
-              className="flex hidden md:block text-muted-foreground font-medium items-center"
-            >
-              Arjun Aditya
-            </Link>
+          <div className="flex items-center gap-2">
+          <Button variant="secondary" size="minor">Sign In</Button>
+            <Button variant="black" size="minor">Try for Free</Button>
           </div>
         </div>
       </header>
