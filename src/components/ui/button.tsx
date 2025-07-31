@@ -11,9 +11,13 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-primary orangeshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
+        blue:
+          "bg-primary blueshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
+        red:
+          "bg-primary redshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
         black:
           "bg-black text-white shadow-xs hover:bg-neutral-900 rounded-lg cursor-pointer",
-          outline:
+        outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground cursor-pointer",
         secondary:
           " text-black cursor-pointer",

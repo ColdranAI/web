@@ -161,6 +161,32 @@
   transition: box-shadow 0.2s ease;
 }
 
+.blueshadow {
+  box-shadow: 0px 6px #A259FF;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.blueshadow:active {
+  transform: translateY(2px);
+  transition: transform 0.3s ease;
+  box-shadow: 0px 2px #A259FF;
+  transition: box-shadow 0.2s ease;
+}
+
+.redshadow {
+  box-shadow: 0px 6px #F97D92;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.redshadow:active {
+  transform: translateY(2px);
+  transition: transform 0.3s ease;
+  box-shadow: 0px 2px #F97D92;
+  transition: box-shadow 0.2s ease;
+}
+
 
 
 .circular:hover {

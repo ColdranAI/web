@@ -24,8 +24,10 @@ export default function Home() {
           <span className="font-semibold text-black">MVP</span>. Coldran will
           help you do that.
         </p>
-        <div className="flex items-center pt-10 justify-center">
+        <div className="flex items-center pt-10 gap-4 justify-center">
         <Button variant="default" size="lg">Build Your Agent</Button>
+        <Button variant="blue" size="lg">Build Your Agent</Button>
+        <Button variant="red" size="lg">Build Your Agent</Button>
       </div>
       </div>
       <div className="mb-14 max-w-4xl mx-auto px-4">
