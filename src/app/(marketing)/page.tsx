@@ -14,7 +14,7 @@ export default function Home() {
       <div className="md:min-h-screen pt-20 pb-20 md:pb-0">
         <div className=" w-full max-w-2xl mx-auto py-2">
           <h1 className="text-black text-4xl md:text-5xl font-semibold text-center z-10 ">
-            Frictionless Waitlists for Busy Founders
+            Customer Relationship Management for Founders
           </h1>
         </div>
         <p className="text-md text-center text-muted-foreground mt-3">
