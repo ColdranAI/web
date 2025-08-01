@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Bot, User, Database, Search, FileText } from "lucide-react";
+import { User } from "lucide-react";
 
 interface Message {
   id: string;
@@ -64,11 +64,10 @@ export function SimpleChatDemo() {
       {/* Header */}
       <div className="flex items-center gap-3 p-3 border-b border-neutral-300 bg-neutral-100">
         <div className="w-6 h-6 bg-neutral-700 rounded-full flex items-center justify-center">
-          <Bot className="w-4 h-4 text-white" />
+          <img src="/logo.svg" alt="logo" className="w-6 rounded-full h-6" />
         </div>
         <div>
-          <h3 className="font-medium text-neutral-900 text-sm">Customer Support</h3>
-          <p className="text-xs text-neutral-600">How can I help you?</p>
+          <h3 className="font-medium text-neutral-900 text-sm">Coldran Support</h3>
         </div>
       </div>
 
@@ -98,12 +97,12 @@ export function SimpleChatDemo() {
                   {message.type === "user" ? (
                     <User className="w-3 h-3 text-white" />
                   ) : (
-                    <Bot className="w-3 h-3 text-neutral-700" />
+                    <img src="/logo.svg" alt="logo" className="w-6 rounded-full h-6" />
                   )}
                 </div>
                 <div className={`px-3 py-2 rounded text-sm ${
                   message.type === "user"
-                    ? "bg-neutral-700 text-white"
+                    ? "bg-white text-neutral-800 border border-neutral-300"
                     : "bg-white text-neutral-800 border border-neutral-300"
                 }`}>
                   {message.content}

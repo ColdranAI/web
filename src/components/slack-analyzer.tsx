@@ -3,6 +3,7 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { MessageCircle, Users, Hash, Eye, BarChart3, User } from "lucide-react";
+import { SlackLogo } from "./logos/slack";
 
 interface Channel {
   name: string;
@@ -42,16 +43,11 @@ export function SlackAnalyzer() {
   ];
 
   useEffect(() => {
-    if (hasStarted) return;
+    if (!isInView || hasStarted) return;
     
-    // Start after a short delay regardless of scroll position for testing
-    const timer = setTimeout(() => {
-      setHasStarted(true);
-      startAnalysis();
-    }, 1000);
-    
-    return () => clearTimeout(timer);
-  }, []); // Empty dependency array - run only once on mount
+    setHasStarted(true);
+    startAnalysis();
+  }, [isInView, hasStarted]);
 
   const startAnalysis = () => {
     
@@ -145,9 +141,7 @@ export function SlackAnalyzer() {
     <div ref={ref} className="w-full max-w-lg mx-auto bg-white border border-neutral-200 rounded-lg overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-3 p-4 border-b border-neutral-200 bg-neutral-50">
-        <div className="w-8 h-8 bg-neutral-800 rounded-full flex items-center justify-center">
-          <BarChart3 className="w-5 h-5 text-white" />
-        </div>
+          <SlackLogo />
         <div>
           <h3 className="font-medium text-neutral-900">Slack Channel Analyzer</h3>
           <p className="text-xs text-neutral-500">
@@ -160,7 +154,7 @@ export function SlackAnalyzer() {
         </div>
       </div>
 
-      <div className="h-96 overflow-y-auto bg-neutral-50">
+      <div className="h-96 overflow-y-auto">
         <AnimatePresence mode="wait">
           {currentPhase === "analyzing" ? (
             <motion.div

@@ -202,7 +202,7 @@ export function FeedbackOrganizer() {
       {/* Header */}
       <div className="flex items-center gap-3 p-4 border-b border-neutral-200 bg-neutral-50">
         <div className="w-8 h-8 bg-neutral-800 rounded-full flex items-center justify-center">
-          <BarChart2 className="w-5 h-5 text-white" />
+          <img src="/logo.svg" alt="logo" className="rounded-full" draggable="false" />
         </div>
         <div className="flex-1">
           <h3 className="font-medium text-neutral-900">Feedback Organizer</h3>

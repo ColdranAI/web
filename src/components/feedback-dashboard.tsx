@@ -171,7 +171,6 @@ export function FeedbackDashboard() {
       {/* Header */}
       <div className="p-4 border-b border-neutral-300 bg-neutral-100">
         <h2 className="text-lg font-semibold text-neutral-900">Feedback Pipeline</h2>
-        <p className="text-sm text-neutral-600">Process and manage customer input</p>
       </div>
 
       {/* Tab Navigation */}
@@ -205,7 +204,7 @@ export function FeedbackDashboard() {
       </div>
 
       {/* Content */}
-      <div className="h-96 overflow-y-auto bg-neutral-50">
+      <div className="h-96 overflow-y-auto">
         <AnimatePresence mode="wait">
           {activeTab === "features" ? (
             <motion.div

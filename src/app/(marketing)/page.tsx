@@ -39,6 +39,8 @@ export default function Home() {
         <Button variant="red" size="lg">Build Your Agent</Button>
       </div>
       </div>
+      <TemplatesSection />
+
       <div className="space-y-16">
           {/* Row 1: Chat to Dashboard Pipeline */}
           <motion.section
@@ -114,7 +116,6 @@ export default function Home() {
           </h1>
         </div>
       </div>
-      <TemplatesSection />
     </div>
   );
 }

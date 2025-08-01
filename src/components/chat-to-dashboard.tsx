@@ -27,8 +27,7 @@ export function ChatToDashboard() {
           className="flex-shrink-0"
         >
           <div className="text-center mb-4">
-            <h3 className="font-medium text-neutral-800 mb-1">1. Customer Conversations</h3>
-            <p className="text-sm text-neutral-600">Users interact with their support bot</p>
+            <h3 className="font-medium text-neutral-800 mb-1">Customer Support</h3>
           </div>
           <SimpleChatDemo />
         </motion.div>
@@ -42,7 +41,6 @@ export function ChatToDashboard() {
         >
           {/* Desktop Pipeline */}
           <div className="hidden lg:flex flex-col items-center">
-            <div className="text-xs text-neutral-600 mb-2 text-center">Your AI Extracts Data</div>
             
             {/* Horizontal Pipeline */}
             <div className="relative w-32 h-8 bg-neutral-200 rounded-full overflow-hidden border border-neutral-300">
@@ -73,7 +71,6 @@ export function ChatToDashboard() {
 
           {/* Mobile Pipeline */}
           <div className="lg:hidden flex flex-row items-center">
-            <div className="text-xs text-neutral-600 mr-2">Your AI Extracts Data</div>
             
             {/* Vertical Pipeline */}
             <div className="relative w-8 h-20 bg-neutral-200 rounded-full overflow-hidden border border-neutral-300">
@@ -109,8 +106,7 @@ export function ChatToDashboard() {
           className="flex-1"
         >
           <div className="text-center mb-4">
-            <h3 className="font-medium text-neutral-800 mb-1">2. Your Command Center</h3>
-            <p className="text-sm text-neutral-600">Organized feedback with action buttons</p>
+            <h3 className="font-medium text-neutral-800 mb-1">Dashboard</h3>
           </div>
           <FeedbackDashboard />
         </motion.div>
