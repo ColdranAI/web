@@ -31,7 +31,7 @@ export default function AuthCard({
 
   return (
     <div className="flex items-center justify-center w-full min-h-[60vh]">
-      <Card className="max-w-md w-full shadow-sm border border-neutral-100">
+      <Card className="max-w-md w-full border border-neutral-100">
         <div className="flex items-center justify-center">
           <KiteLogo />
         </div>

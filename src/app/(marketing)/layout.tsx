@@ -29,7 +29,7 @@ export default function MarketingLayout({
           </div>
           <div className="flex items-center gap-2">
           <Button variant="secondary" size="minor">Sign In</Button>
-            <Button variant="black" size="minor">Try for Free</Button>
+            <Button variant="black" size="minor">Play with Agents</Button>
           </div>
         </div>
       </header>

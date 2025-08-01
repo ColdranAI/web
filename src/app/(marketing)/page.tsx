@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
-import { BuyMeCoffeeCard } from "@/components/buy-me-coffee-card";
 import { Support } from "@/components/support";
 import { Review } from "@/components/review";
-import { PricingCard } from "@/components/pricing-card";
-import { SecondFeature } from "@/components/second-feature";
-import { FeatureCard } from "@/components/FeedbackForm";
+// import { SecondFeature } from "@/components/second-feature";
+// import { FeatureCard } from "@/components/FeedbackForm";
 import { TemplatesSection } from "@/components/templates-section";
 import { Button } from "@/components/ui/button";
+import { ChatToDashboard } from "@/components/chat-to-dashboard";
+import { SlackAnalyzer } from "@/components/slack-analyzer";
+import { FeedbackOrganizer } from "@/components/feedback-organizer";
+import { motion } from "framer-motion";
+
 
 export default function Home() {
   return (
@@ -18,56 +23,71 @@ export default function Home() {
           </h1>
         </div>
         <p className="text-md text-center text-muted-foreground mt-3">
-          Focus on the serving your{" "}
-          <span className="font-semibold text-black">Potential Customers</span>{" "}
-          while you build the{" "}
-          <span className="font-semibold text-black">MVP</span>. Coldran will
-          help you do that.
+          Focus on building your next{" "}
+          <span className="font-semibold text-black">Features</span>{" "}
+          while we tell you what to build{" "}
+          <span className="font-semibold text-black">For Your Customers</span>.
+          <br />
+          <br />
+          <span className="max-w-5xl font-semibold text-black">Mini Secret</span> we also provide short-term memory and long term memory for your customer support agents.
         </p>
         <div className="flex items-center pt-10 gap-4 justify-center">
         <Button variant="default" size="lg">Build Your Agent</Button>
-        <Button variant="blue" size="lg">Build Your Agent</Button>
+        <Button variant="blue" size="lg">
+          <a href="/demo">View Live Demo</a>
+        </Button>
         <Button variant="red" size="lg">Build Your Agent</Button>
       </div>
       </div>
-      <div className="mb-14 max-w-4xl mx-auto px-4">
-          <section>
-            <header className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 leading-tight">
-                  You wouldn't be here if your
-                  <br className="hidden md:block" /> current waitlist ACSHUALLY
-                  worked.
-                  <br className="hidden md:block" /> It's time for better
-                  templates.
-              </h2>
-            </header>
-            <article>
-              <p className="text-lg text-neutral-700 leading-relaxed">
-                A Vibe Coder and not sure about the security of your waitlist?{" "}
-                <strong>It's time for better templates.</strong> <br />
-                Users bouncing because your page looks unprofessional?{" "}
-                <strong>It's time for better templates.</strong> <br/>
-                Spending 2 days on what should take 20 minutes to setup & deploy?{" "}
-                <strong>It's time for better templates.</strong> <br/>
-                Database setup giving you headaches?{" "}
-                <strong>It's time for better templates.</strong> <br />
-                Animation code breaking your brain?{" "}
-                <strong>It's time for better templates.</strong> <br />
-                Notion integration seems impossible?{" "}
-                <strong>It's time for better templates.</strong> <br />
-                People Spamming your waitlist?{" "}
-                <strong className="inline-block bg-neutral-100 border border-neutral-300 text-black px-2 py-1 transform rotate-[-2deg] font-bold">
-                  It's time for Better Waitlists.
-                </strong>
-                <br />
-                <br />
-                ps: we are not a design shop, that stuff is very brand oriented.
-                <br />
-                we sell functionality, not design.
+      <div className="space-y-16">
+          {/* Row 1: Chat to Dashboard Pipeline */}
+          <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <ChatToDashboard />
+          </motion.section>
 
-              </p>
-            </article>
-          </section>
+          {/* Row 2: Two components side by side */}
+          <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="grid md:grid-cols-2 gap-8"
+          >
+            {/* Slack Analyzer */}
+            <div className="text-center">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold text-neutral-800 mb-3">
+                  Real-time Workspace Analysis
+                </h2>
+                <p className="text-neutral-600">
+                  Automatically analyzes communication channels, tracks sentiment, 
+                  and identifies engagement patterns across your workspace
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <SlackAnalyzer />
+              </div>
+            </div>
+
+            {/* Feedback Organizer */}
+            <div className="text-center">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold text-neutral-800 mb-3">
+                  Smart Feedback Intelligence
+                </h2>
+                <p className="text-neutral-600">
+                  Transforms unstructured feedback into prioritized insights with 
+                  sentiment analysis and automated categorization
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <FeedbackOrganizer />
+              </div>
+            </div>
+          </motion.section>
         </div>
         <div className="grid grid-cols-2 gap-8 my-10 px-4">
         <div>
@@ -77,8 +97,8 @@ export default function Home() {
           <Support />
         </div>
       </div>
-      <SecondFeature />
-      <FeatureCard />
+      {/* <SecondFeature /> */} 
+      {/* <FeatureCard /> */}
       <div className="mx-4 my-2">
         <div className="relative w-full max-w-5xl aspect-[10/3] rounded-2xl mx-auto overflow-hidden">
           <Image

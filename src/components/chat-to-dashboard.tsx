@@ -1,0 +1,158 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { SimpleChatDemo } from "./animated-chatbot";
+import { FeedbackDashboard } from "./feedback-dashboard";
+import { ArrowRight, Database } from "lucide-react";
+
+export function ChatToDashboard() {
+  return (
+    <div className="w-full max-w-6xl mx-auto">
+      {/* Title */}
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold text-neutral-900 mb-2">
+          AI Chat → Data Pipeline → Dashboard
+        </h2>
+        <p className="text-neutral-600">
+          Chat processes feedback, feeds structured data to dashboard for action
+        </p>
+      </div>
+
+      {/* Components Layout */}
+      <div className="flex flex-col lg:flex-row items-center gap-8">
+        {/* Chat Component */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="flex-shrink-0"
+        >
+          <div className="text-center mb-4">
+            <h3 className="font-medium text-neutral-800 mb-1">1. Customer Conversations</h3>
+            <p className="text-sm text-neutral-600">Users interact with their support bot</p>
+          </div>
+          <SimpleChatDemo />
+        </motion.div>
+
+        {/* Animated Pipeline */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-col lg:flex-row items-center gap-4 px-4"
+        >
+          {/* Desktop Pipeline */}
+          <div className="hidden lg:flex flex-col items-center">
+            <div className="text-xs text-neutral-600 mb-2 text-center">Your AI Extracts Data</div>
+            
+            {/* Horizontal Pipeline */}
+            <div className="relative w-32 h-8 bg-neutral-200 rounded-full overflow-hidden border border-neutral-300">
+              {/* Pipeline background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-200"></div>
+              
+              {/* Flowing data particles */}
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100].map((i) => (
+                <motion.div
+                  key={i}
+                  className="absolute top-1/2 w-1 h-1 bg-neutral-600 rounded-full transform -translate-y-1/2"
+                  animate={{
+                    x: [-20, 500],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    delay: i * 1,
+                    ease: "linear",
+                  }}
+                />
+              ))}
+            
+            </div>
+
+            <div className="text-xs text-neutral-500 mt-2">Data Flow</div>
+          </div>
+
+          {/* Mobile Pipeline */}
+          <div className="lg:hidden flex flex-row items-center">
+            <div className="text-xs text-neutral-600 mr-2">Your AI Extracts Data</div>
+            
+            {/* Vertical Pipeline */}
+            <div className="relative w-8 h-20 bg-neutral-200 rounded-full overflow-hidden border border-neutral-300">
+              {/* Pipeline background */}
+              <div className="absolute inset-0 bg-gradient-to-b from-neutral-200 via-neutral-100 to-neutral-200"></div>
+              
+              {/* Flowing data particles */}
+              {[0, 1, 2].map((i) => (
+                <motion.div
+                  key={i}
+                  className="absolute left-1/2 w-3 h-3 bg-neutral-600 rounded-full transform -translate-x-1/2"
+                  animate={{
+                    y: [-12, 100],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: i * 1,
+                    ease: "linear",
+                  }}
+                />
+              ))}
+
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Dashboard Component */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6 }}
+          className="flex-1"
+        >
+          <div className="text-center mb-4">
+            <h3 className="font-medium text-neutral-800 mb-1">2. Your Command Center</h3>
+            <p className="text-sm text-neutral-600">Organized feedback with action buttons</p>
+          </div>
+          <FeedbackDashboard />
+        </motion.div>
+      </div>
+
+      {/* Key Features */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9 }}
+        className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
+      >
+        <div className="text-center p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
+          <div className="w-8 h-8 bg-neutral-700 rounded mx-auto mb-3 flex items-center justify-center">
+            <span className="text-white text-sm font-bold">1</span>
+          </div>
+          <h4 className="font-medium text-neutral-900 mb-2">Invisible Processing</h4>
+          <p className="text-sm text-neutral-600">
+            Your AI silently extracts insights from every customer conversation
+          </p>
+        </div>
+        
+        <div className="text-center p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
+          <div className="w-8 h-8 bg-neutral-700 rounded mx-auto mb-3 flex items-center justify-center">
+            <span className="text-white text-sm font-bold">2</span>
+          </div>
+          <h4 className="font-medium text-neutral-900 mb-2">Organized Dashboard</h4>
+          <p className="text-sm text-neutral-600">
+            Clean tabs separate features from bugs with clear priority levels
+          </p>
+        </div>
+        
+        <div className="text-center p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
+          <div className="w-8 h-8 bg-neutral-700 rounded mx-auto mb-3 flex items-center justify-center">
+            <span className="text-white text-sm font-bold">3</span>
+          </div>
+          <h4 className="font-medium text-neutral-900 mb-2">Direct Actions</h4>
+          <p className="text-sm text-neutral-600">
+            One-click buttons to move items to GitHub or alert team via Slack
+          </p>
+        </div>
+      </motion.div>
+    </div>
+  );
+}

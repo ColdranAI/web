@@ -12,19 +12,19 @@ interface TemplateCardProps {
   description: string;
   features: string[];
   buttonText: string;
-  tier: "basic" | "standard" | "enterprise";
-  currentTier: "basic" | "standard" | "enterprise";
+  tier: "scraping" | "research" | "output";
+  currentTier: "scraping" | "research" | "output";
   onCompare?: () => void;
 }
 
 const TemplateCard = ({ title, description, features, buttonText, tier, currentTier, onCompare }: TemplateCardProps) => {
   const getCompareButtonText = () => {
-    if (currentTier === "basic") return "Compare with _Standard";
-    if (currentTier === "standard") return "Compare with _Enterprise";
+    if (currentTier === "scraping") return "Compare with Deep Research";
+    if (currentTier === "research") return "Compare with Output";
     return null;
   };
 
-  const shouldShowCompareButton = currentTier !== "enterprise";
+  const shouldShowCompareButton = currentTier !== "output";
 
   return (
     <div className="flex flex-col h-full max-w-xs gap-8 justify-between">
@@ -66,10 +66,11 @@ const TemplateCard = ({ title, description, features, buttonText, tier, currentT
 };
 
 export function TemplatesSection() {
-  const [activeTab, setActiveTab] = useState<"basic" | "standard" | "enterprise">("basic");
+  const [activeTab, setActiveTab] = useState<"scraping" | "research" | "output">("scraping");
 
   const templatesData = {
-    basic: {
+    scraping: {
+      statement: "Advanced web scraping tools that extract customer feedback from multiple platforms automatically.",
       templates: [
         {
           title: "Coming Soon",
@@ -81,141 +82,49 @@ export function TemplatesSection() {
             "Supabase or PlanetScale SQL Database",
           ],
           buttonText: "Serve Yourself",
-          tier: "basic" as const,
-        },
-        {
-          title: "Coming Soon",
-          description: "A better way to experience a future AI-powered productivity suite. Join the waitlist to explore what's coming.",
-          features: [
-            "Discord Server Template for your waitlist",
-            "Rate Limiting",
-            "Drizzle ORM",
-            "Supabase or PlanetScale SQL Database",
-            "Basic Email Notifications",
-            "Simple Form Validation",
-            "Mobile Responsive Design",
-          ],
-          buttonText: "Serve Yourself",
-          tier: "basic" as const,
-        },
-        {
-          title: "Coming Soon",
-          description: "A better way to experience a future AI-powered productivity suite. Join the waitlist to explore what's coming.",
-          features: [
-            "Discord Server Template for your waitlist",
-            "Rate Limiting",
-            "Drizzle ORM",
-            "Supabase or PlanetScale SQL Database",
-            "Basic Email Notifications",
-            "Simple Form Validation",
-            "Mobile Responsive Design",
-          ],
-          buttonText: "Serve Yourself",
-          tier: "basic" as const,
+          tier: "scraping" as const,
         },
       ],
     },
-    standard: {
+    research: {
+      statement: "Deep research capabilities that analyze customer sentiment and identify patterns across conversations.",
       templates: [
         {
           title: "Coming Soon",
           description: "A better way to experience a future AI-powered productivity suite. Join the waitlist to explore what's coming.",
           features: [
-            "Everything from _Basic",
-            "Resend Integration",
-            "Discord & Slack Webhook with Email & Count",
-            "Script to Export Mails from Discord Channel",
-            "Integrations with Zapier, Airtable & Notion",
-            "Advanced Form Validation",
-            "Analytics Dashboard",
-            "Priority Support",
+            "Everything from Scraping",
+            "AI Sentiment Analysis",
+            "Pattern Recognition",
+            "Trend Identification",
+            "Competitive Analysis",
+            "Market Research Tools",
+            "Data Correlation Engine",
+            "Advanced Analytics",
           ],
-          buttonText: "Serve Yourself",
-          tier: "standard" as const,
-        },
-        {
-          title: "Coming Soon",
-          description: "A better way to experience a future AI-powered productivity suite. Join the waitlist to explore what's coming.",
-          features: [
-            "Everything from _Basic",
-            "Resend Integration",
-            "Discord & Slack Webhook with Email & Count",
-            "Script to Export Mails from Discord Channel",
-            "Integrations with Zapier, Airtable & Notion",
-            "Advanced Form Validation",
-            "Analytics Dashboard",
-            "Priority Support",
-          ],
-          buttonText: "Serve Yourself",
-          tier: "standard" as const,
-        },
-        {
-          title: "Coming Soon",
-          description: "A better way to experience a future AI-powered productivity suite. Join the waitlist to explore what's coming.",
-          features: [
-            "Everything from _Basic",
-            "Resend Integration",
-            "Discord & Slack Webhook with Email & Count",
-            "Script to Export Mails from Discord Channel",
-            "Integrations with Zapier, Airtable & Notion",
-            "Advanced Form Validation",
-            "Analytics Dashboard",
-            "Priority Support",
-          ],
-          buttonText: "Serve Yourself",
-          tier: "standard" as const,
+          buttonText: "Start Research",
+          tier: "research" as const,
         },
       ],
     },
-    enterprise: {
+    output: {
+      statement: "Professional output generation that creates actionable reports and insights for business decision making.",
       templates: [
         {
           title: "Coming Soon",
           description: "A better way to experience a future AI-powered productivity suite. Join the waitlist to explore what's coming.",
           features: [
-            "Everything from _Standard",
-            "Beautiful Dashboard with Analytics",
-            "Custom Branding & White-label",
-            "Advanced Security Features",
-            "Multi-language Support",
-            "API Access & Custom Integrations",
-            "24/7 Priority Support",
-            "Custom Development Services",
+            "Everything from Deep Research",
+            "Executive Dashboards",
+            "Automated Reports",
+            "Business Intelligence",
+            "ROI Analysis",
+            "Strategic Recommendations",
+            "Export to Multiple Formats",
+            "White-label Solutions",
           ],
-          buttonText: "Serve Yourself",
-          tier: "enterprise" as const,
-        },
-        {
-          title: "Coming Soon",
-          description: "A better way to experience a future AI-powered productivity suite. Join the waitlist to explore what's coming.",
-          features: [
-            "Everything from _Standard",
-            "Beautiful Dashboard with Analytics",
-            "Custom Branding & White-label",
-            "Advanced Security Features",
-            "Multi-language Support",
-            "API Access & Custom Integrations",
-            "24/7 Priority Support",
-            "Custom Development Services",
-          ],
-          buttonText: "Serve Yourself",
-          tier: "enterprise" as const,
-        },
-        {
-          title: "Coming Soon",
-          description: "A better way to experience a future AI-powered productivity suite. Join the waitlist to explore what's coming.",
-          features: [
-            "Everything from _Standard",
-            "Beautiful Dashboard with Analytics",
-            "Custom Branding & White-label",
-            "Advanced Security Features",
-            "Multi-language Support",
-            "API Access & Custom Integrations",
-            "24/7 Priority Support",
-            "Custom Development Services",
-          ],
-          buttonText: "Serve Yourself",
-          tier: "enterprise" as const,
+          buttonText: "Generate Output",
+          tier: "output" as const,
         },
       ],
     },
@@ -240,23 +149,41 @@ export function TemplatesSection() {
       <div className="flex justify-center mb-12">
         <div className="flex space-x-2 p-1 bg-gray-100 rounded-lg">
           <button
-            onClick={() => setActiveTab("basic")}
-            className={tabButtonClass(activeTab === "basic")}
+            onClick={() => setActiveTab("scraping")}
+            className={tabButtonClass(activeTab === "scraping")}
           >
-            _Basic
+            Scraping
           </button>
           <button
-            onClick={() => setActiveTab("standard")}
-            className={tabButtonClass(activeTab === "standard")}
+            onClick={() => setActiveTab("research")}
+            className={tabButtonClass(activeTab === "research")}
           >
-            _Standard
+            Deep Research
           </button>
           <button
-            onClick={() => setActiveTab("enterprise")}
-            className={tabButtonClass(activeTab === "enterprise")}
+            onClick={() => setActiveTab("output")}
+            className={tabButtonClass(activeTab === "output")}
           >
-            _Enterprise
+            Output
           </button>
+        </div>
+      </div>
+
+      {/* 20-word Statement */}
+      <div className="text-center mb-8">
+        <p className="text-lg text-neutral-700 font-medium max-w-3xl mx-auto">
+          {templatesData[activeTab].statement}
+        </p>
+      </div>
+
+      {/* Screen Recording Placeholder */}
+      <div className="mb-12 flex justify-center">
+        <div className="w-full max-w-4xl aspect-video bg-neutral-100 border-2 border-dashed border-neutral-300 rounded-lg flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-4xl mb-4">🎬</div>
+            <p className="text-neutral-600 font-medium">Screen Recording for {activeTab === "scraping" ? "Scraping" : activeTab === "research" ? "Deep Research" : "Output"}</p>
+            <p className="text-sm text-neutral-500 mt-2">Demo video will be placed here</p>
+          </div>
         </div>
       </div>
 
@@ -272,8 +199,8 @@ export function TemplatesSection() {
             tier={template.tier}
             currentTier={activeTab}
             onCompare={() => {
-              if (activeTab === "basic") setActiveTab("standard");
-              else if (activeTab === "standard") setActiveTab("enterprise");
+              if (activeTab === "scraping") setActiveTab("research");
+              else if (activeTab === "research") setActiveTab("output");
             }}
           />
         ))}
