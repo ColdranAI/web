@@ -9,7 +9,6 @@ interface Channel {
   name: string;
   messageCount: number;
   participants: number;
-  sentiment: "positive" | "neutral" | "negative";
 }
 
 interface AnalysisStep {
@@ -22,11 +21,9 @@ export function SlackAnalyzer() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px" });
   
-  const [currentPhase, setCurrentPhase] = useState<"analyzing" | "summary" | "chat">("analyzing");
   const [analysisSteps, setAnalysisSteps] = useState<AnalysisStep[]>([
     { title: "Scanning channels", status: "pending", progress: 0 },
     { title: "Processing messages", status: "pending", progress: 0 },
-    { title: "Analyzing sentiment", status: "pending", progress: 0 },
     { title: "Generating insights", status: "pending", progress: 0 },
   ]);
 
@@ -35,11 +32,11 @@ export function SlackAnalyzer() {
   const [hasStarted, setHasStarted] = useState(false);
 
   const mockChannels: Channel[] = [
-    { name: "general", messageCount: 1247, participants: 23, sentiment: "positive" },
-    { name: "product-feedback", messageCount: 892, participants: 15, sentiment: "neutral" },
-    { name: "support", messageCount: 634, participants: 8, sentiment: "negative" },
-    { name: "feature-requests", messageCount: 456, participants: 12, sentiment: "positive" },
-    { name: "bug-reports", messageCount: 234, participants: 6, sentiment: "negative" },
+    { name: "general", messageCount: 1247, participants: 23 },
+    { name: "product-feedback", messageCount: 892, participants: 15 },
+    { name: "support", messageCount: 634, participants: 8 },
+    { name: "feature-requests", messageCount: 456, participants: 12 },
+    { name: "bug-reports", messageCount: 234, participants: 6 },
   ];
 
   useEffect(() => {
@@ -93,7 +90,7 @@ export function SlackAnalyzer() {
                       type: "bot", 
                       content: "Analysis complete! I've processed 5 channels with 3,463 messages. What would you like to know?"
                     }]);
-                  }, 500);
+                  }, 300);
                   
                   setTimeout(() => {
                     setMessages(prev => [...prev, {
@@ -101,7 +98,7 @@ export function SlackAnalyzer() {
                       type: "user", 
                       content: "What's the overall sentiment in #support?"
                     }]);
-                  }, 2500);
+                  }, 500);
                   
                   setTimeout(() => {
                     setMessages(prev => [...prev, {
@@ -109,7 +106,7 @@ export function SlackAnalyzer() {
                       type: "bot", 
                       content: "The #support channel shows 23% negative sentiment, mainly due to login timeout issues. 634 total messages from 8 participants."
                     }]);
-                  }, 4500);
+                  }, 1000);
                 }, 3000);
               }, 1000);
             }
@@ -121,21 +118,6 @@ export function SlackAnalyzer() {
     }, 400);
   };
 
-  const getSentimentColor = (sentiment: Channel["sentiment"]) => {
-    switch (sentiment) {
-      case "positive": return "text-green-600 bg-green-50";
-      case "negative": return "text-red-600 bg-red-50";
-      default: return "text-yellow-600 bg-yellow-50";
-    }
-  };
-
-  const getSentimentIcon = (sentiment: Channel["sentiment"]) => {
-    switch (sentiment) {
-      case "positive": return "↗";
-      case "negative": return "↘";
-      default: return "→";
-    }
-  };
 
   return (
     <div ref={ref} className="w-full max-w-lg mx-auto bg-white border border-neutral-200 rounded-lg overflow-hidden">
@@ -144,19 +126,14 @@ export function SlackAnalyzer() {
           <SlackLogo />
         <div>
           <h3 className="font-medium text-neutral-900">Slack Channel Analyzer</h3>
-          <p className="text-xs text-neutral-500">
-            {currentPhase === "analyzing" 
-              ? "Analyzing workspace..." 
-              : currentPhase === "summary" 
-              ? "Analysis Complete" 
-              : "Ready for questions"}
+          <p className="text-xs text-start text-neutral-500">
+            Analyzing workspace...
           </p>
         </div>
       </div>
 
       <div className="h-96 overflow-y-auto">
         <AnimatePresence mode="wait">
-          {currentPhase === "analyzing" ? (
             <motion.div
               key="analyzing"
               initial={{ opacity: 0 }}
@@ -245,9 +222,6 @@ export function SlackAnalyzer() {
                                 {channel.name}
                               </span>
                             </div>
-                            <div className={`px-2 py-1 rounded text-xs font-medium ${getSentimentColor(channel.sentiment)}`}>
-                              {getSentimentIcon(channel.sentiment)} {channel.sentiment}
-                            </div>
                           </div>
                           
                           <div className="flex items-center gap-4 text-xs text-neutral-600">
@@ -263,107 +237,19 @@ export function SlackAnalyzer() {
                         </motion.div>
                       ))}
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ) : currentPhase === "summary" ? (
-            <motion.div
-              key="summary"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="p-4 space-y-4"
-            >
-              <div className="text-center">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-green-600 font-bold"
-                  >
-                    ✓
-                  </motion.div>
-                </div>
-                <h3 className="font-semibold text-neutral-900 mb-2">Analysis Complete!</h3>
-                <p className="text-sm text-neutral-600 mb-4">
-                  Processed 5 channels, 3,463 messages, and 64 participants
-                </p>
-              </div>
-              
-              <div className="bg-white border border-neutral-200 rounded-lg p-4">
-                <h4 className="font-medium text-neutral-900 mb-3">Key Findings:</h4>
-                <ul className="space-y-2 text-sm text-neutral-700">
-                  <li>• #support has high negative sentiment (login issues)</li>
-                  <li>• #general shows strong positive engagement</li>
-                  <li>• #feature-requests trending upward</li>
-                  <li>• 23% of conversations need immediate attention</li>
-                </ul>
-              </div>
-              
-              <div className="text-center">
-                <p className="text-sm text-neutral-600">Ask me anything about the analysis...</p>
-              </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="chat"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="h-full flex flex-col"
-            >
-              {/* Chat Messages */}
-              <div className="flex-1 p-4 space-y-3 overflow-y-auto">
-                <AnimatePresence>
-                  {messages.map((message) => (
-                    <motion.div
-                      key={message.id}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}
-                    >
-                      <div className={`flex items-start gap-2 max-w-[85%] ${
-                        message.type === "user" ? "flex-row-reverse" : "flex-row"
-                      }`}>
-                        <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          message.type === "user" 
-                            ? "bg-neutral-700" 
-                            : "bg-neutral-300"
-                        }`}>
-                          {message.type === "user" ? (
-                            <User className="w-3 h-3 text-white" />
-                          ) : (
-                            <BarChart3 className="w-3 h-3 text-neutral-700" />
-                          )}
-                        </div>
-                        <div className={`px-3 py-2 rounded text-sm ${
-                          message.type === "user"
-                            ? "bg-neutral-700 text-white"
-                            : "bg-white text-neutral-800 border border-neutral-300"
-                        }`}>
-                          {message.content}
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
-              
-              {/* Chat Input */}
-              <div className="p-3 border-t border-neutral-300 bg-white">
+
+                    <div className="p-3 border-t border-neutral-300 bg-white">
                 <div className="flex items-center gap-2">
-                  <div className="flex-1 px-2 py-1.5 bg-neutral-100 border border-neutral-300 rounded text-sm text-neutral-500">
-                    Ask about the analysis...
-                  </div>
+                  <textarea className="flex-1 px-2 py-1.5 bg-neutral-100 border border-neutral-300 rounded text-sm text-neutral-500 overflow-hidden h-8" placeholder="Ask about the analysis..."></textarea>
                   <button className="px-3 py-1.5 bg-neutral-700 text-white rounded text-sm">
                     Send
                   </button>
                 </div>
               </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
-          )}
         </AnimatePresence>
       </div>
     </div>
