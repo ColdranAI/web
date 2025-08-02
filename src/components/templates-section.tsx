@@ -11,12 +11,12 @@ export function TemplatesSection() {
       video: "https://www.youtube.com/embed/XWrJsKjhkzQ?si=MYc2pieuBRJYitzn",
     },
     research: {
-      statement: "Deep research capabilities that analyze customer sentiment and identify patterns across conversations.",
-      video: "https://www.youtube.com/embed/kqRwnvwo5vk?si=-K_GyL0_wvYQkFA1",
+      statement: "Currently it's not integrated in our dashboard but this is an example of what we can do. We don't have economic viability to provide.",
+      video: "https://www.youtube.com/embed/_9h7pSxJz9Q?si=O91oIJQrauAfDH8f",
     },
     output: {
-      statement: "Professional output generation that creates actionable reports and insights for business decision making.",
-      video: "https://www.youtube.com/embed/LTLcbwJFJt0?si=cYwWFNogdW5J0Rx7",
+      statement: "Here's the output of the scraping and research.",
+      video: "https://chatgpt.com/share/688c3afb-d0e8-800d-a133-050cba74f311",
     },
   };
 
@@ -67,11 +67,35 @@ export function TemplatesSection() {
         </p>
       </div>
 
-      {/* Screen Recording Placeholder */}
+      {/* Screen Recording/Content */}
       <div className="mb-12 flex justify-center">
-          <div className="text-center border-2 bg-neutral-100 p-2 border-dashed border-neutral-300 rounded-lg">
-            <iframe className="aspect-video" src={templatesData[activeTab].video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-          </div>
+        <div className="text-center border-2 bg-neutral-100 p-2 border-dashed border-neutral-300 rounded-lg">
+          {activeTab === "output" ? (
+            <div className="flex flex-col items-center justify-center p-12 space-y-6">
+              <h3 className="text-2xl font-semibold text-neutral-800">Preview Analysis</h3>
+              <p className="text-neutral-600 max-w-md text-center">
+                View the complete analysis and insights generated from the scraped data and research mode.
+              </p>
+              <a
+                href={templatesData[activeTab].video}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 cursor-pointer py-3 bg-neutral-900 text-white rounded-lg font-medium hover:bg-neutral-800 transition-colors duration-200"
+              >
+                View Full Analysis
+              </a>
+            </div>
+          ) : (
+            <iframe 
+              className="aspect-video" 
+              src={templatesData[activeTab].video} 
+              title="YouTube video player" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerPolicy="strict-origin-when-cross-origin" 
+              allowFullScreen
+            />
+          )}
+        </div>
       </div>
     </div>
   );

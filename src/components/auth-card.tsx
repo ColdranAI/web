@@ -33,7 +33,7 @@ export default function AuthCard({
     <div className="flex items-center justify-center w-full min-h-[60vh]">
       <Card className="max-w-md w-full border border-neutral-100">
         <div className="flex items-center justify-center">
-          <KiteLogo />
+          <ColdranLogo />
         </div>
         <CardHeader className="text-center">
           <CardTitle className="text-lg md:text-xl">{title}</CardTitle>
@@ -151,7 +151,7 @@ const SignInButton = ({
   );
 };
 
-const KiteLogo = () => {
+const ColdranLogo = () => {
   return (
     <div className="group relative overflow-visible">
       <svg

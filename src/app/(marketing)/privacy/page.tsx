@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
           Our Commitment to Privacy
         </h2>
         <p className="mb-4">
-          At KitePortfolio, we take your privacy seriously. This policy
+          At Coldran, we take your privacy seriously. This policy
           describes what personal information we collect and how we use it. Our
           primary goal is to provide a secure and trustworthy experience.
         </p>
@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
           Third-Party Services
         </h2>
         <p className="mb-4">
-          KitePortfolio uses third-party services for analytics and
+          Coldran uses third-party services for analytics and
           functionality. These services may collect information sent by your
           browser as part of their operations. We do not share your personal
           information with third parties except as described in this policy.
@@ -132,7 +132,7 @@ export default function PrivacyPolicy() {
         </p>
 
         <p className="text-sm text-muted-foreground mt-10">
-          Note: KitePortfolio is not affiliated with Zerodha or endorsed by
+          Note: Coldran is not affiliated with Zerodha or endorsed by
           them.
         </p>
       </div>

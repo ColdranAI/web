@@ -1,10 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Support } from "@/components/support";
-import { Review } from "@/components/review";
-// import { SecondFeature } from "@/components/second-feature";
-// import { FeatureCard } from "@/components/FeedbackForm";
 import { TemplatesSection } from "@/components/templates-section";
 import { Button } from "@/components/ui/button";
 import { ChatToDashboard } from "@/components/chat-to-dashboard";
@@ -31,13 +27,14 @@ export default function Home() {
           <br />
           <span className="max-w-5xl font-semibold text-black">Mini Secret</span> we also provide short-term memory and long term memory for your customer support agents.
         </p>
-        <div className="flex items-center pt-10 gap-4 justify-center">
+        <div className="flex items-center py-10 gap-4 justify-center">
         <Button variant="default" size="lg">Build Your Agent</Button>
         <Button variant="blue" size="lg">
           <a href="/demo">View Live Demo</a>
         </Button>
         <Button variant="red" size="lg">Build Your Agent</Button>
       </div>
+      <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly</p>
       </div>
       <TemplatesSection />
 
@@ -66,7 +63,7 @@ export default function Home() {
                 </h2>
                 <p className="text-neutral-600">
                   Automatically analyzes communication channels, tracks sentiment, 
-                  and identifies engagement patterns across your workspace
+                  Coming for both Discord & Slack.
                 </p>
               </div>
               <div className="flex justify-center">
@@ -78,7 +75,7 @@ export default function Home() {
             <div className="text-center">
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-neutral-800 mb-3">
-                  Smart Feedback Intelligence
+                  Smart Classification of Data
                 </h2>
                 <p className="text-neutral-600">
                   Transforms unstructured feedback into prioritized insights with 
@@ -91,17 +88,71 @@ export default function Home() {
             </div>
           </motion.section>
         </div>
-        <div className="grid grid-cols-2 gap-8 my-10 px-4">
-        <div>
-          <Review />
-        </div>
-        <div>
-          <Support />
-        </div>
-      </div>
-      {/* <SecondFeature /> */} 
-      {/* <FeatureCard /> */}
-      <div className="mx-4 my-2">
+        <div className="py-8">
+            <h2 className="text-2xl font-semibold text-neutral-900 mb-6">Everything You Need to Understand Your Customers</h2>
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
+              {/* Understanding & Classification */}
+              <div className="border border-neutral-200 p-4 rounded-lg bg-white">
+                <h3 className="text-lg font-medium text-neutral-900 mb-3">
+                  Customer Intelligence
+                </h3>
+                <ul className="space-y-2 text-sm text-neutral-600">
+                  <li>• Auto-classify messages into bugs, features & feedback</li>
+                  <li>• Use our Email client and scan for customer pain point analysis and save into knowledge base.</li>
+                  <li>• Zoom & Google Meet call recording with insights</li>
+                  <li>• Scrape Discord, Reddit, Slack & forums for competitor insights</li>
+                </ul>
+              </div>
+
+              {/* AI Support Agents */}
+              <div className="border border-neutral-200 p-4 rounded-lg bg-white">
+                <h3 className="text-lg font-medium text-neutral-900 mb-3">
+                  AI Support Agents
+                </h3>
+                <ul className="space-y-2 text-sm text-neutral-600">
+                  <li>• Client-facing agent with memory & knowledge graph</li>
+                  <li>• Web search API for real-time answers</li>
+                  <li>• Dashboard agent with organized data intelligence</li>
+                  <li>• Vector DB & knowledge graph powered responses</li>
+                </ul>
+              </div>
+
+              {/* Community Features */}
+              <div className="border border-neutral-200 p-4 rounded-lg bg-white">
+                <h3 className="text-lg font-medium text-neutral-900 mb-3">
+                  Community & Feedback
+                </h3>
+                <ul className="space-y-2 text-sm text-neutral-600">
+                  <li>• Feature voting like feedback.ycombinator.com</li>
+                  <li>• Integrated support & roadmap management</li>
+                  <li>• Waitlist pages with survey forms & deep research</li>
+                  <li>• Auto-convert bugs to GitHub issues</li>
+                </ul>
+              </div>
+
+              {/* Native Integrations */}
+              <div className="border border-neutral-200 p-4 rounded-lg bg-white">
+                <h3 className="text-lg font-medium text-neutral-900 mb-3">
+                  Native Integrations
+                </h3>
+                <ul className="space-y-2 text-sm text-neutral-600">
+                  <li>• Discord, Slack, Zoom, Notion, Airtable</li>
+                  <li>• Intercom, Stripe, Segment, GitHub</li>
+                  <li>• Zapier, Twilio for workflow automation</li>
+                  <li>• Free tier & startup credits available</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="border border-neutral-200 p-4 rounded-lg bg-neutral-50">
+              <h3 className="text-lg font-medium text-neutral-900 mb-2">No More "Schedule a Call" Barriers</h3>
+              <p className="text-sm text-neutral-700">
+                Unlike other platforms, we provide everything in one place with gentle, human-like AI behavior. 
+                Perfect onboarding for small customers who want to try before they buy—no formal sales calls required.
+              </p>
+            </div>
+            </div>
+      <div className="mx-4 mt-10 my-2">
         <div className="relative w-full max-w-5xl aspect-[10/3] rounded-2xl mx-auto overflow-hidden">
           <Image
             src="/gradient-2.png"

@@ -44,14 +44,12 @@ export default function MarketingLayout({
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <KiteLogo />
+              <ColdranLogo />
               <h3 className="font-semibold text-lg mb-1.5 mt-4">
-                KitePortfolio
+                Coldran
               </h3>
               <p className="text-muted-foreground text-sm">
-                This tool is designed for Zerodha users who want a fast,
-                lightweight way to monitor their stock holdings without going
-                through daily login barriers.
+                Perfect Combination of Scanning, Customer Experience and Knowledge Base.
                 <br />
               </p>
             </div>
@@ -60,7 +58,7 @@ export default function MarketingLayout({
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="https://discord.gg/xvA8rgGr6Q"
+                    href="https://discord.gg/RHj9pcy2Pp"
                     target="_blank"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -69,21 +67,21 @@ export default function MarketingLayout({
                 </li>
                 <li>
                   <Link
-                    href="https://buymeacoffee.com/nermalcat69"
+                    href="/"
                     target="_blank"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    Buy Me A Coffee
+                    Pricing
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-4">Creator's Links</h4>
+              <h4 className="font-medium mb-4">Links</h4>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="https://x.com/arjvnz"
+                    href="https://x.com/arjunships"
                     target="_blank"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -99,18 +97,9 @@ export default function MarketingLayout({
                     Github
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="https://arjunaditya.xyz"
-                    target="_blank"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    Website
-                  </Link>
-                </li>
               </ul>
             </div>
-            <div>
+            {/* <div>
               <h4 className="font-medium mb-4">Information</h4>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -130,11 +119,11 @@ export default function MarketingLayout({
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
           <div className="mt-10 pt-6 border-t border-border text-center text-sm text-muted-foreground">
             <p>
-              © {new Date().getFullYear()} KitePortfolio. All rights reserved.
+              © {new Date().getFullYear()} Coldran. All rights reserved.
             </p>
           </div>
         </div>
@@ -143,46 +132,17 @@ export default function MarketingLayout({
   );
 }
 
-const KiteLogo = () => {
+const ColdranLogo = () => {
   return (
-    <div className="group relative overflow-visible">
-      <svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 90 60"
-        width="32"
-        height="24"
-        style={{ overflow: "visible" }}
-      >
-        <defs>
-          <style>
-            {`
-              .cls-1 {
-                fill: #f6461a;
-                transition: transform 0.3s ease-in-out, fill 0.3s ease;
-              }
-              .cls-2 {
-                fill: #db342c;
-                transition: transform 0.3s ease-in-out, fill 0.3s ease;
-              }
-              svg:hover .cls-1 {
-                fill: #ff5733;
-                z-index: 5;
-                transform: translateX(-25px);
-              }
-              svg:hover .cls-2 {
-                fill: #ff2a1f;
-                z-index: 1;
-                transform: translateX(-13px);
-              }
-            `}
-          </style>
-        </defs>
-        <title>Kite logo trimmed</title>
-        <polygon className="cls-1" points="30 0 0 30 30 60 60 30 90 0 30 0" />
-        <polygon className="cls-2" points="30 60 60 30 90 60 30 60" />
-      </svg>
+    <div className="group relative overflow-visible w-10 h-10">
+      <svg viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1.25" y="1.25" width="257.5" height="257.5" rx="50.75" fill="white"/>
+      <rect x="1.25" y="1.25" width="257.5" height="257.5" rx="50.75" stroke="#C3C3C3" strokeWidth="1.5"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M132.721 209.312C167.849 208.699 195.983 188.622 195.562 164.471L194.799 120.74L67.5905 122.96L68.3539 166.691C68.7754 190.843 97.5937 209.925 132.721 209.312Z" fill="black"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M65.0105 50.4692C82.5743 50.1626 97.1162 67.3126 97.4908 88.7748L98.1691 127.635L66.3671 128.191C48.8034 128.497 34.2614 111.347 33.8868 89.885C33.5122 68.4228 47.4467 50.7757 65.0105 50.4692Z" fill="#A259FF"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M191.966 50.4117C174.402 50.7183 160.459 67.8759 160.823 88.7343L161.483 126.502L193.285 125.947C210.848 125.64 224.791 108.483 224.427 87.6241C224.063 66.7657 209.53 50.1051 191.966 50.4117Z" fill="#FFB031"/>
+      <path fillRule="evenodd" clipRule="evenodd" d="M128.392 52.0884C145.956 51.7819 160.487 68.3154 160.848 89.0172L161.502 126.501L97.8984 127.611L97.2441 90.1274C96.8828 69.4256 110.828 52.395 128.392 52.0884Z" fill="#F97D92"/>
+</svg>
     </div>
   );
 };
