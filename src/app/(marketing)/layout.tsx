@@ -97,6 +97,15 @@ export default function MarketingLayout({
                     Github
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="https://cal.com/arjunaditya/30min?user=arjunaditya"
+                    target="_blank"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    Call me
+                  </Link>
+                </li>
               </ul>
             </div>
             {/* <div>
