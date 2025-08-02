@@ -24,6 +24,8 @@ export default function Home() {
           while we tell you what to build{" "}
           <span className="font-semibold text-black">For Your Customers</span>.
           <br />
+          <span className="text-muted-foreground">We make it easy for people to have a vast amount of knowledgebase which updates itself over time.</span>
+          <br />
           <br />
           <span className="max-w-5xl font-semibold text-black">Mini Secret</span> we also provide short-term memory and long term memory for your customer support agents.
         </p>
