@@ -30,6 +30,7 @@ export function SlackAnalyzer() {
   const [channels, setChannels] = useState<Channel[]>([]);
   const [messages, setMessages] = useState<Array<{id: string, type: "user" | "bot", content: string}>>([]);
   const [hasStarted, setHasStarted] = useState(false);
+  const [currentPhase, setCurrentPhase] = useState<"analysis" | "summary" | "chat">("analysis");
 
   const mockChannels: Channel[] = [
     { name: "general", messageCount: 1247, participants: 23 },
