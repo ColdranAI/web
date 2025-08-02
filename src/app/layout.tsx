@@ -27,7 +27,7 @@ const fontMono = Inter({
 
 export const metadata: Metadata = {
   title: "Coldran",
-  description: "We provide better functional waitlists",
+  description: "We provide better customer experience with knowledgebase",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
