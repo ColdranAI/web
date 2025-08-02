@@ -29,12 +29,12 @@ export default function Home() {
           <br />
           <span className="max-w-5xl font-semibold text-black">Mini Secret</span> we also provide short-term memory and long term memory for your customer support agents.
         </p>
-        <div className="flex items-center py-10 gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row items-center py-10 gap-4 justify-center">
         <Button variant="default" size="lg">Build Your Agent</Button>
         <Button variant="blue" size="lg">
-          <a href="/demo">View Live Demo</a>
+          <a href="/demo">Run Your Scraper</a>
         </Button>
-        <Button variant="red" size="lg">Build Your Agent</Button>
+        <Button variant="red" size="lg">Build Your Survey</Button>
       </div>
       <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p>
       </div>
