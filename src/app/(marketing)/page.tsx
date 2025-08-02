@@ -39,6 +39,7 @@ export default function Home() {
       <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly</p>
       </div>
       <TemplatesSection />
+      <Image src="/knowledge-base.png" alt="Knowledge Base" width={1000} height={1000} className="mb-20" />
 
       <div className="space-y-16">
           {/* Row 1: Chat to Dashboard Pipeline */}
