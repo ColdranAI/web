@@ -36,7 +36,7 @@ export default function Home() {
         </Button>
         <Button variant="red" size="lg">Build Your Survey</Button>
       </div>
-      <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p>
+      {/* <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p> */}
       </div>
       <TemplatesSection />
       <Image src="/knowledge-base.png" alt="Knowledge Base" width={1000} height={1000} className="mb-20" />
