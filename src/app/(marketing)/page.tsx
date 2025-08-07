@@ -68,7 +68,7 @@ export default function Home() {
       {/* <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p> */}
       </div>
       <TemplatesSection />
-      <Image src="/knowledge-base.png" alt="Knowledge Base" width={1000} height={1000} className="mb-20 mx-auto" />
+      <Image src="/knowledge-base.png" alt="Knowledge Base" draggable={false} width={1000} height={1000} className="mb-20 mx-auto" />
 
       <div className="space-y-16">
           {/* Row 1: Chat to Dashboard Pipeline */}
