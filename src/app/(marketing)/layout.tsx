@@ -40,11 +40,11 @@ export default function MarketingLayout({
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-neutral-200 bg-[#FBFBFB]">
+      <footer className="border-t border-neutral-200 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <ColdranLogo />
+              <ColdranLogo className="w-16 h-16"/>
               <h3 className="font-semibold text-lg mb-1.5 mt-4">
                 Coldran
               </h3>
@@ -54,8 +54,8 @@ export default function MarketingLayout({
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-4">Product</h4>
-              <ul className="space-y-2 text-sm">
+              <h4 className="font-semibold text-lg mb-4">Product</h4>
+              <ul className="space-y-2 text-md">
                 <li>
                   <Link
                     href="https://discord.gg/RHj9pcy2Pp"
@@ -77,11 +77,11 @@ export default function MarketingLayout({
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-4">Links</h4>
-              <ul className="space-y-2 text-sm">
+              <h4 className="font-semibold text-lg mb-4">Links</h4>
+              <ul className="space-y-2 text-md">
                 <li>
                   <Link
-                    href="https://x.com/arjunships"
+                    href="https://x.com/ColdranAI"
                     target="_blank"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -90,7 +90,7 @@ export default function MarketingLayout({
                 </li>
                 <li>
                   <Link
-                    href="https://github.com/nermalcat69"
+                    href="https://github.com/ColdranAI"
                     target="_blank"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -141,9 +141,9 @@ export default function MarketingLayout({
   );
 }
 
-const ColdranLogo = () => {
+const ColdranLogo = ({ className }: { className?: string }) => {
   return (
-    <div className="group relative overflow-visible w-10 h-10">
+    <div className={`group relative overflow-visible w-10 h-10 ${className}`}>
       <svg viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="1.25" y="1.25" width="257.5" height="257.5" rx="50.75" fill="white"/>
       <rect x="1.25" y="1.25" width="257.5" height="257.5" rx="50.75" stroke="#C3C3C3" strokeWidth="1.5"/>

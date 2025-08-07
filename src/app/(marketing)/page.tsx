@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className=" mx-auto px-4 max-w-5xl lg:px-6 h-auto overflow-y-auto md:overflow-hidden my-10  items-center justify-center">
+    <div className=" mx-auto px-4  lg:px-6 h-auto overflow-y-auto md:overflow-hidden my-10  items-center justify-center">
       <div className="md:min-h-screen pt-20 pb-20 md:pb-0">
         <div className=" w-full max-w-2xl mx-auto py-2">
           <h1 className="text-black text-4xl md:text-5xl font-semibold text-center z-10 ">
@@ -35,6 +35,30 @@ export default function Home() {
           <a href="/demo">Run Your Scraper</a>
         </Button>
         <Button variant="red" size="lg">Build Your Survey</Button>
+      </div>
+      <div className="flex flex-col sm:flex-row flex-wrap items-center py-10 gap-4 justify-center">
+        <Button variant="default" size="lg">Build Your Survey</Button>
+        <Button variant="blue" size="lg">Visual Bug Reporting in IDE</Button>
+        <Button variant="red" size="lg">Web Customer Agents</Button>
+        <Button variant="default" size="lg">Discord Customer Bot</Button>
+        <Button variant="red" size="lg">Slack Scraper Agent</Button>
+        <Button variant="blue" size="lg">Run Surveys & Deep Research</Button>
+        <Button variant="default" size="lg">Web Search Subreddits</Button>
+        <Button variant="red" size="lg">Discord Scraper Agent</Button>
+        <Button variant="blue" size="lg">IDE Customer Agents</Button>
+        <Button variant="red" size="lg">Transcribe & Analyze Customer Calls</Button>
+        <Button variant="blue" size="lg">Customer Feedback Classification</Button>
+        <Button variant="red" size="lg">Automatically Trigger Issues</Button>
+        <Button variant="blue" size="lg">Integrate with Zapier, Airtable, Notion, Github, Gitlab, Jira, etc.</Button>
+        <Button variant="default" size="lg">Advanced Mail Client</Button>
+        <Button variant="red" size="lg">Customer Knowledge Base</Button>
+        <Button variant="default" size="lg">Internal Knowledge Base</Button> 
+        <Button variant="red" size="lg">Create A Roadmap Page</Button>
+        <Button variant="blue" size="lg">Create a Help & Support Page</Button>
+        <Button variant="red" size="lg">Screen Record The Bug using Widget</Button>
+        <Button variant="blue" size="lg">Component Behavior Reporting via Web</Button>
+        <Button variant="blue" size="lg">Whatsapp & Instagram Agents</Button>
+
       </div>
       {/* <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p> */}
       </div>
