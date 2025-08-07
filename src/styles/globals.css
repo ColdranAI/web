@@ -40,6 +40,7 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-poppins);
+  --font-instrument-sans: var(--font-instrument-sans);
 }
 
 :root {

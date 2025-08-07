@@ -7,6 +7,7 @@ import { ChatToDashboard } from "@/components/chat-to-dashboard";
 import { SlackAnalyzer } from "@/components/slack-analyzer";
 import { FeedbackOrganizer } from "@/components/feedback-organizer";
 import { motion } from "framer-motion";
+import { ArrowRight } from "@/components/icons/arrow";
 
 
 export default function Home() {
@@ -30,13 +31,15 @@ export default function Home() {
           <span className="max-w-5xl font-semibold text-black">Mini Secret</span> we also provide short-term memory and long term memory for your customer support agents.
         </p>
         <div className="flex flex-col sm:flex-row items-center py-10 gap-4 justify-center">
-        <Button variant="default" size="lg">Build Your Agent</Button>
+        <Button variant="default" size="lg">Build Your Customer Agent</Button>
         <Button variant="blue" size="lg">
-          <a href="/demo">Run Your Scraper</a>
+          <a href="/demo">Analyze Your Customers</a>
         </Button>
-        <Button variant="red" size="lg">Build Your Survey</Button>
+        <Button variant="red" size="lg">Analyze Your Team</Button>
       </div>
-      <div className="flex flex-col sm:flex-row flex-wrap items-center py-10 gap-4 justify-center">
+      <div className="flex flex-col items-center justify-center min-h-screen my-10">
+      <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">External & Internal Agents <ArrowRight className="w-6 h-6" /> KnowledgeBase</h2>
+      <div className="flex-col sm:flex-row flex-wrap hidden lg:flex items-center py-4 gap-4 justify-center">
         <Button variant="default" size="lg">Build Your Survey</Button>
         <Button variant="blue" size="lg">Visual Bug Reporting in IDE</Button>
         <Button variant="red" size="lg">Web Customer Agents</Button>
@@ -58,6 +61,8 @@ export default function Home() {
         <Button variant="red" size="lg">Screen Record The Bug using Widget</Button>
         <Button variant="blue" size="lg">Component Behavior Reporting via Web</Button>
         <Button variant="blue" size="lg">Whatsapp & Instagram Agents</Button>
+
+      </div>
 
       </div>
       {/* <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p> */}

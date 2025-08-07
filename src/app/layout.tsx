@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Poppins, Inter, Instrument_Sans } from "next/font/google";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { cn } from "@/lib/utils";
@@ -22,6 +22,12 @@ const fontPoppins = Poppins({
 const fontMono = Inter({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
+});
+
+const fontInstrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument-sans",
   display: "swap",
 });
 
@@ -48,6 +54,7 @@ export default function RootLayout({
           fontSans.variable,
           fontPoppins.variable,
           fontMono.variable,
+          fontInstrumentSans.variable,
         )}
       >
         <RootProviders>{children}</RootProviders>
