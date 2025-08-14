@@ -72,7 +72,7 @@ export default function TermsOfService() {
         <ul className="list-disc pl-6 mb-6 space-y-2">
           <li>Attempting to gain unauthorized access to our systems</li>
           <li>Using our service for any fraudulent or illegal purpose</li>
-          <li>Interfering with other users' access to the service</li>
+          <li>Interfering with other users&apos; access to the service</li>
           <li>Uploading malicious code or content</li>
         </ul>
 
@@ -80,7 +80,7 @@ export default function TermsOfService() {
           7. Limitation of Liability
         </h2>
         <p className="mb-4">
-          Coldran is provided "as is" without warranties of any kind. We
+          Coldran is provided &ldquo;as is&rdquo; without warranties of any kind. We
           are not responsible for any losses or damages resulting from your use
           of our service.
         </p>

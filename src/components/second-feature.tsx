@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Check, Box, ShoppingBag, Github, ExternalLink } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 interface FeatureCardProps {
   title: string;
@@ -59,8 +59,7 @@ export function SecondFeature() {
       features: [
         "Discord Server Template for your waitlist",
         "Rate Limiting",
-        "Drizzle ORM",
-        "Supabase or PlanetScale SQL Database",
+
         "Upstash Redis",
         "Weekly Improvements & Fixes",
         "Discord Support",

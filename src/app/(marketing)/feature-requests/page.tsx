@@ -165,7 +165,7 @@ export default function FeatureAndFeedback() {
                   required
                 />
                 <p className="text-xs text-muted-foreground">
-                  We'll use this to follow up on your{" "}
+                  We&apos;ll use this to follow up on your{" "}
                   {formType === "feature" ? "request" : "feedback"}.
                 </p>
               </div>

@@ -9,7 +9,6 @@ import {
   Star, 
   TrendingUp, 
   Filter,
-  BarChart2,
   AlertCircle,
   CheckCircle,
   Clock
@@ -202,7 +201,7 @@ export function FeedbackOrganizer() {
       {/* Header */}
       <div className="flex items-center gap-3 p-4 border-b border-neutral-200 bg-neutral-50">
         <div className="w-8 h-8 bg-neutral-800 rounded-full flex items-center justify-center">
-          <img src="/logo.svg" alt="logo" className="rounded-full" draggable="false" />
+          <img src="/logo.svg" alt="logo" className="rounded-full" draggable={false} />
         </div>
         <div className="flex-1">
           <h3 className="font-medium text-neutral-900">Feedback Organizer</h3>
@@ -301,7 +300,7 @@ export function FeedbackOrganizer() {
                     key={type}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`p-3 rounded-lg border ${getTypeColor(type as any)} relative`}
+                    className={`p-3 rounded-lg border ${getTypeColor(type as FeedbackItem["type"])} relative`}
                   >
                     {stats.trending && (
                       <motion.div
@@ -314,7 +313,7 @@ export function FeedbackOrganizer() {
                     )}
                     
                     <div className="flex items-center gap-2 mb-2">
-                      {getTypeIcon(type as any)}
+                      {getTypeIcon(type as FeedbackItem["type"])}
                       <span className="font-medium text-sm capitalize">{type}</span>
                     </div>
                     
@@ -345,7 +344,7 @@ export function FeedbackOrganizer() {
                       className="space-y-2"
                     >
                       <div className="flex items-center gap-2">
-                        <span className={`px-2 py-1 rounded text-xs font-medium capitalize ${getPriorityColor(priority as any)}`}>
+                        <span className={`px-2 py-1 rounded text-xs font-medium capitalize ${getPriorityColor(priority as FeedbackItem["priority"])}`}>
                           {priority} Priority
                         </span>
                         <span className="text-xs text-neutral-500">({items.length} items)</span>

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import { MessageCircle, Users, Hash, Eye, BarChart3, User } from "lucide-react";
+import { MessageCircle, Users, Hash, Eye } from "lucide-react";
 import { SlackLogo } from "./logos/slack";
 
 interface Channel {

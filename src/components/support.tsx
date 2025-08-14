@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { StarIcon } from "lucide-react";
-import Image from "next/image";
 
 export const Support = () => {
   return (

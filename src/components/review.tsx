@@ -1,4 +1,3 @@
-import { MessageCircleIcon } from "lucide-react";
 import Image from "next/image";
 import arjun from "./arjun.jpg";
 import ruklist from "./ruklist.png";
@@ -7,7 +6,7 @@ export const Review = () => (
   <div className="relative rounded-xl flex flex-col justify-between border component-outline bg-card p-6 h-full">
     <p className="max-w-3xl text-balance font-semibold text-lg tracking-tight sm:text-xl">
       &ldquo;A production-grade, monorepo-first, full stack Next.js template.
-      Very thoughtfully engineered and documented. Covers auth, DB & ORM,
+      Very thoughtfully engineered and documented. Covers auth,
       payments, docs, blog, o11y, analytics, emails, and even feature flags &
       dark mode.&rdquo;
     </p>

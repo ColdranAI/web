@@ -5,10 +5,8 @@ import { useState, useEffect } from "react";
 import { 
   Lightbulb, 
   Bug, 
-  ArrowRight,
   Github,
   MessageCircle,
-  ExternalLink,
   Clock,
   User,
   ChevronRight

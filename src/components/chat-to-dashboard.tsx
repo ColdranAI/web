@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { SimpleChatDemo } from "./animated-chatbot";
 import { FeedbackDashboard } from "./feedback-dashboard";
-import { ArrowRight, Database } from "lucide-react";
+
 
 export function ChatToDashboard() {
   return (

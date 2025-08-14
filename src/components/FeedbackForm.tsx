@@ -1,4 +1,3 @@
-import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function FeatureCard() {
@@ -12,10 +11,10 @@ export function FeatureCard() {
 
       <div className="flex flex-1 flex-col justify-start gap-2">
         <p className="text-balance text-md text-neutral-600">
-          We're building a seamless, managed waitlist service for those who
+          We&apos;re building a seamless, managed waitlist service for those who
           prefer not to self-host. Interested? Add your name to the waitlist and
           help shape the future of this platform! (I Support Self-Hosting but if
-          people want a managed service, I'll build it.)
+          people want a managed service, I&apos;ll build it.)
         </p>
       </div>
 
@@ -29,7 +28,7 @@ export function FeatureCard() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="flex flex-row items-center gap-2">I'm Interested!</div>
+          <div className="flex flex-row items-center gap-2">I&apos;m Interested!</div>
         </a>
       </Button>
     </div>
