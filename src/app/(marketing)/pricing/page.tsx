@@ -124,7 +124,7 @@ const tiers: Tier[] = [
   {
     name: "Companies",
     price: "$900",
-    cta: "Get in Touch",
+    cta: "Unify Your Company",
     ctaVariant: "blue",
     features: [
       "Everything in Startups",
@@ -174,7 +174,7 @@ export default function PricingPage() {
               </div>
               <Button
                 className="w-full h-12 rounded-lg"
-                variant="default"
+                variant="lightgray"
               >
                 Get Started
               </Button>
@@ -200,6 +200,18 @@ export default function PricingPage() {
         </div>
       </Card>
     </div>
+          <div className="flex-col sm:flex-row flex-wrap hidden lg:flex items-center py-4 gap-4 justify-center">
+        <Button variant="default" size="minor">Build Your Survey</Button>
+        <Button variant="blue" size="minor">Visual Bug Reporting in IDE</Button>
+        <Button variant="red" size="minor">Web Customer Agents</Button>
+        <Button variant="default" size="minor">Discord Customer Bot</Button>
+        <Button variant="blue" size="minor">Run Surveys & Deep Research</Button>
+        <Button variant="default" size="minor">Web Search Subreddits</Button>
+        <Button variant="red" size="minor">Discord Scraper Agent</Button>
+        <Button variant="blue" size="minor">IDE Customer Agents</Button>
+        <Button variant="blue" size="minor">And More</Button>
+      </div>
+
         <div className="max-w-sm w-full">
       <Card className="p-0 border border-gray-200 rounded-2xl bg-white">
         <div className="flex flex-col gap-6">
@@ -218,7 +230,7 @@ export default function PricingPage() {
               </div>
               <Button
                 className="w-full h-12 rounded-lg"
-                variant="default"
+                variant="gray"
               >
                 Get in Touch
               </Button>
