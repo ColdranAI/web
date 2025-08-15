@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/navbar";
 
 export default function MarketingLayout({
   children,
@@ -10,30 +10,7 @@ export default function MarketingLayout({
   return (
     <div className="relative flex min-h-screen flex-col">
       {/* Header */}
-      <header className="w-full py-2 bg-white">
-        <div className="flex h-14 items-center justify-between max-w-7xl mx-auto px-4 lg:px-6">
-          <div className="flex items-center gap-6">
-            <Link href="/" className="font-normal flex items-center gap-4">
-              <span className="text-sm md:text-xl text-neutral-800 flex items-center gap-3">
-                <img src="/logo.svg" alt="Coldran" draggable={false} width={46} height={46} />
-                <span className="font-semibold font-poppins tracking-wide">
-                  Coldran</span>
-              </span>
-            </Link>
-            <nav className="hidden font-semibold text-md md:flex pl-5 gap-1">
-                <Link href="/pricing" className="circular rounded-md px-3 py-2 text-neutral-800">Pricing</Link>
-                {/* <Link href="/features" className="circular rounded-md px-3 py-2 text-neutral-800">Features</Link> */}
-                <Link href="/blog" className="circular rounded-md px-3 py-2 text-neutral-800">Blog</Link>
-                <Link href="https://docs.coldran.com" target="_blank" className="circular rounded-md px-3 py-2 text-neutral-800">Docs</Link>
-                <Link href="/about" className="circular rounded-md px-3 py-2 text-neutral-800">About</Link>
-            </nav>
-          </div>
-          <div className="flex items-center gap-2">
-          <Button variant="secondary" size="minor">Sign In</Button>
-            <Button variant="black" size="minor">Play with Agents</Button>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Main content */}
       <main className="w-full">
