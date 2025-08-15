@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -228,12 +229,14 @@ export default function PricingPage() {
                   </span>
                 </div>
               </div>
-              <Button
-                className="w-full h-12 rounded-lg"
-                variant="gray"
-              >
-                Get in Touch
-              </Button>
+              <Link href="/enterprise-contact">
+                <Button
+                  className="w-full h-12 rounded-lg"
+                  variant="gray"
+                >
+                  Get in Touch
+                </Button>
+              </Link>
             </div>
 
             <Separator className="my-10" />
