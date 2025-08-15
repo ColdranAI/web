@@ -1,109 +1,148 @@
 "use client";
 
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardDescription,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
-interface PricingTier {
+type Tier = {
   name: string;
   price: string;
-  description: string;
+  cta: string;
+  ctaVariant?: "default" | "blue" | "red";
   features: string[];
-  buttonText: string;
-  buttonVariant: "default" | "blue" | "red";
-  popular?: boolean;
+  flagText?: string;
+};
+
+/* ---------- Single borderless plan column ---------- */
+function PricingCard({
+  tier,
+  columnRef,
+}: {
+  tier: Tier;
+  columnRef?: React.RefObject<HTMLDivElement | null>;
+}) {
+  return (
+    <div ref={columnRef} className="relative">
+      <Card className="p-0 shadow-none border-0 rounded-none bg-white">
+        <div className="flex flex-col gap-6">
+          <CardHeader className="p-6">
+            <CardTitle className="text-lg font-semibold">{tier.name}</CardTitle>
+          </CardHeader>
+
+          <CardContent className="p-0">
+            <div className="flex w-full flex-col items-start gap-4 px-6 lg:h-[150px]">
+              <div className="mb-6 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-4xl leading-none tracking-[-0.15rem] tabular-nums">
+                    {tier.price}
+                  </span>
+                </div>
+                <CardDescription className="text-xs text-muted-foreground">
+                  per month
+                </CardDescription>
+              </div>
+              <Button
+                className="w-full h-12 rounded-lg"
+                variant={tier.ctaVariant ?? "default"}
+              >
+                {tier.cta}
+              </Button>
+            </div>
+
+            <Separator className="my-10" />
+
+            <ul className="mt-4 flex flex-col gap-4 px-6 pb-8 text-sm">
+              {tier.features.map((f) => (
+                <li key={f} className="flex items-start gap-3">
+                  <svg
+                    className="size-5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </div>
+      </Card>
+    </div>
+  );
 }
 
-const pricingTiers: PricingTier[] = [
-  {
-    name: "Free",
-    price: "$0",
-    description: "Get started with basic features",
-    features: [
-      "1 Customer Agent (Widget only)",
-      "1 project with basic memory (resets after 7 days)",
-      "1 integration (Discord or Slack or IDE)",
-      "500 messages/month",
-      "Basic analytics",
-      "Email support"
-    ],
-    buttonText: "Get Started",
-    buttonVariant: "default"
-  },
+/* ---------- Example data ---------- */
+const tiers: Tier[] = [
   {
     name: "Vibe",
     price: "$30",
-    description: "The Perfect Plan for Small Teams",
+    cta: "Vibe with Us",
+    ctaVariant: "blue",
     features: [
-      "Up to 3 Customer Agents (Widget + Discord + Slack)",
+      "Up to 3 Customer Agents",
       "3 projects with persistent memory",
-      "All core integrations (Discord, Slack, IDE)",
+      "All core integrations",
       "5,000 messages/month",
-      "Basic knowledge base upload (50 docs)",
-      "Simple automation triggers (form → email)",
-      "Email + chat support"
+      "Email + chat support",
     ],
-    buttonText: "Choose Vibe",
-    buttonVariant: "blue"
   },
   {
     name: "Cracked",
     price: "$150",
-    description: "Most popular choice for growing teams",
+    cta: "Go Nuts Here",
+    ctaVariant: "red",
     features: [
-      "Up to 10 Customer Agents (any mix: Widget, Discord, Slack, IDE)",
-      "Unlimited projects with persistent memory",
-      "Advanced workflows (bug reporter → GitHub, Sentry → ticket, form → analysis)",
+      "Up to 10 Customer Agents",
+      "Unlimited projects",
+      "Advanced workflows",
       "50,000 messages/month",
-      "Internal Knowledge Base Agent",
-      "Real-time monitoring & alerts",
-      "API access for agents",
-      "Priority support"
+      "API access & priority support",
     ],
-    buttonText: "Go Cracked",
-    buttonVariant: "red",
-    popular: true
   },
   {
     name: "Startups",
     price: "$300",
-    description: "Advanced features for scaling startups",
+    cta: "Grow Your Startup",
     features: [
       "Unlimited Customer Agents",
-      "Unlimited projects with persistent memory",
-      "Advanced AI routing (multi-agent escalation, handoff)",
+      "Advanced AI routing",
       "200,000 messages/month",
-      "ColdChat + team collaboration tools",
-      "Full integration suite (Sentry, GitHub, CRMs, form builders)",
-      "Advanced analytics & trends dashboard",
-      "Dedicated onboarding & training",
-      "SLA-backed priority support"
+      "ColdChat + team collaboration",
+      "SLA-backed priority support",
     ],
-    buttonText: "Scale Up",
-    buttonVariant: "default"
   },
   {
     name: "Companies",
     price: "$900",
-    description: "Big solutions for Big Companies",
+    cta: "Get in Touch",
+    ctaVariant: "blue",
     features: [
       "Everything in Startups",
       "White-label agents",
       "Enterprise SSO & RBAC",
       "Unlimited messages/month",
-      "Custom AI model fine-tuning",
-      "Compliance & audit logging",
-      "24/7 support with dedicated account manager",
-      "Quarterly strategy sessions & feature prioritization"
+      "24/7 dedicated support",
     ],
-    buttonText: "Contact Sales",
-    buttonVariant: "blue"
-  }
+  },
 ];
 
+/* ---------- Page ---------- */
 export default function PricingPage() {
+  const frameRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <div className="min-h-screen bg-white py-20">
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
-        {/* Title */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-semibold text-black mb-4">
             Simple, Transparent Pricing
@@ -113,51 +152,120 @@ export default function PricingPage() {
           </p>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {pricingTiers.map((tier, index) => (
-            <div
-              key={tier.name}
-              className={`relative border p-6 bg-white ${
-                tier.popular ? "border-neutral-500 shadow-lg" : "border-neutral-200"
-              }`}
-            >
-              {tier.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-neutral-900 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Popular
+        <div className="max-w-6xl flex flex-col md:flex-row justify-center items-center max-md:gap-5 md:justify-between mx-auto">
+    <div className="max-w-sm w-full ">
+      <Card className="p-0 border border-gray-200 rounded-2xl bg-white">
+        <div className="flex flex-col gap-6">
+          <CardHeader className="p-6">
+            <CardTitle className="text-lg font-semibold">Get Started</CardTitle>
+          </CardHeader>
+
+          <CardContent className="p-0">
+            <div className="flex w-full flex-col items-start gap-4 px-6 lg:h-[150px]">
+              <div className="mb-6 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-4xl leading-none tracking-[-0.15rem] tabular-nums">
+                    $2
                   </span>
                 </div>
-              )}
-              
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-semibold text-black mb-2">{tier.name}</h3>
-                <div className="mb-2">
-                  <span className="text-3xl font-bold text-black">{tier.price}</span>
-                  {tier.price !== "$0" && tier.name !== "Companies" && (
-                    <span className="text-muted-foreground">/month</span>
-                  )}
-                </div>
-                <p className="text-sm text-muted-foreground">{tier.description}</p>
+                <CardDescription className="text-xs text-muted-foreground">
+                  for testing
+                </CardDescription>
               </div>
-                            <Button 
-                variant={tier.buttonVariant} 
-                size="lg" 
-                className="w-full"
+              <Button
+                className="w-full h-12 rounded-lg"
+                variant="default"
               >
-                {tier.buttonText}
+                Get Started
               </Button>
-
-              <ul className="space-y-3 mt-10 mb-6">
-                {tier.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start text-sm">
-                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
-                    <span className="text-neutral-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-          ))}
+
+            <Separator className="my-10" />
+
+            <ul className="mt-4 flex flex-col gap-4 px-6 pb-8 text-sm">
+                <li className="flex items-start gap-3">
+                  <svg
+                    className="size-5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  <span>Everything Which You need to Test Us</span>
+                </li>
+            </ul>
+          </CardContent>
+        </div>
+      </Card>
+    </div>
+        <div className="max-w-sm w-full">
+      <Card className="p-0 border border-gray-200 rounded-2xl bg-white">
+        <div className="flex flex-col gap-6">
+          <CardHeader className="p-6">
+            <CardTitle className="text-lg font-semibold">Enterprise</CardTitle>
+          </CardHeader>
+
+          <CardContent className="p-0">
+            <div className="flex w-full flex-col items-start gap-4 px-6 lg:h-[150px]">
+              <div className="mb-6 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-4xl leading-none tracking-[-0.15rem] tabular-nums">
+                    Custom
+                  </span>
+                </div>
+              </div>
+              <Button
+                className="w-full h-12 rounded-lg"
+                variant="default"
+              >
+                Get in Touch
+              </Button>
+            </div>
+
+            <Separator className="my-10" />
+
+            <ul className="mt-4 flex flex-col gap-4 px-6 pb-8 text-sm">
+                <li className="flex items-start gap-3">
+                  <svg
+                    className="size-5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  <span>Everything Custom</span>
+                </li>
+            </ul>
+          </CardContent>
+        </div>
+      </Card>
+    </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto mt-10">
+          {/* Wrapper must be relative so overlay positions correctly */}
+          <div className="relative">
+            {/* Framed container can be overflow-hidden now; corners stay clean */}
+            <div
+              ref={frameRef}
+              className="rounded-2xl max-md:max-w-sm max-md:mx-auto border border-gray-200 bg-white overflow-hidden"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-x divide-gray-200">
+                {tiers.map((t) => {
+                  return (
+                    <div key={t.name} className="relative">
+                      <PricingCard tier={t} />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          {/* end wrapper */}
         </div>
       </div>
     </div>
