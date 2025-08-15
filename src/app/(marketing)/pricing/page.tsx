@@ -90,9 +90,9 @@ const tiers: Tier[] = [
     ctaVariant: "blue",
     features: [
       "Up to 3 Customer Agents",
-      "3 projects with persistent memory",
-      "All core integrations",
-      "5,000 messages/month",
+      "Long Term & Short Term Memory",
+      "Integrate with Slack, Discord, and more",
+      "1,000 messages/month",
       "Email + chat support",
     ],
   },
