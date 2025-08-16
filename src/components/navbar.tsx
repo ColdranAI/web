@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 type WhoAmI =
@@ -9,34 +10,37 @@ type WhoAmI =
   | { authenticated: true; user: { id: string; name?: string | null; image?: string | null } };
 
 export function Navbar() {
+  const pathname = usePathname();
+
+  // Default to "not ready" only on /sign-in (where we might swap to Dashboard).
+  const [ready, setReady] = useState(pathname === "/sign-in" ? false : true);
   const [auth, setAuth] = useState<WhoAmI>({ authenticated: false });
-  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    let cancelled = false;
+    // Only bother fetching auth on /sign-in (so other pages never show a loading state).
+    if (pathname !== "/sign-in") return;
+
+    const ctrl = new AbortController();
 
     fetch("https://app.coldran.com/api/whoami", {
       method: "GET",
       credentials: "include",
+      signal: ctrl.signal,
     })
       .then((r) => (r.ok ? r.json() : { authenticated: false }))
       .then((data: WhoAmI) => {
-        if (!cancelled) {
-          setAuth(data);
-          setReady(true);
-        }
+        setAuth(data);
+        setReady(true);
       })
       .catch(() => {
-        if (!cancelled) {
-          setAuth({ authenticated: false });
-          setReady(true);
-        }
+        setAuth({ authenticated: false });
+        setReady(true);
       });
 
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+    return () => ctrl.abort();
+  }, [pathname]);
+
+  const showDashboardCTA = pathname === "/sign-in" && auth.authenticated;
 
   return (
     <header className="w-full py-4 bg-white">
@@ -45,52 +49,38 @@ export function Navbar() {
           <Link href="/" className="font-normal flex items-center gap-4">
             <span className="text-sm md:text-xl text-neutral-800 flex items-center gap-3">
               <img src="/logo.svg" alt="Coldran" draggable={false} width={46} height={46} />
-              <span className="font-semibold font-poppins tracking-wide">
-                Coldran
-              </span>
+              <span className="font-semibold font-poppins tracking-wide">Coldran</span>
             </span>
           </Link>
           <nav className="hidden font-semibold text-md md:flex pl-5 gap-1">
-            <Link href="/pricing" className="circular rounded-md px-3 py-2 text-neutral-800">
-              Pricing
-            </Link>
-            <Link href="/blog" className="circular rounded-md px-3 py-2 text-neutral-800">
-              Blog
-            </Link>
-            <Link href="https://docs.coldran.com" target="_blank" className="circular rounded-md px-3 py-2 text-neutral-800">
-              Docs
-            </Link>
-            <Link href="/about" className="circular rounded-md px-3 py-2 text-neutral-800">
-              About
-            </Link>
+            <Link href="/pricing" className="circular rounded-md px-3 py-2 text-neutral-800">Pricing</Link>
+            <Link href="/blog" className="circular rounded-md px-3 py-2 text-neutral-800">Blog</Link>
+            <a href="https://docs.coldran.com" target="_blank" className="circular rounded-md px-3 py-2 text-neutral-800">Docs</a>
+            <Link href="/about" className="circular rounded-md px-3 py-2 text-neutral-800">About</Link>
           </nav>
         </div>
+
         <div className="flex items-center gap-2">
-          {!ready ? (
+          {/* Only ever show a loading state on /sign-in while we decide if we should show Dashboard */}
+          {!ready && pathname === "/sign-in" ? (
             <Button variant="secondary" size="minor" className="opacity-70 pointer-events-none">
               Loading…
             </Button>
-          ) : auth.authenticated ? (
-            <>
-              {auth.user.name && (
-                <span className="text-sm text-neutral-600 mr-2">
-                  Welcome, {auth.user.name}
-                </span>
-              )}
-              <Button variant="black" size="minor" asChild>
-                <a href="https://app.coldran.com">Go to App</a>
-              </Button>
-            </>
+          ) : showDashboardCTA ? (
+            <Button variant="black" size="minor" asChild>
+              <a href="https://app.coldran.com">Dashboard</a>
+            </Button>
           ) : (
             <>
-              <Button variant="secondary" size="minor" asChild>
-                <a href="https://app.coldran.com/sign-in">Sign In</a>
+              {/* Internal route: use Link + asChild so it doesn't flash a reload */}
+              <Link href="/play-with-us" className="inline-block">
+                <Button variant="lightgray" size="minor">Play with Us</Button>
+              </Link>
+
+              {/* Sign-in always visible outside the app */}
+              <Button variant="blue" size="minor" asChild>
+                <a href="https://app.coldran.com/sign-in" target="_blank" rel="dofollow noopener">Sign In</a>
               </Button>
-              <a href="/play-with-us">
-              <Button variant="black" size="minor">
-                Play with Us
-              </Button>
-              </a>
             </>
           )}
         </div>

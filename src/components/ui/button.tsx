@@ -21,6 +21,8 @@ const buttonVariants = cva(
           "bg-primary grayshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
         lightgray:
           "bg-primary lightgrayshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
+        lightgraybg:
+          "bg-neutral-200 border border-neutral-300 text-neutral-950 shadow-xs cursor-pointer rounded-lg",
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground cursor-pointer",
         secondary:
