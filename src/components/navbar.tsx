@@ -39,7 +39,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="w-full py-2 bg-white">
+    <header className="w-full py-4 bg-white">
       <div className="flex h-14 items-center justify-between max-w-7xl mx-auto px-4 lg:px-6">
         <div className="flex items-center gap-6">
           <Link href="/" className="font-normal flex items-center gap-4">
@@ -83,12 +83,14 @@ export function Navbar() {
             </>
           ) : (
             <>
-              <Button variant="secondary" size="minor" asChild>
+              <Button variant="secondary" size="sm" asChild>
                 <a href="https://app.coldran.com/sign-in">Sign In</a>
               </Button>
-              <Button variant="black" size="minor">
-                Play with Agents
+              <a href="/play-with-us">
+              <Button variant="black" size="sm">
+                Play with Us
               </Button>
+              </a>
             </>
           )}
         </div>
