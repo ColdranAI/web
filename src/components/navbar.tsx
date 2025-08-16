@@ -83,11 +83,11 @@ export function Navbar() {
             </>
           ) : (
             <>
-              <Button variant="secondary" size="sm" asChild>
+              <Button variant="secondary" size="minor" asChild>
                 <a href="https://app.coldran.com/sign-in">Sign In</a>
               </Button>
               <a href="/play-with-us">
-              <Button variant="black" size="sm">
+              <Button variant="black" size="minor">
                 Play with Us
               </Button>
               </a>
