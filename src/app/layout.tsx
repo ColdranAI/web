@@ -52,9 +52,9 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
-          fontPoppins.variable,
+          // fontPoppins.variable,
           fontMono.variable,
-          fontInstrumentSans.variable,
+          // fontInstrumentSans.variable,
         )}
       >
         <RootProviders>{children}</RootProviders>
