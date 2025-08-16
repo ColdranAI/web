@@ -111,44 +111,6 @@ export function ChatToDashboard() {
           <FeedbackDashboard />
         </motion.div>
       </div>
-
-      {/* Key Features */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9 }}
-        className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6"
-      >
-        <div className="text-center p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
-          <div className="w-8 h-8 bg-neutral-700 rounded mx-auto mb-3 flex items-center justify-center">
-            <span className="text-white text-sm font-bold">1</span>
-          </div>
-          <h4 className="font-medium text-neutral-900 mb-2">Invisible Processing</h4>
-          <p className="text-sm text-neutral-600">
-            Your AI silently extracts insights from every customer conversation
-          </p>
-        </div>
-        
-        <div className="text-center p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
-          <div className="w-8 h-8 bg-neutral-700 rounded mx-auto mb-3 flex items-center justify-center">
-            <span className="text-white text-sm font-bold">2</span>
-          </div>
-          <h4 className="font-medium text-neutral-900 mb-2">Organized Dashboard</h4>
-          <p className="text-sm text-neutral-600">
-            Clean tabs separate features from bugs with clear priority levels
-          </p>
-        </div>
-        
-        <div className="text-center p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
-          <div className="w-8 h-8 bg-neutral-700 rounded mx-auto mb-3 flex items-center justify-center">
-            <span className="text-white text-sm font-bold">3</span>
-          </div>
-          <h4 className="font-medium text-neutral-900 mb-2">Direct Actions</h4>
-          <p className="text-sm text-neutral-600">
-            One-click buttons to move items to GitHub or alert team via Slack
-          </p>
-        </div>
-      </motion.div>
     </div>
   );
 }
