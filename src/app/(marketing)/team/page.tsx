@@ -81,12 +81,12 @@ export default function TeamPage() {
                     <Badge variant="outline">∞ (Lost count)</Badge>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Coffee Consumed:</span>
+                    <span className="text-sm font-medium">Lemonade Consumed:</span>
                     <Badge variant="outline">Dangerous Levels</Badge>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">Sleep Schedule:</span>
-                    <Badge variant="outline">What's Sleep?</Badge>
+                    <Badge variant="outline">Sleeps Whenever He wants</Badge>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">Debugging Skills:</span>

@@ -29,33 +29,13 @@ export default function AboutArjunPage() {
               
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
                 Meet
-                <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"> Arjun Aditya</span>
+                <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"> Arjun Aditya(dummy page rn)</span>
               </h1>
               
               <p className="text-xl text-muted-foreground mb-8">
                 The one-person tech army who turned caffeine into code and dreams into digital reality. 
                 This is the story of how one developer decided to build an entire platform solo.
               </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg">
-                  <Github className="w-4 h-4 mr-2" />
-                  View GitHub
-                </Button>
-                <Button variant="outline" size="lg">
-                  <Coffee className="w-4 h-4 mr-2" />
-                  Buy Me Coffee
-                </Button>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="w-80 h-80 mx-auto rounded-2xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
-                AA
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
             </div>
           </div>
         </div>
