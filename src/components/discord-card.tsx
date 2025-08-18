@@ -27,15 +27,14 @@ export function DiscordCard({
           <p className="text-xs text-muted-foreground mt-1">{description}</p>
         </div>
       </div>
-      <Button
-        size="sm"
-        className="shrink-0 bg-[#5865F2] hover:bg-[#4752C4] text-white border-none"
-        asChild
-      >
-        <a href={joinServerUrl} target="_blank" rel="noopener noreferrer">
+      <a href={joinServerUrl} target="_blank" rel="noopener noreferrer">
+        <Button
+          size="sm"
+          className="shrink-0 bg-[#5865F2] hover:bg-[#4752C4] text-white border-none"
+        >
           Join Server
-        </a>
-      </Button>
+        </Button>
+      </a>
     </div>
   );
 }

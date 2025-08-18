@@ -55,6 +55,7 @@ export function Navbar() {
           <nav className="hidden font-semibold text-md md:flex pl-5 gap-1">
             <Link href="/pricing" className="circular rounded-md px-3 py-2 text-neutral-800">Pricing</Link>
             <Link href="/blog" className="circular rounded-md px-3 py-2 text-neutral-800">Blog</Link>
+            <Link href="/team" className="circular rounded-md px-3 py-2 text-neutral-800">Team</Link>
             <a href="https://docs.coldran.com" target="_blank" className="circular rounded-md px-3 py-2 text-neutral-800">Docs</a>
             <Link href="/about" className="circular rounded-md px-3 py-2 text-neutral-800">About</Link>
           </nav>
@@ -67,9 +68,9 @@ export function Navbar() {
               Loading…
             </Button>
           ) : showDashboardCTA ? (
-            <Button variant="black" size="minor" asChild>
-              <a href="https://app.coldran.com">Dashboard</a>
-            </Button>
+            <a href="https://app.coldran.com">
+              <Button variant="black" size="minor">Dashboard</Button>
+            </a>
           ) : (
             <>
               {/* Internal route: use Link + asChild so it doesn't flash a reload */}
@@ -78,9 +79,9 @@ export function Navbar() {
               </Link>
 
               {/* Sign-in always visible outside the app */}
-              <Button variant="blue" size="minor" asChild>
-                <a href="https://app.coldran.com/sign-in" target="_blank" rel="dofollow noopener">Sign In</a>
-              </Button>
+              <a href="https://app.coldran.com/" target="_blank" rel="dofollow noopener">
+                <Button variant="blue" size="minor">Sign In</Button>
+              </a>
             </>
           )}
         </div>

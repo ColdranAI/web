@@ -30,17 +30,16 @@ export function FileCard({
           <p className="text-xs text-muted-foreground mt-1">{description}</p>
         </div>
       </div>
-      <Button
-        variant="outline"
-        size="sm"
-        className="shrink-0 hover:bg-neutral-100"
-        asChild
-      >
-        <a href={downloadUrl} download>
+      <a href={downloadUrl} download>
+        <Button
+          variant="outline"
+          size="sm"
+          className="shrink-0 hover:bg-neutral-100"
+        >
           <Download className="mr-2 h-4 w-4" />
           Download
-        </a>
-      </Button>
+        </Button>
+      </a>
     </div>
   );
 }

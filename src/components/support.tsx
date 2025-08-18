@@ -25,15 +25,15 @@ export const Support = () => {
             </span>
           </p>
         </div>
-        <Button asChild variant="outline" size="sm">
-          <a
-            href="https://x.com/ArjunShips"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <a
+          href="https://x.com/ArjunShips"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button variant="outline" size="sm">
             Say Hii! to Arjun 🍄
-          </a>
-        </Button>
+          </Button>
+        </a>
       </div>
     </div>
   );

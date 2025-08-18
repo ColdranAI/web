@@ -32,9 +32,11 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row items-center py-10 gap-4 justify-center">
         <Button variant="default" size="lg">Build Your Customer Agent</Button>
-        <Button variant="blue" size="lg">
-          <a href="/demo">Analyze Your Customers</a>
-        </Button>
+        <a href="/demo">
+          <Button variant="blue" size="lg">
+            Analyze Your Customers
+          </Button>
+        </a>
         <Button variant="red" size="lg">Analyze Your Team</Button>
       </div>
       <div className="flex flex-col items-center justify-center min-h-screen my-10">

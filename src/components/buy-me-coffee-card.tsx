@@ -27,15 +27,14 @@ export function BuyMeCoffeeCard({
           <p className="text-xs text-muted-foreground mt-1">{description}</p>
         </div>
       </div>
-      <Button
-        size="sm"
-        className="shrink-0 bg-amber-500 hover:bg-amber-600 text-white border-none"
-        asChild
-      >
-        <a href={coffeeUrl} target="_blank" rel="noopener noreferrer">
+      <a href={coffeeUrl} target="_blank" rel="noopener noreferrer">
+        <Button
+          size="sm"
+          className="shrink-0 bg-amber-500 hover:bg-amber-600 text-white border-none"
+        >
           Buy Coffee
-        </a>
-      </Button>
+        </Button>
+      </a>
     </div>
   );
 }

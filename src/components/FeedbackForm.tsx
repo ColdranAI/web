@@ -18,19 +18,18 @@ export function FeatureCard() {
         </p>
       </div>
 
-      <Button
-        variant="outline"
-        className="w-fit rounded-full bg-transparent bg-white hover:bg-neutral-100 text-black border-neutral-200"
-        asChild
+      <a
+        href="https://x.com/ArjunShips"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <a
-          href="https://x.com/ArjunShips"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Button
+          variant="outline"
+          className="w-fit rounded-full bg-transparent bg-white hover:bg-neutral-100 text-black border-neutral-200"
         >
-          <div className="flex flex-row items-center gap-2">I&apos;m Interested!</div>
-        </a>
-      </Button>
+          <span className="flex flex-row items-center gap-2">I&apos;m Interested!</span>
+        </Button>
+      </a>
     </div>
   );
 }
