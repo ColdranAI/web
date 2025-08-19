@@ -17,6 +17,24 @@ export function Navbar() {
   const [auth, setAuth] = useState<WhoAmI>({ authenticated: false });
 
   useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key.toLowerCase() === 'c' && !event.ctrlKey && !event.metaKey && !event.altKey) {
+        // Check if user is not typing in an input field
+        const activeElement = document.activeElement as HTMLElement;
+        if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.contentEditable === 'true')) {
+          return;
+        }
+        
+        event.preventDefault();
+        document.getElementById('sign-in-link')?.click();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, []);
+
+  useEffect(() => {
     // Only bother fetching auth on /sign-in (so other pages never show a loading state).
     if (pathname !== "/sign-in") return;
 
@@ -79,8 +97,16 @@ export function Navbar() {
               </Link>
 
               {/* Sign-in always visible outside the app */}
-              <a href="https://app.coldran.com/" target="_blank" rel="dofollow noopener">
-                <Button variant="blue" size="minor">Sign In</Button>
+              <a href="https://app.coldran.com/" target="_blank" rel="dofollow noopener" id="sign-in-link">
+                <Button variant="blue" size="minor">
+                  Sign In <span 
+                    className="font-medium text-[11px] px-1.5 py-0.5 rounded-lg border border-neutral-700 bg-neutral-800 cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      document.getElementById('sign-in-link')?.click();
+                    }}
+                  >C</span>
+                  </Button>
               </a>
             </>
           )}
