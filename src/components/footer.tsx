@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <ColdranLogo className="w-16 h-16"/>
+              <ColdranLogo className="w-16 h-16 animate-fadeIn delay-0"/>
               <h3 className="font-semibold text-lg mb-1.5 mt-4">
                 Coldran
               </h3>
