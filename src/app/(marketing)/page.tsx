@@ -73,14 +73,6 @@ export default function Home() {
       <Image src="/knowledge-base.png" alt="Knowledge Base" draggable={false} width={1000} height={1000} className="mb-20 mx-auto" />
 
       <div className="space-y-16">
-          {/* Row 1: Chat to Dashboard Pipeline */}
-          <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <ChatToDashboard />
-          </motion.section>
 
           {/* Row 2: Two components side by side */}
           <motion.section
@@ -90,7 +82,7 @@ export default function Home() {
             className="grid md:grid-cols-2 gap-8"
           >
             {/* Slack Analyzer */}
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-neutral-800 mb-3">
                   Real-time Workspace Analysis
@@ -103,10 +95,10 @@ export default function Home() {
               <div className="flex justify-center">
                 <SlackAnalyzer />
               </div>
-            </div>
+            </div> */}
 
             {/* Feedback Organizer */}
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-neutral-800 mb-3">
                   Smart Classification of Data
@@ -119,13 +111,12 @@ export default function Home() {
               <div className="flex justify-center">
                 <FeedbackOrganizer />
               </div>
-            </div>
+            </div> */}
           </motion.section>
         </div>
         <div className="py-8">
-            <h2 className="text-2xl font-semibold text-neutral-900 mb-6">Everything You Need to Understand Your Customers</h2>
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              {/* Understanding & Classification */}
+            <h2 className="text-2xl font-semibold text-neutral-900 mb-6">Currently We are in Beta.</h2>
+            {/* <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="border border-neutral-200 p-4 rounded-lg bg-white">
                 <h3 className="text-lg font-medium text-neutral-900 mb-3">
                   Customer Intelligence
@@ -138,7 +129,6 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* AI Support Agents */}
               <div className="border border-neutral-200 p-4 rounded-lg bg-white">
                 <h3 className="text-lg font-medium text-neutral-900 mb-3">
                   AI Support Agents
@@ -151,7 +141,6 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Community Features */}
               <div className="border border-neutral-200 p-4 rounded-lg bg-white">
                 <h3 className="text-lg font-medium text-neutral-900 mb-3">
                   Community & Feedback
@@ -164,7 +153,6 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* Native Integrations */}
               <div className="border border-neutral-200 p-4 rounded-lg bg-white">
                 <h3 className="text-lg font-medium text-neutral-900 mb-3">
                   Native Integrations
@@ -176,7 +164,7 @@ export default function Home() {
                   <li>• Free tier & startup credits available</li>
                 </ul>
               </div>
-            </div>
+            </div> */}
             
             <div className="border border-neutral-200 p-4 rounded-lg bg-neutral-50">
               <h3 className="text-lg font-medium text-neutral-900 mb-2">No More &ldquo;Schedule a Call&rdquo; Barriers</h3>
@@ -186,7 +174,7 @@ export default function Home() {
               </p>
             </div>
             </div>
-      <div className="mx-4 mt-10 my-2">
+      {/* <div className="mx-4 mt-10 my-2">
         <div className="relative w-full max-w-5xl aspect-[10/3] rounded-2xl mx-auto overflow-hidden">
           <Image
             src="/gradient-2.png"
@@ -199,8 +187,8 @@ export default function Home() {
           <h1 className="absolute bottom-0 font-mono lg:right-1/4 transform translate-x-1/4 md:translate-x-1/2 -translate-y-1/2 text-white text-2xl md:text-3xl font-bold text-center z-10 whitespace-nowrap">
             Treat. Customers. Better.
           </h1>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </div>
   );
 }

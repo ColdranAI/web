@@ -7,7 +7,7 @@ export function TemplatesSection() {
 
   const templatesData = {
     scraping: {
-      statement: "Currently just discord but we plan to add more platform eg. reddit, slack, etc.",
+      statement: "Currently just discord but we plan to add more platforms eg. reddit, slack, etc.",
       video: "https://www.youtube.com/embed/XWrJsKjhkzQ?si=MYc2pieuBRJYitzn",
     },
     research: {
