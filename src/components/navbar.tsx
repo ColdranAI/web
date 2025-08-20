@@ -18,7 +18,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'c' && !event.ctrlKey && !event.metaKey && !event.altKey) {
+      if (event.key.toLowerCase() === 'b' && !event.ctrlKey && !event.metaKey && !event.altKey) {
         // Check if user is not typing in an input field
         const activeElement = document.activeElement as HTMLElement;
         if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.contentEditable === 'true')) {
@@ -100,12 +100,12 @@ export function Navbar() {
               <a href="https://app.coldran.com/" target="_blank" rel="dofollow noopener" id="sign-in-link">
                 <Button variant="blue" size="minor">
                   Sign In <span 
-                    className="font-medium text-[11px] px-1.5 py-0.5 rounded-lg border border-neutral-700 bg-neutral-800 cursor-pointer"
+                    className="font-medium text-[11px] px-1.5 py-0.5 rounded-sm border border-neutral-700 bg-neutral-800 cursor-pointer"
                     onClick={(e) => {
                       e.stopPropagation();
                       document.getElementById('sign-in-link')?.click();
                     }}
-                  >C</span>
+                  >B</span>
                   </Button>
               </a>
             </>
