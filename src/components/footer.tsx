@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <ColdranLogo className="w-16 h-16 animate-fadeIn delay-0"/>
+              <ColdranLogo className="w-12 h-12 animate-fadeIn delay-0"/>
               <h3 className="font-semibold text-lg mb-1.5 mt-4">
                 Coldran
               </h3>
@@ -30,7 +30,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="/pricing"
                     target="_blank"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
