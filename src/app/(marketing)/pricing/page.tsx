@@ -91,7 +91,7 @@ const tiers: Tier[] = [
     ctaVariant: "blue",
     features: [
       "Unlimited Customer Agents + 100MB of Context",
-      "Total KnowledgeBase Size: 500MB",
+      "500MB KnowledgeBase Size(Customer Analysis)",
       "Long Term & Short Term Memory",
       "Integrate with Slack, Discord, and more",
       "1,000 messages/month",
@@ -105,7 +105,7 @@ const tiers: Tier[] = [
     ctaVariant: "red",
     features: [
       "Unlimited Customer Agents + 500MB of Context",
-      "Total KnowledgeBase Size: 1GB",
+      "1GB KnowledgeBase Size(Customer Analysis)",
       "Unlimited projects",
       "Advanced workflows",
       "50,000 messages/month",
@@ -118,7 +118,7 @@ const tiers: Tier[] = [
     cta: "Grow Your Startup",
     features: [
       "Unlimited Customer Agents + 1GB of Context",
-      "Total KnowledgeBase Size: 1GB",
+      "2GB KnowledgeBase Size(Customer Analysis)",
       "Advanced AI routing",
       "200,000 messages/month",
       "ColdChat + team collaboration",
@@ -132,10 +132,11 @@ const tiers: Tier[] = [
     ctaVariant: "blue",
     features: [
       "Total Memory Size: 5GB",
+      "10GB KnowledgeBase Size(Customer Analysis)",
       "Everything in Startups",
       "White-label agents",
       "Enterprise SSO & RBAC",
-      "Unlimited messages/month",
+      "1,000,000 messages/month",
       "24/7 dedicated support",
     ],
   },
