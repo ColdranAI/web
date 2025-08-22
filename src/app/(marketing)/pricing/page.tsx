@@ -90,7 +90,8 @@ const tiers: Tier[] = [
     cta: "Vibe with Us",
     ctaVariant: "blue",
     features: [
-      "Up to 3 Customer Agents",
+      "Unlimited Customer Agents + 100MB of Context",
+      "Total KnowledgeBase Size: 500MB",
       "Long Term & Short Term Memory",
       "Integrate with Slack, Discord, and more",
       "1,000 messages/month",
@@ -103,7 +104,8 @@ const tiers: Tier[] = [
     cta: "Go Nuts Here",
     ctaVariant: "red",
     features: [
-      "Up to 10 Customer Agents",
+      "Unlimited Customer Agents + 500MB of Context",
+      "Total KnowledgeBase Size: 1GB",
       "Unlimited projects",
       "Advanced workflows",
       "50,000 messages/month",
@@ -115,7 +117,8 @@ const tiers: Tier[] = [
     price: "$300",
     cta: "Grow Your Startup",
     features: [
-      "Unlimited Customer Agents",
+      "Unlimited Customer Agents + 1GB of Context",
+      "Total KnowledgeBase Size: 1GB",
       "Advanced AI routing",
       "200,000 messages/month",
       "ColdChat + team collaboration",
@@ -128,6 +131,7 @@ const tiers: Tier[] = [
     cta: "Unify Your Company",
     ctaVariant: "blue",
     features: [
+      "Total Memory Size: 5GB",
       "Everything in Startups",
       "White-label agents",
       "Enterprise SSO & RBAC",
