@@ -47,14 +47,14 @@ export default function Home() {
     
     <div>
     <span className="mb-4 ml-4 text-sm font-semibold text-neutral-600">Coldran Beta</span>
-    <h1 className="relative text-black text-5xl lg:text-6xl font-medium md:leading-[77px]">
+    <h1 className="relative text-black text-5xl lg:text-6xl font-medium leading-[60px] lg:leading-[77px]">
       Collect, Analyze,
       <br />
-    <span className="absolute -translate-y-16 -translate-x-28 right-0"><ProductPrBottomLeft /></span>
+    <span className="absolute -translate-y-16 translate-x-96 lg:translate-x-122 "><ProductPrBottomLeft /></span>
       and <span>Improve Product</span>.
       <br />
       With Customer Agents.
-        <span className="absolute -translate-x-10 translate-y-14"><ToDo /></span>
+        <span className="absolute md:-translate-x-10 translate-y-10 md:translate-y-14"><ToDo /></span>
 
     </h1>
 
