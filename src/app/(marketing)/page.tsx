@@ -9,6 +9,7 @@ import { FeedbackOrganizer } from "@/components/feedback-organizer";
 import { motion } from "framer-motion";
 import { ArrowRight } from "@/components/icons/arrow";
 import { CustomerReports, ThinksAndCodes, PullRequest } from "@/components/svgs";
+import { CreateAgent, IDEAgent, Forms, Questions, ToDo, ProductPr, ProductIssue, CustomerCalls } from "@/components/svgs";
 
 
 export default function Home() {
@@ -40,6 +41,16 @@ export default function Home() {
         </a>
         <Button variant="red" size="lg">Analyze Your Team</Button>
       </div>
+                <div className="py-4 flex flex-row gap-4 mx-auto">
+          <CreateAgent />
+          <IDEAgent />
+          <Forms />
+          <Questions />
+          <ToDo />
+          <ProductPr />
+          <ProductIssue />
+          <CustomerCalls />
+          </div>
       <div className="max-w-lg space-y-3">
         <div className=" p-5 transition-all duration-300 active:translate-x-90 active:translate-y-40">
         <CustomerReports />
