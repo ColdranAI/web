@@ -178,7 +178,7 @@ export default function Home() {
               </div>
             </div> */}
             
-            <div className="border border-neutral-200 p-4 rounded-lg bg-neutral-50">
+            <div className="border border-neutral-200 p-4 rounded-lg bg-white">
               <h3 className="text-lg font-medium text-neutral-900 mb-2">No More &ldquo;Schedule a Call&rdquo; Barriers</h3>
               <p className="text-sm text-neutral-700">
                 Unlike other platforms, we provide everything in one place with gentle, human-like AI behavior. 
