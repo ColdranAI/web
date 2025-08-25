@@ -82,11 +82,11 @@ export function Navbar() {
               src="/logo.svg"
               alt="Coldran"
               draggable={false}
-              width={46}
-              height={46}
+              width={50}
+              height={50}
             />
           </Link>
-          <nav className="hidden font-medium text-md md:flex pl-3 gap-1">
+          <nav className="hidden font-medium text-lg md:flex pl-3 gap-1">
             <Link
               href="/pricing"
               className="circular rounded-md px-3 py-2 text-neutral-800"
@@ -141,7 +141,7 @@ export function Navbar() {
             <>
               {/* Internal route: use Link + asChild so it doesn't flash a reload */}
               <Link href="/play-with-us" className="inline-block">
-                <Button variant="lightgray" size="minor">
+                <Button variant="lightgray" size="sm">
                   Play with Us
                 </Button>
               </Link>
@@ -153,7 +153,7 @@ export function Navbar() {
                 rel="dofollow noopener"
                 id="sign-in-link"
               >
-                <Button variant="blue" size="minor">
+                <Button variant="blue" size="sm">
                   Sign In{" "}
                   <kbd
                     className="font-medium text-[11px] px-1.5 py-0.5 rounded-sm border border-neutral-700 bg-neutral-800 cursor-pointer"

@@ -1,18 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { TemplatesSection } from "@/components/templates-section";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChatToDashboard } from "@/components/chat-to-dashboard";
-import { SlackAnalyzer } from "@/components/slack-analyzer";
-import { FeedbackOrganizer } from "@/components/feedback-organizer";
-import { motion } from "framer-motion";
-import { ArrowRight } from "@/components/icons/arrow";
-import {
-  CustomerReports,
-  ThinksAndCodes,
-  PullRequest,
-} from "@/components/svgs";
+
 import {
   CreateAgent,
   IDEAgent,
@@ -25,73 +15,63 @@ import {
 } from "@/components/svgs";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  const [randomizedComponents, setRandomizedComponents] = useState<React.ComponentType<{ className?: string }>[]>([]);
+
+  useEffect(() => {
+    const components = [
+      CreateAgent,
+      IDEAgent,
+      Forms,
+      Questions,
+      ToDo,
+      ProductPr,
+      ProductIssue,
+      CustomerCalls,
+    ];
+
+    // Shuffle components
+    const shuffled = [...components].sort(() => Math.random() - 0.5);
+    setRandomizedComponents(shuffled);
+    setMounted(true);
+  }, []);
+
   return (
-    <div className=" mx-auto px-4  lg:px-6 h-auto overflow-y-auto md:overflow-hidden my-10  items-center justify-center">
-      <div className="md:min-h-screen pt-20 pb-20 md:pb-0 flex flex-col justify-center">
-        <span className="text-sm  text-neutral-900 mx-auto font-medium rounded-lg py-1 px-2 text-center border border-neutral-400 bg-neutral-50">
-          work in progress
-        </span>
-        <div className=" w-full max-w-2xl mx-auto py-2 ">
-          <h1 className="text-black text-4xl md:text-5xl font-semibold text-center z-10 ">
-            Customer Relationship Management for Founders
-          </h1>
-        </div>
-        <p className="text-md text-center text-muted-foreground mt-3">
-          Focus on building your next{" "}
-          <span className="font-semibold text-black">Features</span> while we
-          tell you what to build{" "}
-          <span className="font-semibold text-black">For Your Customers</span>.
-          <br />
-          <span className="text-muted-foreground">
-            We make it easy for people to have a vast amount of knowledgebase
-            which updates itself over time.
-          </span>
-          <br />
-          <br />
-          <span className="max-w-5xl font-semibold text-black">
-            Mini Secret
-          </span>{" "}
-          we also provide short-term memory and long term memory for your
-          customer support agents.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center py-10 gap-4 justify-center">
-          <Button variant="default" size="lg">
-            Build Your Customer Agent
-          </Button>
-          <a href="/demo">
-            <Button variant="blue" size="lg">
-              Analyze Your Customers
-            </Button>
-          </a>
-          <Button variant="red" size="lg">
-            Analyze Your Team
-          </Button>
-        </div>
-        <div className="py-4 flex flex-row gap-4 mx-auto">
-          <CreateAgent />
-          <IDEAgent />
-          <Forms />
-          <Questions />
-          <ToDo />
-          <ProductPr />
-          <ProductIssue />
-          <CustomerCalls />
-        </div>
-        <div className="max-w-lg space-y-3">
-          <div className=" p-5 transition-all duration-300 active:translate-x-90 active:translate-y-40">
-            <CustomerReports />
-          </div>
-          <div className="max-w-xs translate-x-120 -translate-y-7">
-            <ThinksAndCodes />
-          </div>
-          <div className="max-w-xs p-3 transition-all duration-300 active:translate-x-100 active:-translate-y-10">
-            <PullRequest />
+    <div className="mx-auto px-4 lg:px-6 h-auto my-10">
+      <div className="md:min-h-screen pt-10 pb-20 md:pb-0 flex flex-col justify-center">
+        <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="w-full max-w-4xl">
+              <h1 className="text-black text-4xl md:text-6xl tracking-[1px] font-semibold">
+                Change how you work with your customers
+              </h1>
+
+              <p className="text-md text-muted-foreground mt-3 mb-5">
+                Focus on building your next{" "}
+                <span className="font-semibold text-black">Features</span> while we
+                tell you what to build{" "}
+                <span className="font-semibold text-black">For Your Customers</span>.
+                <br />
+                <span className="text-muted-foreground">
+                  We make it easy for people to have a vast amount of knowledgebase
+                  which updates itself over time.
+                </span>
+              </p>
+
+              <a href="/demo">
+                <Button variant="blue" size="sm">
+                  Get Started
+                </Button>
+              </a>
+            </div>
+
+            <div className="w-full h-96 relative">
+            </div>
           </div>
         </div>
         <div className="flex flex-col items-center justify-center min-h-screen my-10">
           <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">
-            External & Internal Agents <ArrowRight className="w-6 h-6" />{" "}
-            KnowledgeBase
+            External & Internal Agents → KnowledgeBase
           </h2>
           <div className="flex-col sm:flex-row flex-wrap hidden lg:flex items-center py-4 gap-4 justify-center">
             <Button variant="default" size="lg">
@@ -162,57 +142,7 @@ export default function Home() {
         </div>
         {/* <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p> */}
       </div>
-      <TemplatesSection />
-      <Image
-        src="/knowledge-base.png"
-        alt="Knowledge Base"
-        draggable={false}
-        width={1000}
-        height={1000}
-        className="mb-20 mx-auto"
-      />
 
-      <div className="space-y-16">
-        {/* Row 2: Two components side by side */}
-        <motion.section
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="grid md:grid-cols-2 gap-8"
-        >
-          {/* Slack Analyzer */}
-          {/* <div className="text-center">
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold text-neutral-800 mb-3">
-                  Real-time Workspace Analysis
-                </h2>
-                <p className="text-neutral-600">
-                  Automatically analyzes communication channels, tracks sentiment, 
-                  Coming for both Discord & Slack.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <SlackAnalyzer />
-              </div>
-            </div> */}
-
-          {/* Feedback Organizer */}
-          {/* <div className="text-center">
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold text-neutral-800 mb-3">
-                  Smart Classification of Data
-                </h2>
-                <p className="text-neutral-600">
-                  Transforms unstructured feedback into prioritized insights with 
-                  sentiment analysis and automated categorization
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <FeedbackOrganizer />
-              </div>
-            </div> */}
-        </motion.section>
-      </div>
       <div className="py-8">
         <h2 className="text-2xl font-semibold text-neutral-900 mb-6">
           Currently We are in Beta.

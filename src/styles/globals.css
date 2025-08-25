@@ -41,6 +41,7 @@
   --font-mono: var(--font-mono);
   --font-heading: var(--font-poppins);
   --font-instrument-sans: var(--font-instrument-sans);
+  --font-fira-sans: var(--font-fira-sans);
 }
 
 :root {
