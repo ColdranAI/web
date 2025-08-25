@@ -39,36 +39,31 @@ export default function Home() {
   return (
     <div className="mx-auto px-4 lg:px-6 h-auto my-10">
       <div className="md:min-h-screen pt-10 pb-20 md:pb-0 flex flex-col justify-center">
-        <div className="relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="w-full max-w-4xl">
-              <h1 className="text-black text-4xl md:text-6xl tracking-[1px] font-semibold">
-                Change how you work with your customers
-              </h1>
+<div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-6 items-center">
+  {/* Left Column */}
+  <div>
+    <div className="mb-4 text-sm font-semibold text-neutral-600">Beta</div>
+    <h1 className="text-black text-5xl md:text-6xl font-semibold leading-[70px]">
+      How you collect, analyze,
+      <br />
+      and improve matters.
+      <br />
+      Do it together with Coldran.
+    </h1>
+  </div>
 
-              <p className="text-md text-muted-foreground mt-3 mb-5">
-                Focus on building your next{" "}
-                <span className="font-semibold text-black">Features</span> while we
-                tell you what to build{" "}
-                <span className="font-semibold text-black">For Your Customers</span>.
-                <br />
-                <span className="text-muted-foreground">
-                  We make it easy for people to have a vast amount of knowledgebase
-                  which updates itself over time.
-                </span>
-              </p>
+  {/* Right Column */}
+  <div className="flex flex-col items-start md:items-center">
+    <CreateAgent />
+    <a href="/demo">
+      <Button variant="blue" size="lg" className="mt-6">
+        Get started
+      </Button>
+    </a>
+  </div>
+</div>
 
-              <a href="/demo">
-                <Button variant="blue" size="sm">
-                  Get Started
-                </Button>
-              </a>
-            </div>
 
-            <div className="w-full h-96 relative">
-            </div>
-          </div>
-        </div>
         <div className="flex flex-col items-center justify-center min-h-screen my-10">
           <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">
             External & Internal Agents → KnowledgeBase
