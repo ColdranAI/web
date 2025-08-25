@@ -48,10 +48,10 @@ export default function Home() {
           {/* Left Column */}
           <div>
             <div>
-              <span className="mb-4 ml-4 text-sm font-semibold text-neutral-600">
+              <span className="mb-4 sm:ml-4 text-sm font-semibold text-neutral-600">
                 Coldran Beta
               </span>
-              <h1 className="relative text-black text-5xl lg:text-6xl font-medium leading-[60px] lg:leading-[77px]">
+              <h1 className="relative text-black text-3xl sm:text-5xl lg:text-6xl font-medium sm:leading-[60px] lg:leading-[77px]">
                 Collect, Analyze,
                 <br />
                 <span className="absolute -translate-y-16 translate-x-96 lg:translate-x-122 ">
@@ -60,13 +60,13 @@ export default function Home() {
                 and <span>Improve Product</span>.
                 <br />
                 With Customer Agents.
-                <span className="absolute -translate-x-5 sm:-translate-x-24 md:-translate-x-2  xl:-translate-x-10 translate-y-10 md:translate-y-12">
+                <span className="absolute max-sm:translate-y-3  max-sm:-translate-x-2 sm:-translate-x-24 md:-translate-x-2  xl:-translate-x-10 translate-y-10 md:translate-y-12">
                   <ToDo />
                 </span>
               </h1>
             </div>
 
-            <div className="flex relative mt-10 flex-col ml-4 ">
+            <div className="flex relative mt-10 flex-col max:smml-4 ">
               <div>
                 <a href="https://app.coldran.com" target="_blank">
                   <Button variant="blue" size="lg" className="">
@@ -93,12 +93,15 @@ export default function Home() {
           <h2 className="text-5xl font-medium text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans"></h2>
         </div>
 
-        <div className="my-20 flex items-center px-6 py-20 bg-neutral-50 grid grid-cols-[70%_30%]">
+        <div className="my-20 flex flex-col md:items-center px-6 py-10 md:py-20 bg-neutral-50 md:grid md:grid-cols-[70%_30%]">
           <div>
-            <h2 className="text-5xl font-medium text-neutral-900 mb-6font-instrument-sans">
+                      <div className="block md:hidden max-md:pb-5">
+            <PRIssues />
+          </div>
+            <h2 className="text-2xl sm:text-5xl font-medium text-neutral-900 mb-6 font-instrument-sans">
               Coldran Narrative
             </h2>
-            <p className="text-xl mb-10 text-neutral-700 my-4 max-w-2xl">
+            <p className="text-md sm:text-xl mb-10 text-neutral-700 my-4 max-w-2xl">
               Allow the customers to have autonomy to get help with bugs,
               outdated documentation, feature requests, etc. As Fast as Possible
               to reach Resolution.
@@ -107,7 +110,7 @@ export default function Home() {
               Customers shouldn't shout into the void.
             </p>
           </div>
-          <div>
+          <div className="hidden md:block">
             <PRIssues />
           </div>
           <a href="https://discord.gg/rDDqA83eGz" target="_blank">
