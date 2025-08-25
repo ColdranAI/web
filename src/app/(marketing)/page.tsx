@@ -43,19 +43,19 @@ export default function Home() {
   {/* Left Column */}
   <div>
     <div className="mb-4 text-sm font-semibold text-neutral-600">Beta</div>
-    <h1 className="text-black text-5xl md:text-6xl font-semibold leading-[70px]">
-      How you collect, analyze,
+    <h1 className="text-black text-5xl md:text-6xl font-medium leading-[77px]">
+      Collect, Analyze,
       <br />
-      and improve matters.
+      and <span>Improve Product</span>.
       <br />
-      Do it together with Coldran.
+      Together with Coldran.
     </h1>
   </div>
 
   {/* Right Column */}
   <div className="flex flex-col items-start md:items-center">
     <CreateAgent />
-    <a href="/demo">
+    <a href="/">
       <Button variant="blue" size="lg" className="mt-6">
         Get started
       </Button>

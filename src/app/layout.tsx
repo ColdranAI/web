@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Poppins, Inter, Instrument_Sans, Fira_Sans } from "next/font/google";
+import { Poppins, Inter, Instrument_Sans, Fira_Sans, Public_Sans, Ubuntu } from "next/font/google";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
@@ -31,11 +31,17 @@ const fontInstrumentSans = Instrument_Sans({
   display: "swap",
 });
 
+const fontPublicSans = Public_Sans({
+  subsets: ["latin"],
+  variable: "--font-public-sans",
+  display: "swap",
+});
+
 const fontFiraSans = Fira_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-fira-sans", // makes it available as a CSS variable
-  weight: ["300", "400", "500", "600", "700", "800"], // include all you might need
+  variable: "--font-fira-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 
@@ -63,7 +69,8 @@ export default function RootLayout({
           fontFiraSans.variable,
           fontPoppins.variable,
           fontMono.variable,
-          // fontInstrumentSans.variable,
+          fontInstrumentSans.variable,
+          fontPublicSans.variable,
         )}
       >
         <RootProviders>{children}</RootProviders>
