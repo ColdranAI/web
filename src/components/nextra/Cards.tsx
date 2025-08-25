@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import Link from 'next/link';
-import { ArrowRight, ExternalLink } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { ReactNode } from "react";
+import Link from "next/link";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface CardsProps {
   children: ReactNode;
@@ -23,14 +23,14 @@ interface CardProps {
 
 export function Cards({ children, className, cols = 2 }: CardsProps) {
   const gridCols = {
-    1: 'grid-cols-1',
-    2: 'grid-cols-1 md:grid-cols-2',
-    3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-    4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4',
+    1: "grid-cols-1",
+    2: "grid-cols-1 md:grid-cols-2",
+    3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+    4: "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
   };
 
   return (
-    <div className={cn('my-6 grid gap-4', gridCols[cols], className)}>
+    <div className={cn("my-6 grid gap-4", gridCols[cols], className)}>
       {children}
     </div>
   );
@@ -50,9 +50,9 @@ export function Card({
   const CardContent = () => (
     <div
       className={cn(
-        'group relative overflow-hidden rounded-lg border bg-card p-6 hover:shadow-lg transition-all duration-300',
-        href && 'cursor-pointer hover:border-primary/50',
-        className
+        "group relative overflow-hidden rounded-lg border bg-card p-6 hover:shadow-lg transition-all duration-300",
+        href && "cursor-pointer hover:border-primary/50",
+        className,
       )}
     >
       {/* Image */}
@@ -60,7 +60,7 @@ export function Card({
         <div className="mb-4 overflow-hidden rounded-md">
           <img
             src={image}
-            alt={title || ''}
+            alt={title || ""}
             className="w-full h-32 object-cover transition-transform group-hover:scale-105"
           />
         </div>
@@ -89,13 +89,13 @@ export function Card({
             )}
           </h3>
         )}
-        
+
         {description && (
           <p className="text-muted-foreground text-sm leading-relaxed">
             {description}
           </p>
         )}
-        
+
         {children && (
           <div className="prose prose-sm max-w-none [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
             {children}
@@ -118,7 +118,7 @@ export function Card({
         </a>
       );
     }
-    
+
     return (
       <Link href={href} className="block">
         <CardContent />
@@ -158,7 +158,10 @@ export function FeatureCard({
       {features && features.length > 0 && (
         <ul className="mt-4 space-y-2">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-center text-sm text-muted-foreground">
+            <li
+              key={index}
+              className="flex items-center text-sm text-muted-foreground"
+            >
               <div className="mr-2 h-1.5 w-1.5 rounded-full bg-primary" />
               {feature}
             </li>
@@ -188,32 +191,30 @@ export function ComparisonCard({
   features,
   highlighted = false,
   href,
-  buttonText = 'Learn More',
+  buttonText = "Learn More",
   className,
 }: ComparisonCardProps) {
   return (
     <div
       className={cn(
-        'relative overflow-hidden rounded-lg border bg-card p-6',
-        highlighted && 'border-primary shadow-lg scale-105',
-        className
+        "relative overflow-hidden rounded-lg border bg-card p-6",
+        highlighted && "border-primary shadow-lg scale-105",
+        className,
       )}
     >
       {highlighted && (
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/60" />
       )}
-      
+
       <div className="space-y-4">
         <div>
           <h3 className="text-xl font-semibold">{title}</h3>
           {description && (
             <p className="text-muted-foreground text-sm mt-1">{description}</p>
           )}
-          {price && (
-            <div className="text-2xl font-bold mt-2">{price}</div>
-          )}
+          {price && <div className="text-2xl font-bold mt-2">{price}</div>}
         </div>
-        
+
         <ul className="space-y-2">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center text-sm">
@@ -222,16 +223,16 @@ export function ComparisonCard({
             </li>
           ))}
         </ul>
-        
+
         {href && (
           <div className="pt-4">
             <Link
               href={href}
               className={cn(
-                'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-10 py-2 px-4 w-full',
+                "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-10 py-2 px-4 w-full",
                 highlighted
-                  ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-                  : 'border border-input hover:bg-accent hover:text-accent-foreground'
+                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                  : "border border-input hover:bg-accent hover:text-accent-foreground",
               )}
             >
               {buttonText}

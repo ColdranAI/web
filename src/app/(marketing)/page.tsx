@@ -8,40 +8,66 @@ import { SlackAnalyzer } from "@/components/slack-analyzer";
 import { FeedbackOrganizer } from "@/components/feedback-organizer";
 import { motion } from "framer-motion";
 import { ArrowRight } from "@/components/icons/arrow";
-import { CustomerReports, ThinksAndCodes, PullRequest } from "@/components/svgs";
-import { CreateAgent, IDEAgent, Forms, Questions, ToDo, ProductPr, ProductIssue, CustomerCalls } from "@/components/svgs";
-
+import {
+  CustomerReports,
+  ThinksAndCodes,
+  PullRequest,
+} from "@/components/svgs";
+import {
+  CreateAgent,
+  IDEAgent,
+  Forms,
+  Questions,
+  ToDo,
+  ProductPr,
+  ProductIssue,
+  CustomerCalls,
+} from "@/components/svgs";
 
 export default function Home() {
   return (
     <div className=" mx-auto px-4  lg:px-6 h-auto overflow-y-auto md:overflow-hidden my-10  items-center justify-center">
-      <div className="md:min-h-screen pt-20 pb-20 md:pb-0">
-        <div className=" w-full max-w-2xl mx-auto py-2">
+      <div className="md:min-h-screen pt-20 pb-20 md:pb-0 flex flex-col justify-center">
+        <span className="text-sm  text-neutral-900 mx-auto font-medium rounded-lg py-1 px-2 text-center border border-neutral-400 bg-neutral-50">
+          work in progress
+        </span>
+        <div className=" w-full max-w-2xl mx-auto py-2 ">
           <h1 className="text-black text-4xl md:text-5xl font-semibold text-center z-10 ">
             Customer Relationship Management for Founders
           </h1>
         </div>
         <p className="text-md text-center text-muted-foreground mt-3">
           Focus on building your next{" "}
-          <span className="font-semibold text-black">Features</span>{" "}
-          while we tell you what to build{" "}
+          <span className="font-semibold text-black">Features</span> while we
+          tell you what to build{" "}
           <span className="font-semibold text-black">For Your Customers</span>.
           <br />
-          <span className="text-muted-foreground">We make it easy for people to have a vast amount of knowledgebase which updates itself over time.</span>
+          <span className="text-muted-foreground">
+            We make it easy for people to have a vast amount of knowledgebase
+            which updates itself over time.
+          </span>
           <br />
           <br />
-          <span className="max-w-5xl font-semibold text-black">Mini Secret</span> we also provide short-term memory and long term memory for your customer support agents.
+          <span className="max-w-5xl font-semibold text-black">
+            Mini Secret
+          </span>{" "}
+          we also provide short-term memory and long term memory for your
+          customer support agents.
         </p>
         <div className="flex flex-col sm:flex-row items-center py-10 gap-4 justify-center">
-        <Button variant="default" size="lg">Build Your Customer Agent</Button>
-        <a href="/demo">
-          <Button variant="blue" size="lg">
-            Analyze Your Customers
+          <Button variant="default" size="lg">
+            Build Your Customer Agent
           </Button>
-        </a>
-        <Button variant="red" size="lg">Analyze Your Team</Button>
-      </div>
-                <div className="py-4 flex flex-row gap-4 mx-auto">
+          <a href="/demo">
+            <Button variant="blue" size="lg">
+              Analyze Your Customers
+            </Button>
+          </a>
+          <Button variant="red" size="lg">
+            Analyze Your Team
+          </Button>
+        </div>
+        <div className="py-4 flex flex-row gap-4 mx-auto">
           <CreateAgent />
           <IDEAgent />
           <Forms />
@@ -50,62 +76,112 @@ export default function Home() {
           <ProductPr />
           <ProductIssue />
           <CustomerCalls />
+        </div>
+        <div className="max-w-lg space-y-3">
+          <div className=" p-5 transition-all duration-300 active:translate-x-90 active:translate-y-40">
+            <CustomerReports />
           </div>
-      <div className="max-w-lg space-y-3">
-        <div className=" p-5 transition-all duration-300 active:translate-x-90 active:translate-y-40">
-        <CustomerReports />
+          <div className="max-w-xs translate-x-120 -translate-y-7">
+            <ThinksAndCodes />
+          </div>
+          <div className="max-w-xs p-3 transition-all duration-300 active:translate-x-100 active:-translate-y-10">
+            <PullRequest />
+          </div>
         </div>
-        <div className="max-w-xs translate-x-120 -translate-y-7">
-        <ThinksAndCodes />
+        <div className="flex flex-col items-center justify-center min-h-screen my-10">
+          <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">
+            External & Internal Agents <ArrowRight className="w-6 h-6" />{" "}
+            KnowledgeBase
+          </h2>
+          <div className="flex-col sm:flex-row flex-wrap hidden lg:flex items-center py-4 gap-4 justify-center">
+            <Button variant="default" size="lg">
+              Build Your Survey
+            </Button>
+            <Button variant="blue" size="lg">
+              Visual Bug Reporting in IDE
+            </Button>
+            <Button variant="red" size="lg">
+              Web Customer Agents
+            </Button>
+            <Button variant="default" size="lg">
+              Discord Customer Bot
+            </Button>
+            <Button variant="red" size="lg">
+              Slack Scraper Agent
+            </Button>
+            <Button variant="blue" size="lg">
+              Run Surveys & Deep Research
+            </Button>
+            <Button variant="default" size="lg">
+              Web Search Subreddits
+            </Button>
+            <Button variant="red" size="lg">
+              Discord Scraper Agent
+            </Button>
+            <Button variant="blue" size="lg">
+              IDE Customer Agents
+            </Button>
+            <Button variant="red" size="lg">
+              Transcribe & Analyze Customer Calls
+            </Button>
+            <Button variant="blue" size="lg">
+              Customer Feedback Classification
+            </Button>
+            <Button variant="red" size="lg">
+              Automatically Trigger Issues
+            </Button>
+            <Button variant="blue" size="lg">
+              Integrate with Zapier, Airtable, Notion, Github, Gitlab, Jira,
+              etc.
+            </Button>
+            <Button variant="default" size="lg">
+              Advanced Mail Client
+            </Button>
+            <Button variant="red" size="lg">
+              Customer Knowledge Base
+            </Button>
+            <Button variant="default" size="lg">
+              Internal Knowledge Base
+            </Button>
+            <Button variant="red" size="lg">
+              Create A Roadmap Page
+            </Button>
+            <Button variant="blue" size="lg">
+              Create a Help & Support Page
+            </Button>
+            <Button variant="red" size="lg">
+              Screen Record The Bug using Widget
+            </Button>
+            <Button variant="blue" size="lg">
+              Component Behavior Reporting via Web
+            </Button>
+            <Button variant="blue" size="lg">
+              Whatsapp & Instagram Agents
+            </Button>
+          </div>
         </div>
-        <div className="max-w-xs p-3 transition-all duration-300 active:translate-x-100 active:-translate-y-10">
-        <PullRequest />
-        </div>
-      </div>
-      <div className="flex flex-col items-center justify-center min-h-screen my-10">
-      <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">External & Internal Agents <ArrowRight className="w-6 h-6" /> KnowledgeBase</h2>
-      <div className="flex-col sm:flex-row flex-wrap hidden lg:flex items-center py-4 gap-4 justify-center">
-        <Button variant="default" size="lg">Build Your Survey</Button>
-        <Button variant="blue" size="lg">Visual Bug Reporting in IDE</Button>
-        <Button variant="red" size="lg">Web Customer Agents</Button>
-        <Button variant="default" size="lg">Discord Customer Bot</Button>
-        <Button variant="red" size="lg">Slack Scraper Agent</Button>
-        <Button variant="blue" size="lg">Run Surveys & Deep Research</Button>
-        <Button variant="default" size="lg">Web Search Subreddits</Button>
-        <Button variant="red" size="lg">Discord Scraper Agent</Button>
-        <Button variant="blue" size="lg">IDE Customer Agents</Button>
-        <Button variant="red" size="lg">Transcribe & Analyze Customer Calls</Button>
-        <Button variant="blue" size="lg">Customer Feedback Classification</Button>
-        <Button variant="red" size="lg">Automatically Trigger Issues</Button>
-        <Button variant="blue" size="lg">Integrate with Zapier, Airtable, Notion, Github, Gitlab, Jira, etc.</Button>
-        <Button variant="default" size="lg">Advanced Mail Client</Button>
-        <Button variant="red" size="lg">Customer Knowledge Base</Button>
-        <Button variant="default" size="lg">Internal Knowledge Base</Button> 
-        <Button variant="red" size="lg">Create A Roadmap Page</Button>
-        <Button variant="blue" size="lg">Create a Help & Support Page</Button>
-        <Button variant="red" size="lg">Screen Record The Bug using Widget</Button>
-        <Button variant="blue" size="lg">Component Behavior Reporting via Web</Button>
-        <Button variant="blue" size="lg">Whatsapp & Instagram Agents</Button>
-
-      </div>
-
-      </div>
-      {/* <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p> */}
+        {/* <p className="text-center text-sm text-muted-foreground">would love to buy coldrun.ai but it's costly. ps: this platform is work in progress</p> */}
       </div>
       <TemplatesSection />
-      <Image src="/knowledge-base.png" alt="Knowledge Base" draggable={false} width={1000} height={1000} className="mb-20 mx-auto" />
+      <Image
+        src="/knowledge-base.png"
+        alt="Knowledge Base"
+        draggable={false}
+        width={1000}
+        height={1000}
+        className="mb-20 mx-auto"
+      />
 
       <div className="space-y-16">
-
-          {/* Row 2: Two components side by side */}
-          <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="grid md:grid-cols-2 gap-8"
-          >
-            {/* Slack Analyzer */}
-            {/* <div className="text-center">
+        {/* Row 2: Two components side by side */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="grid md:grid-cols-2 gap-8"
+        >
+          {/* Slack Analyzer */}
+          {/* <div className="text-center">
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-neutral-800 mb-3">
                   Real-time Workspace Analysis
@@ -120,8 +196,8 @@ export default function Home() {
               </div>
             </div> */}
 
-            {/* Feedback Organizer */}
-            {/* <div className="text-center">
+          {/* Feedback Organizer */}
+          {/* <div className="text-center">
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-neutral-800 mb-3">
                   Smart Classification of Data
@@ -135,11 +211,13 @@ export default function Home() {
                 <FeedbackOrganizer />
               </div>
             </div> */}
-          </motion.section>
-        </div>
-        <div className="py-8">
-            <h2 className="text-2xl font-semibold text-neutral-900 mb-6">Currently We are in Beta.</h2>
-            {/* <div className="grid md:grid-cols-2 gap-4 mb-6">
+        </motion.section>
+      </div>
+      <div className="py-8">
+        <h2 className="text-2xl font-semibold text-neutral-900 mb-6">
+          Currently We are in Beta.
+        </h2>
+        {/* <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="border border-neutral-200 p-4 rounded-lg bg-white">
                 <h3 className="text-lg font-medium text-neutral-900 mb-3">
                   Customer Intelligence
@@ -188,15 +266,19 @@ export default function Home() {
                 </ul>
               </div>
             </div> */}
-            
-            <div className="border border-neutral-200 p-4 rounded-lg bg-white">
-              <h3 className="text-lg font-medium text-neutral-900 mb-2">No More &ldquo;Schedule a Call&rdquo; Barriers</h3>
-              <p className="text-sm text-neutral-700">
-                Unlike other platforms, we provide everything in one place with gentle, human-like AI behavior. 
-                Perfect onboarding for small customers who want to try before they buy—no formal sales calls required.
-              </p>
-            </div>
-            </div>
+
+        <div className="border border-neutral-200 p-4 rounded-lg bg-white">
+          <h3 className="text-lg font-medium text-neutral-900 mb-2">
+            No More &ldquo;Schedule a Call&rdquo; Barriers
+          </h3>
+          <p className="text-sm text-neutral-700">
+            Unlike other platforms, we provide everything in one place with
+            gentle, human-like AI behavior. Perfect onboarding for small
+            customers who want to try before they buy—no formal sales calls
+            required.
+          </p>
+        </div>
+      </div>
       {/* <div className="mx-4 mt-10 my-2">
         <div className="relative w-full max-w-5xl aspect-[10/3] rounded-2xl mx-auto overflow-hidden">
           <Image

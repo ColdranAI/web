@@ -5,14 +5,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { CheckIcon, Loader2, Building2, Users, DollarSign, MessageSquare } from "lucide-react";
+import {
+  CheckIcon,
+  Loader2,
+  Building2,
+  Users,
+  DollarSign,
+  MessageSquare,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 interface EnterpriseContactFormProps {
   onSuccess: () => void;
 }
 
-export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps) {
+export function EnterpriseContactForm({
+  onSuccess,
+}: EnterpriseContactFormProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -28,7 +37,7 @@ export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps)
     contactPhone: "",
     budgetRange: "",
     requirements: "",
-    timeline: ""
+    timeline: "",
   };
 
   const steps = [
@@ -36,36 +45,82 @@ export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps)
       title: "Company Information",
       icon: Building2,
       fields: [
-        { name: "companyName", label: "Company Name", placeholder: "Acme Corporation", required: true },
-        { name: "website", label: "Website", placeholder: "https://acme.com", required: true },
-        { name: "industry", label: "Industry", placeholder: "SaaS, E-commerce, Healthcare, etc.", required: true }
-      ]
+        {
+          name: "companyName",
+          label: "Company Name",
+          placeholder: "Acme Corporation",
+          required: true,
+        },
+        {
+          name: "website",
+          label: "Website",
+          placeholder: "https://acme.com",
+          required: true,
+        },
+        {
+          name: "industry",
+          label: "Industry",
+          placeholder: "SaaS, E-commerce, Healthcare, etc.",
+          required: true,
+        },
+      ],
     },
     {
       title: "Team Details",
       icon: Users,
       fields: [
-        { name: "teamSize", label: "Team Size", placeholder: "50-200 employees", required: true },
-        { name: "contactName", label: "Contact Name", placeholder: "John Smith", required: true },
-        { name: "contactEmail", label: "Contact Email", placeholder: "john@acme.com", required: true },
-        { name: "contactPhone", label: "Contact Phone", placeholder: "+1 (555) 123-4567", required: false }
-      ]
+        {
+          name: "teamSize",
+          label: "Team Size",
+          placeholder: "50-200 employees",
+          required: true,
+        },
+        {
+          name: "contactName",
+          label: "Contact Name",
+          placeholder: "John Smith",
+          required: true,
+        },
+        {
+          name: "contactEmail",
+          label: "Contact Email",
+          placeholder: "john@acme.com",
+          required: true,
+        },
+        {
+          name: "contactPhone",
+          label: "Contact Phone",
+          placeholder: "+1 (555) 123-4567",
+          required: false,
+        },
+      ],
     },
     {
       title: "Requirements",
       icon: MessageSquare,
       fields: [
-        { name: "budgetRange", label: "Budget Range", placeholder: "$10,000 - $50,000 per month", required: true },
-        { name: "timeline", label: "Implementation Timeline", placeholder: "Next 30-60 days", required: true },
-        { 
-          name: "requirements", 
-          label: "Key Requirements", 
-          placeholder: "Describe your specific needs, integrations, and any custom requirements...",
+        {
+          name: "budgetRange",
+          label: "Budget Range",
+          placeholder: "$10,000 - $50,000 per month",
           required: true,
-          type: "textarea"
-        }
-      ]
-    }
+        },
+        {
+          name: "timeline",
+          label: "Implementation Timeline",
+          placeholder: "Next 30-60 days",
+          required: true,
+        },
+        {
+          name: "requirements",
+          label: "Key Requirements",
+          placeholder:
+            "Describe your specific needs, integrations, and any custom requirements...",
+          required: true,
+          type: "textarea",
+        },
+      ],
+    },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -83,7 +138,7 @@ export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps)
           ...formData,
           type: "enterprise",
           timestamp: new Date().toISOString(),
-          step: currentStep
+          step: currentStep,
         }),
       });
 
@@ -132,7 +187,8 @@ export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps)
         </motion.div>
         <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
         <p className="text-muted-foreground mb-6">
-          We&apos;ve received your enterprise inquiry and will contact you within 24 hours to discuss your customized solution.
+          We&apos;ve received your enterprise inquiry and will contact you
+          within 24 hours to discuss your customized solution.
         </p>
         <Button onClick={onSuccess} className="w-full">
           Close
@@ -149,11 +205,13 @@ export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps)
       {/* Progress Bar */}
       <div className="space-y-2">
         <div className="flex justify-between text-sm text-muted-foreground">
-          <span>Step {currentStep + 1} of {steps.length}</span>
+          <span>
+            Step {currentStep + 1} of {steps.length}
+          </span>
           <span>{currentStepData.title}</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2">
-          <div 
+          <div
             className="bg-blue-600 h-2 rounded-full transition-all duration-300"
             style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
           />
@@ -205,11 +263,11 @@ export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps)
         >
           Previous
         </Button>
-        
+
         <div className="flex gap-2">
           {currentStep === steps.length - 1 ? (
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="bg-blue-600 hover:bg-blue-700 text-white"
               disabled={isSubmitting}
             >
@@ -226,8 +284,8 @@ export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps)
               )}
             </Button>
           ) : (
-            <Button 
-              type="button" 
+            <Button
+              type="button"
               onClick={nextStep}
               className="bg-blue-600 hover:bg-blue-700 text-white"
             >
@@ -245,7 +303,8 @@ export function EnterpriseContactForm({ onSuccess }: EnterpriseContactFormProps)
 
       {/* Privacy Notice */}
       <p className="text-xs text-muted-foreground text-center">
-        We respect your privacy. Your information will only be used to provide you with a customized enterprise quote.
+        We respect your privacy. Your information will only be used to provide
+        you with a customized enterprise quote.
       </p>
     </form>
   );

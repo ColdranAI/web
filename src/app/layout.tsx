@@ -2,7 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Poppins, Inter, Instrument_Sans } from "next/font/google";
 import "@/styles/globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
 import RootProviders from "@/components/providers";
 

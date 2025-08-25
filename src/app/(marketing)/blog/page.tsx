@@ -1,8 +1,8 @@
-import { getBlogPosts } from '@/lib/mdx';
-import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Calendar, User, ArrowRight } from 'lucide-react';
+import { getBlogPosts } from "@/lib/mdx";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Calendar, User, ArrowRight } from "lucide-react";
 
 export default async function BlogPage() {
   const posts = await getBlogPosts();
@@ -15,7 +15,7 @@ export default async function BlogPage() {
           Blog
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Insights, updates, and thought leadership on AI, customer experience, 
+          Insights, updates, and thought leadership on AI, customer experience,
           and the future of business automation.
         </p>
       </div>
@@ -57,19 +57,17 @@ export default async function BlogPage() {
                     )}
                   </div>
                 )}
-                
+
                 {/* Title */}
                 <h2 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                  <Link href={`/blog/${post.slug}`}>
-                    {post.title}
-                  </Link>
+                  <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
-                
+
                 {/* Description */}
                 <p className="text-muted-foreground mb-4 line-clamp-3">
                   {post.description}
                 </p>
-                
+
                 {/* Meta */}
                 <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-4">
@@ -82,19 +80,23 @@ export default async function BlogPage() {
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       <span>
-                        {new Date(post.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric',
+                        {new Date(post.date).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
                         })}
                       </span>
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Read More */}
                 <Link href={`/blog/${post.slug}`}>
-                  <Button variant="ghost" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  >
                     Read More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -104,22 +106,18 @@ export default async function BlogPage() {
           ))}
         </div>
       )}
-      
+
       {/* Newsletter CTA */}
       {posts.length > 0 && (
         <section className="mt-16 text-center p-8 bg-muted/50 rounded-lg">
-          <h3 className="text-2xl font-semibold mb-4">
-            Stay Updated
-          </h3>
+          <h3 className="text-2xl font-semibold mb-4">Stay Updated</h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Get the latest insights on AI, customer experience, and business automation 
-            delivered straight to your inbox.
+            Get the latest insights on AI, customer experience, and business
+            automation delivered straight to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg">
-                Subscribe to Newsletter
-              </Button>
+              <Button size="lg">Subscribe to Newsletter</Button>
             </Link>
             <Link href="/case-studies">
               <Button variant="outline" size="lg">

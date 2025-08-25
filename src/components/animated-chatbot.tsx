@@ -18,7 +18,8 @@ const staticMessages = [
   },
   {
     type: "bot" as const,
-    content: "I understand the login issue is frustrating. Let me help you troubleshoot this and report it to our team.",
+    content:
+      "I understand the login issue is frustrating. Let me help you troubleshoot this and report it to our team.",
   },
   {
     type: "user" as const,
@@ -26,7 +27,8 @@ const staticMessages = [
   },
   {
     type: "bot" as const,
-    content: "That's a great suggestion! I've noted your request for dark mode. Many users have asked for this feature.",
+    content:
+      "That's a great suggestion! I've noted your request for dark mode. Many users have asked for this feature.",
   },
   {
     type: "user" as const,
@@ -34,7 +36,8 @@ const staticMessages = [
   },
   {
     type: "bot" as const,
-    content: "Thanks for the feedback! I've recorded your mobile app request. Our team reviews all suggestions regularly.",
+    content:
+      "Thanks for the feedback! I've recorded your mobile app request. Our team reviews all suggestions regularly.",
   },
 ];
 
@@ -46,16 +49,19 @@ export function SimpleChatDemo() {
     const timer = setTimeout(() => {
       staticMessages.forEach((msg, index) => {
         setTimeout(() => {
-          setMessages(prev => [...prev, {
-            id: `msg-${index}`,
-            type: msg.type,
-            content: msg.content,
-            timestamp: new Date(),
-          }]);
+          setMessages((prev) => [
+            ...prev,
+            {
+              id: `msg-${index}`,
+              type: msg.type,
+              content: msg.content,
+              timestamp: new Date(),
+            },
+          ]);
         }, index * 1500);
       });
     }, 500);
-    
+
     return () => clearTimeout(timer);
   }, []); // Run only once on mount
 
@@ -67,7 +73,9 @@ export function SimpleChatDemo() {
           <img src="/logo.svg" alt="logo" className="w-6 rounded-full h-6" />
         </div>
         <div>
-          <h3 className="font-medium text-neutral-900 text-sm">Coldran Support</h3>
+          <h3 className="font-medium text-neutral-900 text-sm">
+            Coldran Support
+          </h3>
         </div>
       </div>
 
@@ -86,25 +94,35 @@ export function SimpleChatDemo() {
               animate={{ opacity: 1, y: 0 }}
               className={`flex ${message.type === "user" ? "justify-end" : "justify-start"}`}
             >
-              <div className={`flex items-start gap-2 max-w-[85%] ${
-                message.type === "user" ? "flex-row-reverse" : "flex-row"
-              }`}>
-                <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
-                  message.type === "user" 
-                    ? "bg-neutral-700" 
-                    : "bg-neutral-300"
-                }`}>
+              <div
+                className={`flex items-start gap-2 max-w-[85%] ${
+                  message.type === "user" ? "flex-row-reverse" : "flex-row"
+                }`}
+              >
+                <div
+                  className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
+                    message.type === "user"
+                      ? "bg-neutral-700"
+                      : "bg-neutral-300"
+                  }`}
+                >
                   {message.type === "user" ? (
                     <User className="w-3 h-3 text-white" />
                   ) : (
-                    <img src="/logo.svg" alt="logo" className="w-6 rounded-full h-6" />
+                    <img
+                      src="/logo.svg"
+                      alt="logo"
+                      className="w-6 rounded-full h-6"
+                    />
                   )}
                 </div>
-                <div className={`px-3 py-2 rounded text-sm ${
-                  message.type === "user"
-                    ? "bg-white text-neutral-800 border border-neutral-300"
-                    : "bg-white text-neutral-800 border border-neutral-300"
-                }`}>
+                <div
+                  className={`px-3 py-2 rounded text-sm ${
+                    message.type === "user"
+                      ? "bg-white text-neutral-800 border border-neutral-300"
+                      : "bg-white text-neutral-800 border border-neutral-300"
+                  }`}
+                >
                   {message.content}
                 </div>
               </div>

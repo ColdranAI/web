@@ -1,13 +1,13 @@
-import { getCaseStudies } from '@/lib/mdx';
-import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { getCaseStudies } from "@/lib/mdx";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export default function CaseStudiesPage() {
   const caseStudies = getCaseStudies();
-  const featuredCaseStudies = caseStudies.filter(cs => cs.featured);
-  const regularCaseStudies = caseStudies.filter(cs => !cs.featured);
+  const featuredCaseStudies = caseStudies.filter((cs) => cs.featured);
+  const regularCaseStudies = caseStudies.filter((cs) => !cs.featured);
 
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12">
@@ -17,8 +17,9 @@ export default function CaseStudiesPage() {
           Case Studies
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Discover how we've helped businesses transform their customer experience 
-          and achieve remarkable results with our AI-powered solutions.
+          Discover how we've helped businesses transform their customer
+          experience and achieve remarkable results with our AI-powered
+          solutions.
         </p>
       </div>
 
@@ -38,32 +39,35 @@ export default function CaseStudiesPage() {
                   </Badge>
                   <Badge variant="outline">Featured</Badge>
                 </div>
-                
+
                 <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
                   {caseStudy.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground mb-4 line-clamp-3">
                   {caseStudy.description}
                 </p>
-                
+
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <p className="text-sm font-medium">{caseStudy.client}</p>
                     <p className="text-sm text-muted-foreground">
-                      {new Date(caseStudy.date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
+                      {new Date(caseStudy.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
                       })}
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Results Preview */}
                 {caseStudy.results && caseStudy.results.length > 0 && (
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     {caseStudy.results.slice(0, 2).map((result, index) => (
-                      <div key={index} className="text-center p-3 bg-muted/50 rounded-lg">
+                      <div
+                        key={index}
+                        className="text-center p-3 bg-muted/50 rounded-lg"
+                      >
                         <div className="text-2xl font-bold text-primary">
                           {result.value}
                         </div>
@@ -74,9 +78,12 @@ export default function CaseStudiesPage() {
                     ))}
                   </div>
                 )}
-                
+
                 <Link href={`/case-studies/${caseStudy.slug}`}>
-                  <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <Button
+                    variant="outline"
+                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                  >
                     Read Case Study
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -90,9 +97,11 @@ export default function CaseStudiesPage() {
       {/* All Case Studies */}
       <section>
         <h2 className="text-2xl font-semibold mb-8">
-          {featuredCaseStudies.length > 0 ? 'More Case Studies' : 'All Case Studies'}
+          {featuredCaseStudies.length > 0
+            ? "More Case Studies"
+            : "All Case Studies"}
         </h2>
-        
+
         {regularCaseStudies.length === 0 && featuredCaseStudies.length === 0 ? (
           <div className="text-center py-16">
             <h3 className="text-xl font-medium mb-2">No case studies yet</h3>
@@ -116,27 +125,27 @@ export default function CaseStudiesPage() {
                 <Badge variant="secondary" className="mb-3">
                   {caseStudy.industry}
                 </Badge>
-                
+
                 <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                   {caseStudy.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground mb-4 line-clamp-2">
                   {caseStudy.description}
                 </p>
-                
+
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <p className="text-sm font-medium">{caseStudy.client}</p>
                     <p className="text-sm text-muted-foreground">
-                      {new Date(caseStudy.date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'short',
+                      {new Date(caseStudy.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "short",
                       })}
                     </p>
                   </div>
                 </div>
-                
+
                 <Link href={`/case-studies/${caseStudy.slug}`}>
                   <Button variant="ghost" size="sm" className="w-full">
                     Read More

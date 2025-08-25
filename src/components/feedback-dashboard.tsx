@@ -2,14 +2,14 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import { 
-  Lightbulb, 
-  Bug, 
+import {
+  Lightbulb,
+  Bug,
   Github,
   MessageCircle,
   Clock,
   User,
-  ChevronRight
+  ChevronRight,
 } from "lucide-react";
 
 interface FeedbackItem {
@@ -40,38 +40,39 @@ export function FeedbackDashboard() {
     {
       id: "FR001",
       title: "Dark mode support",
-      description: "Add dark theme option for better night usage and accessibility",
+      description:
+        "Add dark theme option for better night usage and accessibility",
       priority: "high",
       votes: 127,
       user: "sarah.chen",
-      created: "2 days ago"
+      created: "2 days ago",
     },
     {
-      id: "FR002", 
+      id: "FR002",
       title: "Mobile app version",
       description: "Native mobile app for iOS and Android platforms",
       priority: "high",
       votes: 98,
       user: "mike.johnson",
-      created: "3 days ago"
+      created: "3 days ago",
     },
     {
       id: "FR003",
       title: "Advanced search filters",
-      description: "More granular filtering options in search functionality", 
+      description: "More granular filtering options in search functionality",
       priority: "medium",
       votes: 76,
       user: "alex.kim",
-      created: "1 week ago"
+      created: "1 week ago",
     },
     {
       id: "FR004",
       title: "Export data to CSV",
       description: "Allow users to export dashboard data in CSV format",
-      priority: "medium", 
+      priority: "medium",
       votes: 54,
       user: "emma.davis",
-      created: "1 week ago"
+      created: "1 week ago",
     },
     {
       id: "FR005",
@@ -80,28 +81,29 @@ export function FeedbackDashboard() {
       priority: "low",
       votes: 32,
       user: "james.wilson",
-      created: "2 weeks ago"
-    }
+      created: "2 weeks ago",
+    },
   ];
 
   const bugReports: BugItem[] = [
     {
       id: "BUG001",
       title: "Login timeout issues",
-      description: "Users getting logged out every 10 minutes, should be 24 hours",
+      description:
+        "Users getting logged out every 10 minutes, should be 24 hours",
       severity: "critical",
       reporter: "support.team",
       created: "1 day ago",
-      reproduced: true
+      reproduced: true,
     },
     {
       id: "BUG002",
       title: "Dashboard charts not loading",
       description: "Charts show loading spinner indefinitely on Chrome",
-      severity: "high", 
+      severity: "high",
       reporter: "qa.tester",
       created: "2 days ago",
-      reproduced: true
+      reproduced: true,
     },
     {
       id: "BUG003",
@@ -109,8 +111,8 @@ export function FeedbackDashboard() {
       description: "Weekly digest emails are not being delivered to users",
       severity: "high",
       reporter: "john.doe",
-      created: "3 days ago", 
-      reproduced: false
+      created: "3 days ago",
+      reproduced: false,
     },
     {
       id: "BUG004",
@@ -119,7 +121,7 @@ export function FeedbackDashboard() {
       severity: "medium",
       reporter: "ui.designer",
       created: "5 days ago",
-      reproduced: true
+      reproduced: true,
     },
     {
       id: "BUG005",
@@ -128,8 +130,8 @@ export function FeedbackDashboard() {
       severity: "low",
       reporter: "beta.user",
       created: "1 week ago",
-      reproduced: false
-    }
+      reproduced: false,
+    },
   ];
 
   useEffect(() => {
@@ -141,18 +143,25 @@ export function FeedbackDashboard() {
 
   const getPriorityColor = (priority: FeedbackItem["priority"]) => {
     switch (priority) {
-      case "high": return "text-neutral-900 bg-neutral-200";
-      case "medium": return "text-neutral-700 bg-neutral-150";
-      default: return "text-neutral-600 bg-neutral-100";
+      case "high":
+        return "text-neutral-900 bg-neutral-200";
+      case "medium":
+        return "text-neutral-700 bg-neutral-150";
+      default:
+        return "text-neutral-600 bg-neutral-100";
     }
   };
 
   const getSeverityColor = (severity: BugItem["severity"]) => {
     switch (severity) {
-      case "critical": return "text-neutral-900 bg-neutral-300";
-      case "high": return "text-neutral-800 bg-neutral-200"; 
-      case "medium": return "text-neutral-700 bg-neutral-150";
-      default: return "text-neutral-600 bg-neutral-100";
+      case "critical":
+        return "text-neutral-900 bg-neutral-300";
+      case "high":
+        return "text-neutral-800 bg-neutral-200";
+      case "medium":
+        return "text-neutral-700 bg-neutral-150";
+      default:
+        return "text-neutral-600 bg-neutral-100";
     }
   };
 
@@ -168,7 +177,9 @@ export function FeedbackDashboard() {
     <div className="w-full max-w-2xl mx-auto bg-white border border-neutral-300 rounded-lg overflow-hidden">
       {/* Header */}
       <div className="p-4 border-b border-neutral-300 bg-neutral-100">
-        <h2 className="text-lg font-semibold text-neutral-900">Feedback Pipeline</h2>
+        <h2 className="text-lg font-semibold text-neutral-900">
+          Feedback Pipeline
+        </h2>
       </div>
 
       {/* Tab Navigation */}
@@ -224,12 +235,18 @@ export function FeedbackDashboard() {
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="font-medium text-neutral-900 text-sm">{item.title}</span>
-                          <span className={`px-2 py-0.5 rounded text-xs ${getPriorityColor(item.priority)}`}>
+                          <span className="font-medium text-neutral-900 text-sm">
+                            {item.title}
+                          </span>
+                          <span
+                            className={`px-2 py-0.5 rounded text-xs ${getPriorityColor(item.priority)}`}
+                          >
                             {item.priority}
                           </span>
                         </div>
-                        <p className="text-xs text-neutral-600 mb-2">{item.description}</p>
+                        <p className="text-xs text-neutral-600 mb-2">
+                          {item.description}
+                        </p>
                         <div className="flex items-center gap-3 text-xs text-neutral-500">
                           <span className="flex items-center gap-1">
                             <User className="w-3 h-3" />
@@ -243,7 +260,7 @@ export function FeedbackDashboard() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-2 pt-2 border-t border-neutral-200">
                       <button
                         onClick={() => handleMoveToGithub(item)}
@@ -267,7 +284,9 @@ export function FeedbackDashboard() {
                 ))
               ) : (
                 <div className="flex items-center justify-center py-8">
-                  <div className="text-sm text-neutral-600">Loading feature requests...</div>
+                  <div className="text-sm text-neutral-600">
+                    Loading feature requests...
+                  </div>
                 </div>
               )}
             </motion.div>
@@ -291,8 +310,12 @@ export function FeedbackDashboard() {
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="font-medium text-neutral-900 text-sm">{item.title}</span>
-                          <span className={`px-2 py-0.5 rounded text-xs ${getSeverityColor(item.severity)}`}>
+                          <span className="font-medium text-neutral-900 text-sm">
+                            {item.title}
+                          </span>
+                          <span
+                            className={`px-2 py-0.5 rounded text-xs ${getSeverityColor(item.severity)}`}
+                          >
                             {item.severity}
                           </span>
                           {item.reproduced && (
@@ -301,7 +324,9 @@ export function FeedbackDashboard() {
                             </span>
                           )}
                         </div>
-                        <p className="text-xs text-neutral-600 mb-2">{item.description}</p>
+                        <p className="text-xs text-neutral-600 mb-2">
+                          {item.description}
+                        </p>
                         <div className="flex items-center gap-3 text-xs text-neutral-500">
                           <span className="flex items-center gap-1">
                             <User className="w-3 h-3" />
@@ -314,7 +339,7 @@ export function FeedbackDashboard() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-2 pt-2 border-t border-neutral-200">
                       <button
                         onClick={() => handleMoveToGithub(item)}
@@ -338,7 +363,9 @@ export function FeedbackDashboard() {
                 ))
               ) : (
                 <div className="flex items-center justify-center py-8">
-                  <div className="text-sm text-neutral-600">Loading bug reports...</div>
+                  <div className="text-sm text-neutral-600">
+                    Loading bug reports...
+                  </div>
                 </div>
               )}
             </motion.div>
@@ -350,8 +377,16 @@ export function FeedbackDashboard() {
       <div className="p-3 border-t border-neutral-300 bg-neutral-100">
         <div className="flex items-center justify-between text-xs text-neutral-600">
           <div className="flex gap-4">
-            <span>Total items: {featureRequests.length + bugReports.length}</span>
-            <span>High priority: {featureRequests.filter(f => f.priority === "high").length + bugReports.filter(b => b.severity === "critical" || b.severity === "high").length}</span>
+            <span>
+              Total items: {featureRequests.length + bugReports.length}
+            </span>
+            <span>
+              High priority:{" "}
+              {featureRequests.filter((f) => f.priority === "high").length +
+                bugReports.filter(
+                  (b) => b.severity === "critical" || b.severity === "high",
+                ).length}
+            </span>
           </div>
           <div className="flex items-center gap-1 text-neutral-500">
             <span>Pipeline active</span>

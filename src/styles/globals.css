@@ -150,7 +150,7 @@
 }
 
 .orangeshadow {
-  box-shadow: 0px 6px #FFB031;
+  box-shadow: 0px 6px #ffb031;
   cursor: pointer;
   transition: box-shadow 0.2s ease;
 }
@@ -158,12 +158,12 @@
 .orangeshadow:active {
   transform: translateY(2px);
   transition: transform 0.3s ease;
-  box-shadow: 0px 2px #FFB031;
+  box-shadow: 0px 2px #ffb031;
   transition: box-shadow 0.2s ease;
 }
 
 .blueshadow {
-  box-shadow: 0px 6px #A259FF;
+  box-shadow: 0px 6px #a259ff;
   cursor: pointer;
   transition: box-shadow 0.2s ease;
 }
@@ -171,12 +171,12 @@
 .blueshadow:active {
   transform: translateY(2px);
   transition: transform 0.3s ease;
-  box-shadow: 0px 2px #A259FF;
+  box-shadow: 0px 2px #a259ff;
   transition: box-shadow 0.2s ease;
 }
 
 .redshadow {
-  box-shadow: 0px 6px #F97D92;
+  box-shadow: 0px 6px #f97d92;
   cursor: pointer;
   transition: box-shadow 0.2s ease;
 }
@@ -184,7 +184,7 @@
 .redshadow:active {
   transform: translateY(2px);
   transition: transform 0.3s ease;
-  box-shadow: 0px 2px #F97D92;
+  box-shadow: 0px 2px #f97d92;
   transition: box-shadow 0.2s ease;
 }
 
@@ -214,7 +214,6 @@
   transition: box-shadow 0.2s ease;
 }
 
-
 .circular:hover {
   background-color: #f7f7f7;
   transition: background-color 0.2s ease;
@@ -243,5 +242,5 @@ iframe {
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }

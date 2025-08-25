@@ -50,14 +50,10 @@ Code blocks are the heart of technical documentation. Our enhanced code blocks i
 - **Filename display** for context
 
 ```jsx
-import { CodeBlock } from '@/components/nextra';
+import { CodeBlock } from "@/components/nextra";
 
-<CodeBlock 
-  language="typescript" 
-  filename="api/users.ts"
-  showLineNumbers
->
-{`interface User {
+<CodeBlock language="typescript" filename="api/users.ts" showLineNumbers>
+  {`interface User {
   id: string;
   email: string;
   createdAt: Date;
@@ -66,7 +62,7 @@ import { CodeBlock } from '@/components/nextra';
 export async function createUser(userData: Partial<User>): Promise<User> {
   // Implementation here
 }`}
-</CodeBlock>
+</CodeBlock>;
 ```
 
 ### 3. Step-by-Step Guides
@@ -74,7 +70,7 @@ export async function createUser(userData: Partial<User>): Promise<User> {
 For complex processes, step-by-step guides provide clear, sequential instructions:
 
 ```jsx
-import { NumberedSteps, StepItem } from '@/components/nextra';
+import { NumberedSteps, StepItem } from "@/components/nextra";
 
 <NumberedSteps>
   <StepItem title="Install Dependencies">
@@ -86,7 +82,7 @@ import { NumberedSteps, StepItem } from '@/components/nextra';
   <StepItem title="Start Development Server">
     Execute `npm run dev` to start the development server.
   </StepItem>
-</NumberedSteps>
+</NumberedSteps>;
 ```
 
 ### 4. Tabbed Content Organization
@@ -94,7 +90,7 @@ import { NumberedSteps, StepItem } from '@/components/nextra';
 Tabs are excellent for organizing related information or showing multiple approaches:
 
 ```jsx
-import { SimpleTabs } from '@/components/nextra';
+import { SimpleTabs } from "@/components/nextra";
 
 const apiExamples = [
   {
@@ -106,7 +102,7 @@ const apiExamples = [
   -H "Content-Type: application/json" \
   -d '{"email": "user@example.com"}'`}
       </CodeBlock>
-    )
+    ),
   },
   {
     label: "JavaScript",
@@ -119,11 +115,11 @@ const apiExamples = [
   body: JSON.stringify({ email: 'user@example.com' })
 });`}
       </CodeBlock>
-    )
-  }
+    ),
+  },
 ];
 
-<SimpleTabs items={apiExamples} defaultValue="curl" />
+<SimpleTabs items={apiExamples} defaultValue="curl" />;
 ```
 
 ### 5. Feature Cards and Comparisons
@@ -131,7 +127,7 @@ const apiExamples = [
 Cards help organize features, comparisons, and related content:
 
 ```jsx
-import { Cards, FeatureCard, ComparisonCard } from '@/components/nextra';
+import { Cards, FeatureCard, ComparisonCard } from "@/components/nextra";
 
 <Cards cols={3}>
   <FeatureCard
@@ -140,7 +136,7 @@ import { Cards, FeatureCard, ComparisonCard } from '@/components/nextra';
     features={[
       "WebSocket connections",
       "Event-driven architecture",
-      "Automatic reconnection"
+      "Automatic reconnection",
     ]}
   />
   <FeatureCard
@@ -149,10 +145,10 @@ import { Cards, FeatureCard, ComparisonCard } from '@/components/nextra';
     features={[
       "End-to-end encryption",
       "OAuth 2.0 integration",
-      "Rate limiting"
+      "Rate limiting",
     ]}
   />
-</Cards>
+</Cards>;
 ```
 
 ## Best Practices for Interactive Documentation
@@ -174,15 +170,15 @@ Maintain consistent styling across all components:
 // Example: Consistent spacing and typography
 const documentationTheme = {
   spacing: {
-    component: 'my-6',
-    section: 'mb-8',
-    subsection: 'mb-4'
+    component: "my-6",
+    section: "mb-8",
+    subsection: "mb-4",
   },
   typography: {
-    heading: 'text-2xl font-semibold mb-4',
-    subheading: 'text-lg font-medium mb-3',
-    body: 'text-muted-foreground leading-relaxed'
-  }
+    heading: "text-2xl font-semibold mb-4",
+    subheading: "text-lg font-medium mb-3",
+    body: "text-muted-foreground leading-relaxed",
+  },
 };
 ```
 
@@ -222,7 +218,7 @@ Combine multiple components to create rich, interactive experiences:
     <TabsTrigger value="response">Response</TabsTrigger>
     <TabsTrigger value="examples">Examples</TabsTrigger>
   </TabsList>
-  
+
   <TabsContent value="request">
     <CodeBlock language="http" filename="POST /api/users">
       {`POST /api/users HTTP/1.1
@@ -236,7 +232,7 @@ Authorization: Bearer your-token
 }`}
     </CodeBlock>
   </TabsContent>
-  
+
   <TabsContent value="response">
     <CodeBlock language="json">
       {`{
@@ -270,7 +266,7 @@ Structure troubleshooting information for easy scanning:
       </Step>
     </Steps>
   </Card>
-  
+
   <Card title="Rate Limiting">
     <InfoCallout>
       Our API has a rate limit of 1000 requests per hour per API key.
@@ -329,16 +325,16 @@ Track the effectiveness of your interactive documentation:
 ```typescript
 // Track component interactions
 const trackComponentUsage = (componentType: string, action: string) => {
-  analytics.track('Documentation Interaction', {
+  analytics.track("Documentation Interaction", {
     component: componentType,
     action: action,
-    page: window.location.pathname
+    page: window.location.pathname,
   });
 };
 
 // Example: Track code copy events
 const handleCodeCopy = () => {
-  trackComponentUsage('CodeBlock', 'copy');
+  trackComponentUsage("CodeBlock", "copy");
   // Copy logic here
 };
 ```
@@ -348,6 +344,7 @@ const handleCodeCopy = () => {
 Interactive documentation components transform static information into engaging, actionable resources. By thoughtfully implementing callouts, code blocks, steps, tabs, and cards, you can create documentation that not only informs but also guides developers to success.
 
 Remember:
+
 - **Start simple** and add complexity gradually
 - **Test with real users** to validate your approach
 - **Measure and iterate** based on usage data
@@ -357,4 +354,4 @@ Great documentation is an investment in your developer community—and these int
 
 ---
 
-*Ready to enhance your documentation? Check out our [component library](/components) and start building better developer experiences today.*
+_Ready to enhance your documentation? Check out our [component library](/components) and start building better developer experiences today._

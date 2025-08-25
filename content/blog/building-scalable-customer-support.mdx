@@ -32,22 +32,22 @@ The first pillar focuses on getting the right ticket to the right resource at th
 ```typescript
 // Example: Intelligent ticket routing
 interface TicketContext {
-  customerTier: 'basic' | 'premium' | 'enterprise';
+  customerTier: "basic" | "premium" | "enterprise";
   issueComplexity: number;
   previousInteractions: number;
   urgencyScore: number;
 }
 
 function routeTicket(ticket: Ticket, context: TicketContext) {
-  if (context.urgencyScore > 8 || context.customerTier === 'enterprise') {
-    return 'human-agent';
+  if (context.urgencyScore > 8 || context.customerTier === "enterprise") {
+    return "human-agent";
   }
-  
+
   if (context.issueComplexity < 3) {
-    return 'ai-chatbot';
+    return "ai-chatbot";
   }
-  
-  return 'hybrid-approach';
+
+  return "hybrid-approach";
 }
 ```
 
@@ -56,6 +56,7 @@ function routeTicket(ticket: Ticket, context: TicketContext) {
 Your AI is only as good as the knowledge it has access to. We've found that companies with well-structured, continuously updated knowledge bases see 40% better AI performance.
 
 **Best Practices:**
+
 - Maintain a single source of truth
 - Use structured data formats
 - Implement version control for documentation
@@ -68,18 +69,21 @@ The most successful implementations treat AI deployment as the beginning, not th
 ## Implementation Strategy: The 90-Day Rollout
 
 ### Days 1-30: Foundation Phase
+
 - Audit existing support processes
 - Clean and structure knowledge base
 - Set up monitoring and analytics
 - Train initial AI models
 
 ### Days 31-60: Pilot Phase
+
 - Deploy to limited user group
 - Monitor performance metrics
 - Gather feedback from agents and customers
 - Iterate on AI responses
 
 ### Days 61-90: Scale Phase
+
 - Gradual rollout to full customer base
 - Optimize based on real-world data
 - Implement advanced features
@@ -136,4 +140,4 @@ Ready to transform your customer support with AI? Here's how to begin:
 
 ---
 
-*Want to learn more about implementing AI-powered customer support? Check out our [case studies](/case-studies) to see how companies like yours have transformed their support operations.*
+_Want to learn more about implementing AI-powered customer support? Check out our [case studies](/case-studies) to see how companies like yours have transformed their support operations._

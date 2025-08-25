@@ -19,28 +19,28 @@ export default function TermsOfService() {
           1. Introduction
         </h2>
         <p className="mb-4">
-          Welcome to Coldran. By using our website and services, you agree
-          to comply with and be bound by the following terms and conditions.
-          Please review them carefully.
+          Welcome to Coldran. By using our website and services, you agree to
+          comply with and be bound by the following terms and conditions. Please
+          review them carefully.
         </p>
 
         <h2 className="text-xl font-semibold text-neutral-800 mt-8 mb-4">
           2. Acceptance of Terms
         </h2>
         <p className="mb-4">
-          By accessing or using Coldran, you acknowledge that you have
-          read, understood, and agree to be bound by these Terms of Service. If
-          you do not agree to these terms, please do not use our service.
+          By accessing or using Coldran, you acknowledge that you have read,
+          understood, and agree to be bound by these Terms of Service. If you do
+          not agree to these terms, please do not use our service.
         </p>
 
         <h2 className="text-xl font-semibold text-neutral-800 mt-8 mb-4">
           3. Description of Service
         </h2>
         <p className="mb-4">
-          Coldran provides a platform for Zerodha users to track their
-          stock holdings without repeated logins. Users can upload their
-          holdings CSV file to view live price changes, portfolio value, and
-          profit/loss information.
+          Coldran provides a platform for Zerodha users to track their stock
+          holdings without repeated logins. Users can upload their holdings CSV
+          file to view live price changes, portfolio value, and profit/loss
+          information.
         </p>
 
         <h2 className="text-xl font-semibold text-neutral-800 mt-8 mb-4">
@@ -65,8 +65,8 @@ export default function TermsOfService() {
           6. Prohibited Uses
         </h2>
         <p className="mb-4">
-          You agree not to use Coldran for any unlawful purpose or in any
-          way that could damage, disable, or impair our service. Prohibited
+          You agree not to use Coldran for any unlawful purpose or in any way
+          that could damage, disable, or impair our service. Prohibited
           activities include but are not limited to:
         </p>
         <ul className="list-disc pl-6 mb-6 space-y-2">
@@ -80,9 +80,9 @@ export default function TermsOfService() {
           7. Limitation of Liability
         </h2>
         <p className="mb-4">
-          Coldran is provided &ldquo;as is&rdquo; without warranties of any kind. We
-          are not responsible for any losses or damages resulting from your use
-          of our service.
+          Coldran is provided &ldquo;as is&rdquo; without warranties of any
+          kind. We are not responsible for any losses or damages resulting from
+          your use of our service.
         </p>
 
         <h2 className="text-xl font-semibold text-neutral-800 mt-8 mb-4">

@@ -1,14 +1,14 @@
-import { getCaseStudy, getAllSlugs } from '@/lib/mdx';
-import { notFound } from 'next/navigation';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, Calendar, Building2, TrendingUp } from 'lucide-react';
-import Link from 'next/link';
-import { Separator } from '@/components/ui/separator';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
-import 'highlight.js/styles/github-dark.css';
+import { getCaseStudy, getAllSlugs } from "@/lib/mdx";
+import { notFound } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Calendar, Building2, TrendingUp } from "lucide-react";
+import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 
 interface CaseStudyPageProps {
   params: Promise<{
@@ -17,7 +17,7 @@ interface CaseStudyPageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllSlugs('case-studies');
+  const slugs = getAllSlugs("case-studies");
   return slugs.map((slug) => ({
     slug,
   }));
@@ -26,10 +26,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: CaseStudyPageProps) {
   const { slug } = await params;
   const caseStudy = getCaseStudy(slug);
-  
+
   if (!caseStudy) {
     return {
-      title: 'Case Study Not Found',
+      title: "Case Study Not Found",
     };
   }
 
@@ -39,13 +39,11 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
     openGraph: {
       title: caseStudy.title,
       description: caseStudy.description,
-      type: 'article',
+      type: "article",
       publishedTime: caseStudy.date,
     },
   };
 }
-
-
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = await params;
@@ -76,15 +74,15 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </Badge>
           ))}
         </div>
-        
+
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
           {caseStudy.title}
         </h1>
-        
+
         <p className="text-xl text-muted-foreground mb-8">
           {caseStudy.description}
         </p>
-        
+
         {/* Meta Information */}
         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
@@ -94,9 +92,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
             <span>
-              {new Date(caseStudy.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
+              {new Date(caseStudy.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
               })}
             </span>
           </div>
@@ -110,7 +108,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <TrendingUp className="h-5 w-5 text-primary" />
             <h2 className="text-2xl font-semibold">Key Results</h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {caseStudy.results.map((result, index) => (
               <div
@@ -129,7 +127,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </div>
             ))}
           </div>
-          
+
           <Separator className="mt-12" />
         </section>
       )}
@@ -147,14 +145,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           Ready to achieve similar results?
         </h3>
         <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-          Let's discuss how we can help transform your customer experience 
-          and drive meaningful business outcomes.
+          Let's discuss how we can help transform your customer experience and
+          drive meaningful business outcomes.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/enterprise-contact">
-            <Button size="lg">
-              Get Started
-            </Button>
+            <Button size="lg">Get Started</Button>
           </Link>
           <Link href="/case-studies">
             <Button variant="outline" size="lg">

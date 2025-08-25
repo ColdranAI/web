@@ -1,5 +1,5 @@
-declare module '*.mdx' {
-  import { MDXProps } from '@mdx-js/react';
+declare module "*.mdx" {
+  import { MDXProps } from "@mdx-js/react";
   export default function MDXContent(props: MDXProps): JSX.Element;
   export const frontMatter: {
     title?: string;
@@ -19,14 +19,14 @@ declare module '*.mdx' {
   };
 }
 
-declare module '@mdx-js/react' {
-  import { ComponentType, ReactNode } from 'react';
-  
+declare module "@mdx-js/react" {
+  import { ComponentType, ReactNode } from "react";
+
   export interface MDXProps {
     children?: ReactNode;
     components?: MDXComponents;
   }
-  
+
   export interface MDXComponents {
     [key: string]: ComponentType<any>;
     h1?: ComponentType<any>;
@@ -52,7 +52,7 @@ declare module '@mdx-js/react' {
     td?: ComponentType<any>;
     th?: ComponentType<any>;
   }
-  
+
   export const MDXProvider: ComponentType<{
     children: ReactNode;
     components?: MDXComponents;

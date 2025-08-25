@@ -1,14 +1,14 @@
-import { getBlogPost, getAllSlugs } from '@/lib/mdx';
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft, Calendar, User, Clock, Share2 } from 'lucide-react';
-import { Metadata } from 'next';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeHighlight from 'rehype-highlight';
-import 'highlight.js/styles/github-dark.css';
+import { getBlogPost, getAllSlugs } from "@/lib/mdx";
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Calendar, User, Clock, Share2 } from "lucide-react";
+import { Metadata } from "next";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -18,36 +18,38 @@ interface BlogPostPageProps {
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
-  const slugs = getAllSlugs('blog');
+  const slugs = getAllSlugs("blog");
   return slugs.map((slug: string) => ({ slug }));
 }
 
 // Generate metadata for SEO
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
-  
+
   if (!post) {
     return {
-      title: 'Blog Post Not Found',
+      title: "Blog Post Not Found",
     };
   }
 
   return {
     title: `${post.title} | Blog`,
     description: post.description,
-    keywords: post.tags?.join(', '),
+    keywords: post.tags?.join(", "),
     authors: post.author ? [{ name: post.author }] : undefined,
     openGraph: {
       title: post.title,
       description: post.description,
-      type: 'article',
+      type: "article",
       publishedTime: post.date,
       authors: post.author ? [post.author] : undefined,
       tags: post.tags,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post.title,
       description: post.description,
     },
@@ -55,7 +57,6 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 // Custom MDX components
-
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
@@ -113,10 +114,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="flex items-center gap-2">
             <Calendar className="h-4 w-4" />
             <span>
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
+              {new Date(post.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
               })}
             </span>
           </div>
@@ -145,9 +146,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
           <div className="flex gap-3">
             <Link href="/contact">
-              <Button size="sm">
-                Subscribe
-              </Button>
+              <Button size="sm">Subscribe</Button>
             </Link>
             <Link href="/case-studies">
               <Button variant="outline" size="sm">
@@ -168,7 +167,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Explore All Articles
               </h4>
               <p className="text-muted-foreground text-sm">
-                Discover more insights on AI, customer experience, and business automation.
+                Discover more insights on AI, customer experience, and business
+                automation.
               </p>
             </div>
           </Link>

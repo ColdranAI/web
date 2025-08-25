@@ -7,7 +7,10 @@ import { Button } from "@/components/ui/button";
 
 type WhoAmI =
   | { authenticated: false }
-  | { authenticated: true; user: { id: string; name?: string | null; image?: string | null } };
+  | {
+      authenticated: true;
+      user: { id: string; name?: string | null; image?: string | null };
+    };
 
 export function Navbar() {
   const pathname = usePathname();
@@ -18,20 +21,30 @@ export function Navbar() {
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
-      if (event.key.toLowerCase() === 'b' && !event.ctrlKey && !event.metaKey && !event.altKey) {
+      if (
+        event.key.toLowerCase() === "b" &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        !event.altKey
+      ) {
         // Check if user is not typing in an input field
         const activeElement = document.activeElement as HTMLElement;
-        if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.contentEditable === 'true')) {
+        if (
+          activeElement &&
+          (activeElement.tagName === "INPUT" ||
+            activeElement.tagName === "TEXTAREA" ||
+            activeElement.contentEditable === "true")
+        ) {
           return;
         }
-        
+
         event.preventDefault();
-        document.getElementById('sign-in-link')?.click();
+        document.getElementById("sign-in-link")?.click();
       }
     };
 
-    document.addEventListener('keydown', handleKeyPress);
-    return () => document.removeEventListener('keydown', handleKeyPress);
+    document.addEventListener("keydown", handleKeyPress);
+    return () => document.removeEventListener("keydown", handleKeyPress);
   }, []);
 
   useEffect(() => {
@@ -65,45 +78,93 @@ export function Navbar() {
       <div className="flex h-14 items-center justify-between max-w-7xl mx-auto px-4 lg:px-6">
         <div className="flex items-center gap-6">
           <Link href="/" className="font-normal flex items-center gap-4">
-              <img src="/logo.svg" alt="Coldran" draggable={false} width={46} height={46} />
+            <img
+              src="/logo.svg"
+              alt="Coldran"
+              draggable={false}
+              width={46}
+              height={46}
+            />
           </Link>
           <nav className="hidden font-medium text-md md:flex pl-3 gap-1">
-            <Link href="/pricing" className="circular rounded-md px-3 py-2 text-neutral-800">Pricing</Link>
-            <Link href="/blog" className="circular rounded-md px-3 py-2 text-neutral-800">Blog</Link>
-            <Link href="/team" className="circular rounded-md px-3 py-2 text-neutral-800">Team</Link>
-            <a href="https://docs.coldran.com" target="_blank" className="circular rounded-md px-3 py-2 text-neutral-800">Docs</a>
-            <Link href="/about" className="circular rounded-md px-3 py-2 text-neutral-800">About</Link>
+            <Link
+              href="/pricing"
+              className="circular rounded-md px-3 py-2 text-neutral-800"
+            >
+              Pricing
+            </Link>
+            <Link
+              href="/blog"
+              className="circular rounded-md px-3 py-2 text-neutral-800"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/team"
+              className="circular rounded-md px-3 py-2 text-neutral-800"
+            >
+              Team
+            </Link>
+            <a
+              href="https://docs.coldran.com"
+              target="_blank"
+              className="circular rounded-md px-3 py-2 text-neutral-800"
+            >
+              Docs
+            </a>
+            <Link
+              href="/about"
+              className="circular rounded-md px-3 py-2 text-neutral-800"
+            >
+              About
+            </Link>
           </nav>
         </div>
 
         <div className="flex items-center gap-2">
           {/* Only ever show a loading state on /sign-in while we decide if we should show Dashboard */}
           {!ready && pathname === "/sign-in" ? (
-            <Button variant="secondary" size="minor" className="opacity-70 pointer-events-none">
+            <Button
+              variant="secondary"
+              size="minor"
+              className="opacity-70 pointer-events-none"
+            >
               Loading…
             </Button>
           ) : showDashboardCTA ? (
             <a href="https://app.coldran.com">
-              <Button variant="black" size="minor">Dashboard</Button>
+              <Button variant="black" size="minor">
+                Dashboard
+              </Button>
             </a>
           ) : (
             <>
               {/* Internal route: use Link + asChild so it doesn't flash a reload */}
               <Link href="/play-with-us" className="inline-block">
-                <Button variant="lightgray" size="minor">Play with Us</Button>
+                <Button variant="lightgray" size="minor">
+                  Play with Us
+                </Button>
               </Link>
 
               {/* Sign-in always visible outside the app */}
-              <a href="https://app.coldran.com/" target="_blank" rel="dofollow noopener" id="sign-in-link">
+              <a
+                href="https://app.coldran.com/"
+                target="_blank"
+                rel="dofollow noopener"
+                id="sign-in-link"
+              >
                 <Button variant="blue" size="minor">
-                  Sign In <kbd 
+                  Sign In{" "}
+                  <kbd
                     className="font-medium text-[11px] px-1.5 py-0.5 rounded-sm border border-neutral-700 bg-neutral-800 cursor-pointer"
                     onClick={(e) => {
                       e.stopPropagation();
-                      document.getElementById('sign-in-link')?.click();
+                      document.getElementById("sign-in-link")?.click();
                     }}
-                  >B</kbd>
-                  </Button>
+                  >
+                    B
+                  </kbd>
+                </Button>
               </a>
             </>
           )}

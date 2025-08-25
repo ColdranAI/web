@@ -55,7 +55,8 @@ export function SecondFeature() {
   const features = [
     {
       title: "$14.99 _Basic",
-      description: "Best suited for small scale waitlists with low observability.",
+      description:
+        "Best suited for small scale waitlists with low observability.",
       features: [
         "Discord Server Template for your waitlist",
         "Rate Limiting",
@@ -69,7 +70,8 @@ export function SecondFeature() {
     {
       // icon: <ShoppingBag className="h-5 w-5" />,
       title: "$21.99 _Standard",
-      description: "Best suited for medium scale waitlists with moderate observability.",
+      description:
+        "Best suited for medium scale waitlists with moderate observability.",
       features: [
         "Everything from _Basic",
         "Resend Integration",
@@ -84,7 +86,8 @@ export function SecondFeature() {
     {
       // icon: <Github className="h-5 w-5" />,
       title: "$49 _Enterprise",
-      description: "Best suited for large scale waitlists with high observability & visualizations.",
+      description:
+        "Best suited for large scale waitlists with high observability & visualizations.",
       features: [
         "Everything from _Standard",
         "Beautiful Dashboard with Analytics",

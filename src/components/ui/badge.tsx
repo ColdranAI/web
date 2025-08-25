@@ -25,16 +25,13 @@ const badgeVariants = cva(
   },
 );
 
-interface BadgeProps extends React.ComponentProps<"span">, VariantProps<typeof badgeVariants> {
+interface BadgeProps
+  extends React.ComponentProps<"span">,
+    VariantProps<typeof badgeVariants> {
   asChild?: boolean;
 }
 
-function Badge({
-  className,
-  variant,
-  asChild = false,
-  ...props
-}: BadgeProps) {
+function Badge({ className, variant, asChild = false, ...props }: BadgeProps) {
   if (asChild) {
     return (
       <Slot

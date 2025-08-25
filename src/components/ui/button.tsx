@@ -11,22 +11,18 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-primary orangeshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
-        blue:
-          "bg-primary blueshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
-        red:
-          "bg-primary redshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
+        blue: "bg-primary blueshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
+        red: "bg-primary redshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
         black:
           "bg-black text-white shadow-xs hover:bg-neutral-900 rounded-lg cursor-pointer",
-        gray:
-          "bg-primary grayshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
+        gray: "bg-primary grayshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
         lightgray:
           "bg-primary lightgrayshadow text-primary-foreground shadow-xs cursor-pointer rounded-lg",
         lightgraybg:
           "bg-neutral-200 border border-neutral-300 text-neutral-950 shadow-xs cursor-pointer rounded-lg",
         outline:
           "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground cursor-pointer",
-        secondary:
-          " text-black cursor-pointer",
+        secondary: " text-black cursor-pointer",
         ghost: "hover:bg-accent hover:text-accent-foreground cursor-pointer",
         link: "text-primary underline-offset-4 hover:underline",
       },
@@ -45,7 +41,9 @@ const buttonVariants = cva(
   },
 );
 
-interface ButtonProps extends React.ComponentProps<"button">, VariantProps<typeof buttonVariants> {
+interface ButtonProps
+  extends React.ComponentProps<"button">,
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 

@@ -6,20 +6,20 @@ const DISCORD_WEBHOOK_URL = process.env.DISCORD_ENTERPRISE_WEBHOOK_URL;
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { 
-      companyName, 
-      website, 
-      industry, 
-      teamSize, 
-      contactName, 
-      contactEmail, 
-      contactPhone, 
-      budgetRange, 
-      requirements, 
+    const {
+      companyName,
+      website,
+      industry,
+      teamSize,
+      contactName,
+      contactEmail,
+      contactPhone,
+      budgetRange,
+      requirements,
       timeline,
       type,
       timestamp,
-      step
+      step,
     } = body;
 
     if (!companyName || !contactEmail || !contactName) {
@@ -102,9 +102,9 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
     });
 
-    return NextResponse.json({ 
+    return NextResponse.json({
       success: true,
-      message: "Enterprise inquiry submitted successfully"
+      message: "Enterprise inquiry submitted successfully",
     });
   } catch (error) {
     console.error("Error sending enterprise inquiry to Discord:", error);

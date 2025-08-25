@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
-import { cn } from '@/lib/utils';
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface StepsProps {
   children: ReactNode;
@@ -13,16 +13,12 @@ interface StepProps {
 }
 
 export function Steps({ children, className }: StepsProps) {
-  return (
-    <div className={cn('my-6 space-y-6', className)}>
-      {children}
-    </div>
-  );
+  return <div className={cn("my-6 space-y-6", className)}>{children}</div>;
 }
 
 export function Step({ children, title, className }: StepProps) {
   return (
-    <div className={cn('relative flex gap-4', className)}>
+    <div className={cn("relative flex gap-4", className)}>
       {/* Step indicator */}
       <div className="flex flex-col items-center">
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold">
@@ -30,14 +26,10 @@ export function Step({ children, title, className }: StepProps) {
         </div>
         <div className="w-px flex-1 bg-border mt-2" />
       </div>
-      
+
       {/* Step content */}
       <div className="flex-1 pb-8">
-        {title && (
-          <h3 className="text-lg font-semibold mb-3">
-            {title}
-          </h3>
-        )}
+        {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
         <div className="prose prose-sm max-w-none [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
           {children}
         </div>
@@ -49,9 +41,9 @@ export function Step({ children, title, className }: StepProps) {
 // Enhanced Steps component with auto-numbering
 export function NumberedSteps({ children, className }: StepsProps) {
   const stepCount = Array.isArray(children) ? children.length : 1;
-  
+
   return (
-    <div className={cn('my-6', className)} style={{ counterReset: 'step' }}>
+    <div className={cn("my-6", className)} style={{ counterReset: "step" }}>
       <style jsx>{`
         .step-item {
           counter-increment: step;
@@ -62,7 +54,10 @@ export function NumberedSteps({ children, className }: StepsProps) {
       `}</style>
       {Array.isArray(children) ? (
         children.map((child, index) => (
-          <div key={index} className="step-item relative flex gap-4 mb-6 last:mb-0">
+          <div
+            key={index}
+            className="step-item relative flex gap-4 mb-6 last:mb-0"
+          >
             {/* Step indicator */}
             <div className="flex flex-col items-center">
               <div className="step-number flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold" />
@@ -70,11 +65,9 @@ export function NumberedSteps({ children, className }: StepsProps) {
                 <div className="w-px h-16 bg-border mt-2" />
               )}
             </div>
-            
+
             {/* Step content */}
-            <div className="flex-1">
-              {child}
-            </div>
+            <div className="flex-1">{child}</div>
           </div>
         ))
       ) : (
@@ -82,9 +75,7 @@ export function NumberedSteps({ children, className }: StepsProps) {
           <div className="flex flex-col items-center">
             <div className="step-number flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold" />
           </div>
-          <div className="flex-1">
-            {children}
-          </div>
+          <div className="flex-1">{children}</div>
         </div>
       )}
     </div>
@@ -100,12 +91,8 @@ interface StepItemProps {
 
 export function StepItem({ title, children, className }: StepItemProps) {
   return (
-    <div className={cn('', className)}>
-      {title && (
-        <h3 className="text-lg font-semibold mb-3">
-          {title}
-        </h3>
-      )}
+    <div className={cn("", className)}>
+      {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
       <div className="prose prose-sm max-w-none [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
         {children}
       </div>

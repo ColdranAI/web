@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, HelpCircle, Shield, Users, Zap, Building2 } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  HelpCircle,
+  Shield,
+  Users,
+  Zap,
+  Building2,
+} from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -21,11 +29,20 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
   };
 
   const getFAQIcon = (question: string) => {
-    if (question.toLowerCase().includes("security") || question.toLowerCase().includes("compliant")) {
+    if (
+      question.toLowerCase().includes("security") ||
+      question.toLowerCase().includes("compliant")
+    ) {
       return <Shield className="h-5 w-5 text-blue-600" />;
-    } else if (question.toLowerCase().includes("team") || question.toLowerCase().includes("support")) {
+    } else if (
+      question.toLowerCase().includes("team") ||
+      question.toLowerCase().includes("support")
+    ) {
       return <Users className="h-5 w-5 text-green-600" />;
-    } else if (question.toLowerCase().includes("pricing") || question.toLowerCase().includes("cost")) {
+    } else if (
+      question.toLowerCase().includes("pricing") ||
+      question.toLowerCase().includes("cost")
+    ) {
       return <Building2 className="h-5 w-5 text-purple-600" />;
     } else {
       return <Zap className="h-5 w-5 text-yellow-600" />;
@@ -99,7 +116,8 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
           Still have questions?
         </h3>
         <p className="text-gray-600 mb-4">
-          Our enterprise team is ready to help you find the perfect solution for your business.
+          Our enterprise team is ready to help you find the perfect solution for
+          your business.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">

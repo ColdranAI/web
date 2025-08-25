@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { ReactNode, useState, createContext, useContext } from 'react';
-import { cn } from '@/lib/utils';
+import { ReactNode, useState, createContext, useContext } from "react";
+import { cn } from "@/lib/utils";
 
 interface TabsContextType {
   activeTab: string;
@@ -34,7 +34,7 @@ interface TabsContentProps {
 }
 
 export function Tabs({ children, defaultValue, className }: TabsProps) {
-  const [activeTab, setActiveTab] = useState(defaultValue || '');
+  const [activeTab, setActiveTab] = useState(defaultValue || "");
 
   // Auto-set first tab if no default value
   const firstTabValue = defaultValue || extractFirstTabValue(children);
@@ -43,10 +43,10 @@ export function Tabs({ children, defaultValue, className }: TabsProps) {
   }
 
   return (
-    <TabsContext.Provider value={{ activeTab: activeTab || firstTabValue, setActiveTab }}>
-      <div className={cn('my-6', className)}>
-        {children}
-      </div>
+    <TabsContext.Provider
+      value={{ activeTab: activeTab || firstTabValue, setActiveTab }}
+    >
+      <div className={cn("my-6", className)}>{children}</div>
     </TabsContext.Provider>
   );
 }
@@ -55,8 +55,8 @@ export function TabsList({ children, className }: TabsListProps) {
   return (
     <div
       className={cn(
-        'inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground',
-        className
+        "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
+        className,
       )}
     >
       {children}
@@ -67,7 +67,7 @@ export function TabsList({ children, className }: TabsListProps) {
 export function TabsTrigger({ value, children, className }: TabsTriggerProps) {
   const context = useContext(TabsContext);
   if (!context) {
-    throw new Error('TabsTrigger must be used within a Tabs component');
+    throw new Error("TabsTrigger must be used within a Tabs component");
   }
 
   const { activeTab, setActiveTab } = context;
@@ -76,11 +76,11 @@ export function TabsTrigger({ value, children, className }: TabsTriggerProps) {
   return (
     <button
       className={cn(
-        'inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+        "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
         isActive
-          ? 'bg-background text-foreground shadow-sm'
-          : 'hover:bg-background/50 hover:text-foreground',
-        className
+          ? "bg-background text-foreground shadow-sm"
+          : "hover:bg-background/50 hover:text-foreground",
+        className,
       )}
       onClick={() => setActiveTab(value)}
     >
@@ -92,7 +92,7 @@ export function TabsTrigger({ value, children, className }: TabsTriggerProps) {
 export function TabsContent({ value, children, className }: TabsContentProps) {
   const context = useContext(TabsContext);
   if (!context) {
-    throw new Error('TabsContent must be used within a Tabs component');
+    throw new Error("TabsContent must be used within a Tabs component");
   }
 
   const { activeTab } = context;
@@ -103,8 +103,8 @@ export function TabsContent({ value, children, className }: TabsContentProps) {
   return (
     <div
       className={cn(
-        'mt-4 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-        className
+        "mt-4 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+        className,
       )}
     >
       {children}
@@ -114,17 +114,17 @@ export function TabsContent({ value, children, className }: TabsContentProps) {
 
 // Helper function to extract the first tab value
 function extractFirstTabValue(children: ReactNode): string {
-  let firstValue = '';
-  
+  let firstValue = "";
+
   const findFirstTrigger = (node: ReactNode): void => {
     if (!node || firstValue) return;
-    
+
     if (Array.isArray(node)) {
       node.forEach(findFirstTrigger);
       return;
     }
-    
-    if (typeof node === 'object' && 'props' in node) {
+
+    if (typeof node === "object" && "props" in node) {
       const element = node as any;
       if (element.type === TabsTrigger && element.props.value) {
         firstValue = element.props.value;
@@ -135,7 +135,7 @@ function extractFirstTabValue(children: ReactNode): string {
       }
     }
   };
-  
+
   findFirstTrigger(children);
   return firstValue;
 }
@@ -151,7 +151,11 @@ interface SimpleTabsProps {
   className?: string;
 }
 
-export function SimpleTabs({ items, defaultValue, className }: SimpleTabsProps) {
+export function SimpleTabs({
+  items,
+  defaultValue,
+  className,
+}: SimpleTabsProps) {
   return (
     <Tabs defaultValue={defaultValue || items[0]?.value} className={className}>
       <TabsList>

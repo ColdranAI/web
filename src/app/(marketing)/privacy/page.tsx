@@ -19,9 +19,9 @@ export default function PrivacyPolicy() {
           Our Commitment to Privacy
         </h2>
         <p className="mb-4">
-          At Coldran, we take your privacy seriously. This policy
-          describes what personal information we collect and how we use it. Our
-          primary goal is to provide a secure and trustworthy experience.
+          At Coldran, we take your privacy seriously. This policy describes what
+          personal information we collect and how we use it. Our primary goal is
+          to provide a secure and trustworthy experience.
         </p>
 
         <h2 className="text-xl font-semibold text-neutral-800 mt-8 mb-4">
@@ -86,10 +86,10 @@ export default function PrivacyPolicy() {
           Third-Party Services
         </h2>
         <p className="mb-4">
-          Coldran uses third-party services for analytics and
-          functionality. These services may collect information sent by your
-          browser as part of their operations. We do not share your personal
-          information with third parties except as described in this policy.
+          Coldran uses third-party services for analytics and functionality.
+          These services may collect information sent by your browser as part of
+          their operations. We do not share your personal information with third
+          parties except as described in this policy.
         </p>
 
         <h2 className="text-xl font-semibold text-neutral-800 mt-8 mb-4">
@@ -132,8 +132,7 @@ export default function PrivacyPolicy() {
         </p>
 
         <p className="text-sm text-muted-foreground mt-10">
-          Note: Coldran is not affiliated with Zerodha or endorsed by
-          them.
+          Note: Coldran is not affiliated with Zerodha or endorsed by them.
         </p>
       </div>
     </div>

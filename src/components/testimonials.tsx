@@ -8,33 +8,36 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "CEO, TechFlow Inc.",
     company: "SaaS Company",
-    content: "The enterprise-grade AI support agents have transformed our customer experience. Response times have improved by 70% and customer satisfaction is at an all-time high.",
+    content:
+      "The enterprise-grade AI support agents have transformed our customer experience. Response times have improved by 70% and customer satisfaction is at an all-time high.",
     rating: 5,
-    avatar: "SJ"
+    avatar: "SJ",
   },
   {
     name: "Michael Chen",
     role: "Head of Operations",
     company: "Global Retail Corp",
-    content: "The workspace analysis and feedback classification tools give us unprecedented insights into customer needs. Our product development cycle has accelerated significantly.",
+    content:
+      "The workspace analysis and feedback classification tools give us unprecedented insights into customer needs. Our product development cycle has accelerated significantly.",
     rating: 5,
-    avatar: "MC"
+    avatar: "MC",
   },
   {
     name: "Emily Rodriguez",
     role: "Customer Success Director",
     company: "HealthTech Solutions",
-    content: "Dedicated support and custom integrations made the transition seamless. The platform scales perfectly with our growing team and complex requirements.",
+    content:
+      "Dedicated support and custom integrations made the transition seamless. The platform scales perfectly with our growing team and complex requirements.",
     rating: 5,
-    avatar: "ER"
-  }
+    avatar: "ER",
+  },
 ];
 
 const stats = [
   { icon: Building2, value: "1000+", label: "Enterprise Customers" },
   { icon: Users, value: "50K+", label: "Active Users" },
   { icon: TrendingUp, value: "99.9%", label: "Uptime SLA" },
-  { icon: Award, value: "4.9/5", label: "Customer Rating" }
+  { icon: Award, value: "4.9/5", label: "Customer Rating" },
 ];
 
 export function Testimonials() {
@@ -60,7 +63,9 @@ export function Testimonials() {
               className="text-center p-6 bg-white rounded-lg border border-gray-200"
             >
               <IconComponent className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-              <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
+              <div className="text-2xl font-bold text-gray-900 mb-1">
+                {stat.value}
+              </div>
               <div className="text-sm text-gray-600">{stat.label}</div>
             </motion.div>
           );
@@ -103,9 +108,13 @@ export function Testimonials() {
                 {testimonial.avatar}
               </div>
               <div>
-                <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                <div className="font-semibold text-gray-900">
+                  {testimonial.name}
+                </div>
                 <div className="text-sm text-gray-600">{testimonial.role}</div>
-                <div className="text-xs text-gray-500">{testimonial.company}</div>
+                <div className="text-xs text-gray-500">
+                  {testimonial.company}
+                </div>
               </div>
             </div>
           </motion.div>
