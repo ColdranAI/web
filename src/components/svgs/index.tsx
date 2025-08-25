@@ -1,8 +1,9 @@
 import { CustomerReports } from "./customer-reports";
 import { ThinksAndCodes } from "./thinks-and-codes";
 import { PullRequest } from "./pull-request";
+import { CustomerHero } from "./customer-hero";
 
-export { CustomerReports, ThinksAndCodes, PullRequest };
+export { CustomerReports, ThinksAndCodes, PullRequest, CustomerHero };
 
 // Pointers
 import { CreateAgent } from "./pointers/create-agent";

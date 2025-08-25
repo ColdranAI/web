@@ -13,6 +13,8 @@ import {
   ProductIssue,
   CustomerCalls,
 } from "@/components/svgs";
+import { CustomerHero } from "@/components/svgs/customer-hero";
+import { CustomerHeroTwo } from "@/components/svgs/customer-hero-two";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -39,27 +41,36 @@ export default function Home() {
   return (
     <div className="mx-auto px-4 lg:px-6 h-auto my-10">
       <div className="md:min-h-screen pt-10 pb-20 md:pb-0 flex flex-col justify-center">
-<div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-6 items-center">
+<div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6 items-center">
   {/* Left Column */}
-  <div>
+<div className="grid grid-cols-[70%_30%] md:grid-cols-1">
+    
+    <div>
     <div className="mb-4 text-sm font-semibold text-neutral-600">Beta</div>
-    <h1 className="text-black text-5xl md:text-6xl font-medium leading-[77px]">
+    <h1 className="text-black text-5xl lg:text-6xl font-medium md:leading-[77px]">
       Collect, Analyze,
       <br />
       and <span>Improve Product</span>.
       <br />
       Together with Coldran.
     </h1>
+    </div>
+    <CustomerHeroTwo />
   </div>
 
   {/* Right Column */}
-  <div className="flex flex-col items-start md:items-center">
-    <CreateAgent />
-    <a href="/">
-      <Button variant="blue" size="lg" className="mt-6">
+  <div className="flex relative flex-col items-start lg:items-center gap-4">
+    <CustomerHero />
+    <div>
+      <a href="https://app.coldran.com" target="_blank">
+      <Button variant="blue" size="lg" className="">
         Get started
       </Button>
-    </a>
+      </a>
+      <div className="absolute translate-x-20">
+        <CreateAgent />
+      </div>
+    </div>
   </div>
 </div>
 
