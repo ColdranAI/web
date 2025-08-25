@@ -41,9 +41,9 @@ export default function Home() {
   return (
     <div className="mx-auto px-4 lg:px-6 h-auto my-10">
       <div className="md:min-h-screen pt-10 pb-20 md:pb-0 flex flex-col justify-center">
-<div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6 items-center">
+<div className="md:grid md:grid-cols-1 lg:grid-cols-[70%_30%] gap-6 items-center">
   {/* Left Column */}
-<div className="grid grid-cols-[70%_30%] md:grid-cols-1">
+  <div className="md:grid md:grid-cols-0  max-lg:grid-cols-[70%_30%]">
     
     <div>
     <div className="mb-4 text-sm font-semibold text-neutral-600">Beta</div>
@@ -59,7 +59,7 @@ export default function Home() {
   </div>
 
   {/* Right Column */}
-  <div className="flex relative flex-col items-start lg:items-center gap-4">
+  <div className="flex relative max-md:mt-10 flex-col items-start lg:items-center gap-4">
     <CustomerHero />
     <div>
       <a href="https://app.coldran.com" target="_blank">
