@@ -13,6 +13,7 @@ import {
   ProductIssue,
   CustomerCalls,
   ProductPrBottomLeft,
+  PRIssues,
 } from "@/components/svgs";
 import { CustomerHero } from "@/components/svgs/customer-hero";
 
@@ -94,10 +95,22 @@ export default function Home() {
   </h2>
 </div>
 
-<div className="my-20 px-6 py-20 bg-neutral-100">
+<div className="my-20 flex items-center px-6 py-20 bg-neutral-50 grid grid-cols-[70%_30%]">
+  <div>
   <h2 className="text-5xl font-medium text-neutral-900 mb-6font-instrument-sans">
   Coldran Narrative
   </h2>
+  <p className="text-xl text-neutral-700 my-4 max-w-2xl">
+    Allow the customers to have autonomy to get help with bugs, outdated documentation, feature requests, etc.
+    As Fast as Possible to reach Resolution.
+    <br />
+    <br />
+    Customers shouldn't shout into the void. 
+  </p>
+  </div>
+  <div>
+    <PRIssues />
+  </div>
 </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen my-10">
