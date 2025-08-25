@@ -89,32 +89,31 @@ export default function Home() {
           </div>
         </div>
 
-<div className="my-20 py-20 bg-neutral-100">
-  <h2 className="text-5xl font-medium text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">
+        <div className="my-20 py-20 bg-neutral-100">
+          <h2 className="text-5xl font-medium text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans"></h2>
+        </div>
 
-  </h2>
-</div>
-
-<div className="my-20 flex items-center px-6 py-20 bg-neutral-50 grid grid-cols-[70%_30%]">
-  <div>
-  <h2 className="text-5xl font-medium text-neutral-900 mb-6font-instrument-sans">
-  Coldran Narrative
-  </h2>
-  <p className="text-xl mb-10 text-neutral-700 my-4 max-w-2xl">
-    Allow the customers to have autonomy to get help with bugs, outdated documentation, feature requests, etc.
-    As Fast as Possible to reach Resolution.
-    <br />
-    <br />
-    Customers shouldn't shout into the void. 
-  </p>
-  </div>
-  <div>
-    <PRIssues />
-  </div>
-    <a href="https://discord.gg/rDDqA83eGz" target="_blank">
-    <Button variant="gray">Join Our Discord</Button>
-  </a>
-</div>
+        <div className="my-20 flex items-center px-6 py-20 bg-neutral-50 grid grid-cols-[70%_30%]">
+          <div>
+            <h2 className="text-5xl font-medium text-neutral-900 mb-6font-instrument-sans">
+              Coldran Narrative
+            </h2>
+            <p className="text-xl mb-10 text-neutral-700 my-4 max-w-2xl">
+              Allow the customers to have autonomy to get help with bugs,
+              outdated documentation, feature requests, etc. As Fast as Possible
+              to reach Resolution.
+              <br />
+              <br />
+              Customers shouldn't shout into the void.
+            </p>
+          </div>
+          <div>
+            <PRIssues />
+          </div>
+          <a href="https://discord.gg/rDDqA83eGz" target="_blank">
+            <Button variant="gray">Join Our Discord</Button>
+          </a>
+        </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen my-10">
           <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">
