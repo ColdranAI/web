@@ -88,6 +88,18 @@ export default function Home() {
           </div>
         </div>
 
+<div className="my-20 py-20 bg-neutral-100">
+  <h2 className="text-5xl font-medium text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">
+
+  </h2>
+</div>
+
+<div className="my-20 px-6 py-20 bg-neutral-100">
+  <h2 className="text-5xl font-medium text-neutral-900 mb-6font-instrument-sans">
+  Coldran Narrative
+  </h2>
+</div>
+
         <div className="flex flex-col items-center justify-center min-h-screen my-10">
           <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">
             External & Internal Agents → KnowledgeBase
