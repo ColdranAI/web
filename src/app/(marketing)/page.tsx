@@ -75,8 +75,9 @@ export default function Home() {
   </div>
 
   {/* Right Column */}
-  <div className="hidden md:block">
+  <div className="hidden lg:block">
     <CustomerHero />
+    <span className="text-xs text-neutral-500 text-end">ps: agent writes the code</span>
   </div>
 </div>
 
