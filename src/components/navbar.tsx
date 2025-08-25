@@ -61,7 +61,7 @@ export function Navbar() {
   const showDashboardCTA = pathname === "/sign-in" && auth.authenticated;
 
   return (
-    <header className="w-full py-4 bg-white">
+    <header className="w-full py-4 bg-white border-b border-neutral-200">
       <div className="flex h-14 items-center justify-between max-w-7xl mx-auto px-4 lg:px-6">
         <div className="flex items-center gap-6">
           <Link href="/" className="font-normal flex items-center gap-4">

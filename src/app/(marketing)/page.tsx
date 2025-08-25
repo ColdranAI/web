@@ -8,6 +8,7 @@ import { SlackAnalyzer } from "@/components/slack-analyzer";
 import { FeedbackOrganizer } from "@/components/feedback-organizer";
 import { motion } from "framer-motion";
 import { ArrowRight } from "@/components/icons/arrow";
+import { CustomerReports, ThinksAndCodes, PullRequest } from "@/components/svgs";
 
 
 export default function Home() {
@@ -38,6 +39,17 @@ export default function Home() {
           </Button>
         </a>
         <Button variant="red" size="lg">Analyze Your Team</Button>
+      </div>
+      <div className="max-w-lg space-y-3">
+        <div className=" p-5 transition-all duration-300 active:translate-x-90 active:translate-y-40">
+        <CustomerReports />
+        </div>
+        <div className="max-w-xs translate-x-120 -translate-y-7">
+        <ThinksAndCodes />
+        </div>
+        <div className="max-w-xs p-3 transition-all duration-300 active:translate-x-100 active:-translate-y-10">
+        <PullRequest />
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center min-h-screen my-10">
       <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">External & Internal Agents <ArrowRight className="w-6 h-6" /> KnowledgeBase</h2>
