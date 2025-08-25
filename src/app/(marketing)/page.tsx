@@ -54,7 +54,7 @@ export default function Home() {
       and <span>Improve Product</span>.
       <br />
       With Customer Agents.
-        <span className="absolute md:-translate-x-10 translate-y-10 md:translate-y-14"><ToDo /></span>
+        <span className="absolute -translate-x-5 sm:-translate-x-24 md:-translate-x-2  xl:-translate-x-10 translate-y-10 md:translate-y-12"><ToDo /></span>
 
     </h1>
 
