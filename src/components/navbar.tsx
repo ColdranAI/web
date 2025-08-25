@@ -156,7 +156,7 @@ export function Navbar() {
                 <Button variant="blue" size="sm">
                   Sign In{" "}
                   <kbd
-                    className="font-medium text-[11px] px-1.5 py-0.5 rounded-sm border border-neutral-700 bg-neutral-800 cursor-pointer"
+                    className="max-sm:hidden font-medium text-[11px] px-1.5 py-0.5 rounded-sm border border-neutral-700 bg-neutral-800 cursor-pointer"
                     onClick={(e) => {
                       e.stopPropagation();
                       document.getElementById("sign-in-link")?.click();
