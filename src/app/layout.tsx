@@ -1,6 +1,13 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Poppins, Inter, Instrument_Sans, Fira_Sans, Public_Sans, Ubuntu } from "next/font/google";
+import {
+  Poppins,
+  Inter,
+  Instrument_Sans,
+  Fira_Sans,
+  Public_Sans,
+  Ubuntu,
+} from "next/font/google";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
@@ -43,7 +50,6 @@ const fontFiraSans = Fira_Sans({
   variable: "--font-fira-sans",
   weight: ["300", "400", "500", "600", "700", "800"],
 });
-
 
 export const metadata: Metadata = {
   title: "Coldran",

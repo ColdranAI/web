@@ -18,7 +18,9 @@ import { CustomerHero } from "@/components/svgs/customer-hero";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const [randomizedComponents, setRandomizedComponents] = useState<React.ComponentType<{ className?: string }>[]>([]);
+  const [randomizedComponents, setRandomizedComponents] = useState<
+    React.ComponentType<{ className?: string }>[]
+  >([]);
 
   useEffect(() => {
     const components = [
@@ -41,46 +43,50 @@ export default function Home() {
   return (
     <div className="mx-auto px-4 lg:px-6 h-auto my-10">
       <div className="md:min-h-screen pt-10 pb-20 md:pb-0 flex flex-col justify-center">
-<div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-6 items-center">
-  {/* Left Column */}
-  <div >
-    
-    <div>
-    <span className="mb-4 ml-4 text-sm font-semibold text-neutral-600">Coldran Beta</span>
-    <h1 className="relative text-black text-5xl lg:text-6xl font-medium leading-[60px] lg:leading-[77px]">
-      Collect, Analyze,
-      <br />
-    <span className="absolute -translate-y-16 translate-x-96 lg:translate-x-122 "><ProductPrBottomLeft /></span>
-      and <span>Improve Product</span>.
-      <br />
-      With Customer Agents.
-        <span className="absolute -translate-x-5 sm:-translate-x-24 md:-translate-x-2  xl:-translate-x-10 translate-y-10 md:translate-y-12"><ToDo /></span>
+        <div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-6 items-center">
+          {/* Left Column */}
+          <div>
+            <div>
+              <span className="mb-4 ml-4 text-sm font-semibold text-neutral-600">
+                Coldran Beta
+              </span>
+              <h1 className="relative text-black text-5xl lg:text-6xl font-medium leading-[60px] lg:leading-[77px]">
+                Collect, Analyze,
+                <br />
+                <span className="absolute -translate-y-16 translate-x-96 lg:translate-x-122 ">
+                  <ProductPrBottomLeft />
+                </span>
+                and <span>Improve Product</span>.
+                <br />
+                With Customer Agents.
+                <span className="absolute -translate-x-5 sm:-translate-x-24 md:-translate-x-2  xl:-translate-x-10 translate-y-10 md:translate-y-12">
+                  <ToDo />
+                </span>
+              </h1>
+            </div>
 
-    </h1>
+            <div className="flex relative mt-10 flex-col ml-4 ">
+              <div>
+                <a href="https://app.coldran.com" target="_blank">
+                  <Button variant="blue" size="lg" className="">
+                    Get started
+                  </Button>
+                </a>
+                <div className="absolute translate-x-20">
+                  <CreateAgent />
+                </div>
+              </div>
+            </div>
+          </div>
 
-    </div>
-
-  <div className="flex relative mt-10 flex-col ml-4 ">
-    <div>
-      <a href="https://app.coldran.com" target="_blank">
-      <Button variant="blue" size="lg" className="">
-        Get started
-      </Button>
-      </a>
-      <div className="absolute translate-x-20">
-        <CreateAgent />
-      </div>
-    </div>
-  </div>
-  </div>
-
-  {/* Right Column */}
-  <div className="hidden lg:block">
-    <CustomerHero />
-    <span className="text-xs text-neutral-500 text-end">ps: agent writes the code</span>
-  </div>
-</div>
-
+          {/* Right Column */}
+          <div className="hidden lg:block">
+            <CustomerHero />
+            <span className="text-xs text-neutral-500 text-end">
+              ps: agent writes the code
+            </span>
+          </div>
+        </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen my-10">
           <h2 className="text-3xl font-semibold text-neutral-900 mb-6 flex justify-center flex-row items-center gap-4 font-instrument-sans">
