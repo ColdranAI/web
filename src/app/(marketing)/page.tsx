@@ -12,9 +12,9 @@ import {
   ProductPr,
   ProductIssue,
   CustomerCalls,
+  ProductPrBottomLeft,
 } from "@/components/svgs";
 import { CustomerHero } from "@/components/svgs/customer-hero";
-import { CustomerHeroTwo } from "@/components/svgs/customer-hero-two";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -41,26 +41,26 @@ export default function Home() {
   return (
     <div className="mx-auto px-4 lg:px-6 h-auto my-10">
       <div className="md:min-h-screen pt-10 pb-20 md:pb-0 flex flex-col justify-center">
-<div className="md:grid md:grid-cols-1 lg:grid-cols-[70%_30%] gap-6 items-center">
+<div className="grid grid-cols-1 md:grid-cols-[70%_30%] gap-6 items-center">
   {/* Left Column */}
-  <div className="md:grid md:grid-cols-0  max-lg:grid-cols-[70%_30%]">
+  <div >
     
     <div>
-    <div className="mb-4 text-sm font-semibold text-neutral-600">Beta</div>
-    <h1 className="text-black text-5xl lg:text-6xl font-medium md:leading-[77px]">
+    <span className="mb-4 ml-4 text-sm font-semibold text-neutral-600">Coldran Beta</span>
+    <h1 className="relative text-black text-5xl lg:text-6xl font-medium md:leading-[77px]">
       Collect, Analyze,
       <br />
+    <span className="absolute -translate-y-16 -translate-x-28 right-0"><ProductPrBottomLeft /></span>
       and <span>Improve Product</span>.
       <br />
-      Together with Coldran.
-    </h1>
-    </div>
-    <CustomerHeroTwo />
-  </div>
+      With Customer Agents.
+        <span className="absolute -translate-x-10 translate-y-14"><ToDo /></span>
 
-  {/* Right Column */}
-  <div className="flex relative max-md:mt-10 flex-col items-start lg:items-center gap-4">
-    <CustomerHero />
+    </h1>
+
+    </div>
+
+  <div className="flex relative mt-10 flex-col ml-4 ">
     <div>
       <a href="https://app.coldran.com" target="_blank">
       <Button variant="blue" size="lg" className="">
@@ -71,6 +71,12 @@ export default function Home() {
         <CreateAgent />
       </div>
     </div>
+  </div>
+  </div>
+
+  {/* Right Column */}
+  <div className="hidden md:block">
+    <CustomerHero />
   </div>
 </div>
 

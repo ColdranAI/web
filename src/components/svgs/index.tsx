@@ -14,6 +14,7 @@ import { ToDo } from "./pointers/trigger-todo";
 import { ProductPr } from "./pointers/product-pr";
 import { ProductIssue } from "./pointers/product-issue";
 import { CustomerCalls } from "./pointers/customer-calls";
+import { ProductPrBottomLeft } from "./pointers/product-pr-bottom-left";
 
 export {
   CreateAgent,
@@ -24,4 +25,5 @@ export {
   ProductPr,
   ProductIssue,
   CustomerCalls,
+  ProductPrBottomLeft,
 };

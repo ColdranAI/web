@@ -1,6 +1,6 @@
 export function CustomerHero() {
     return (
-<svg className="max-w-xs hidden  lg:block lg:-translate-x-30 xl:-translate-x-58" viewBox="0 0 1499 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg className="max-w-lg" viewBox="0 0 1499 780" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="15" y="39" width="1173" height="184" fill="black"/>
 <rect x="13" y="13" width="1177" height="188" fill="#FFC700"/>
 <rect x="13" y="13" width="1177" height="188" stroke="black" strokeWidth="4"/>
