@@ -100,7 +100,7 @@ export default function Home() {
   <h2 className="text-5xl font-medium text-neutral-900 mb-6font-instrument-sans">
   Coldran Narrative
   </h2>
-  <p className="text-xl text-neutral-700 my-4 max-w-2xl">
+  <p className="text-xl mb-10 text-neutral-700 my-4 max-w-2xl">
     Allow the customers to have autonomy to get help with bugs, outdated documentation, feature requests, etc.
     As Fast as Possible to reach Resolution.
     <br />
@@ -111,6 +111,9 @@ export default function Home() {
   <div>
     <PRIssues />
   </div>
+    <a href="https://discord.gg/rDDqA83eGz" target="_blank">
+    <Button variant="gray">Join Our Discord</Button>
+  </a>
 </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen my-10">
