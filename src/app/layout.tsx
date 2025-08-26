@@ -59,6 +59,25 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
+  openGraph: {
+    title: "Coldran",
+    description: "We provide better customer experience with knowledgebase",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Coldran - Better customer experience with knowledgebase",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Coldran",
+    description: "We provide better customer experience with knowledgebase",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
