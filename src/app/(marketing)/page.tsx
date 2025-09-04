@@ -245,18 +245,6 @@ export default function Home() {
                 </ul>
               </div>
             </div> */}
-
-        <div className="border border-neutral-200 p-4 rounded-lg bg-white">
-          <h3 className="text-lg font-medium text-neutral-900 mb-2">
-            No More &ldquo;Schedule a Call&rdquo; Barriers
-          </h3>
-          <p className="text-sm text-neutral-700">
-            Unlike other platforms, we provide everything in one place with
-            gentle, human-like AI behavior. Perfect onboarding for small
-            customers who want to try before they buy—no formal sales calls
-            required.
-          </p>
-        </div>
       </div>
       {/* <div className="mx-4 mt-10 my-2">
         <div className="relative w-full max-w-5xl aspect-[10/3] rounded-2xl mx-auto overflow-hidden">
