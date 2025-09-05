@@ -150,12 +150,6 @@ export default function TeamPage() {
                     </Button>
                   </a>
                 </div>
-
-                <div className="text-center pt-4">
-                  <Link href="/about-arjun">
-                    <Button className="w-full">Learn More About Arjun</Button>
-                  </Link>
-                </div>
               </CardContent>
             </Card>
           </div>

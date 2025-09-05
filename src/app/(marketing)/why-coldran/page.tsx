@@ -1,4 +1,4 @@
-export default function BlogPage() {
+export default function WhyColdranPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-6 py-12">
       <h1 className="text-4xl font-bold">About</h1>
